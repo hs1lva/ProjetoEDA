@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Arquivos de Origem">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Recurso">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{9863791a-4b90-4ed0-846e-09ac0d9e67d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{f2dd4ad8-bffb-45db-a80e-771cb1228bc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{12b9ebbc-580e-4f3e-b273-0aa2d1b7b6b8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="fclientes.c">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="fgestores.c">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="ficheiros.c">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="dados.c">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="validacoes.c">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="fmeios.c">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="vclientes.c">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="vmeios.c">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="falugueres.c">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="vgestores.c">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="valugueres.c">
+      <Filter>View</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clientes.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="gestores.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="meios.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="alugueres.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="localizacao.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
