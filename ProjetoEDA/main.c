@@ -98,10 +98,5 @@ int main() {
 
 #pragma endregion
 
-
-    //--------------IDEIAS A FAZER/CONCLUIR------------
-    //Função para ler ficheiro backup_alugueres.bin (ver também se o bin de registo de alugueres está operacional como todos os outros)
-    //Função para listar as transações feitas (caso seja necessario mais tarde)
-
     return 0;
 }
