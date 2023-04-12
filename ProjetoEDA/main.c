@@ -18,7 +18,7 @@ int main() {
     
     ClienteListaPtr listaClientes = lerClientesBin("backup_clientes.bin");
     MeiosMobilidadeListaPtr listaMeios = lerMeiosMobilidadeBin("backup_meiosmobilidade.bin");
-    AluguerListaPtr listaAlugueres = lerAlugueresBin("backup_alugueres.bin");
+    //AluguerListaPtr listaAlugueres = lerAlugueresBin("backup_alugueres.bin");
 
 #pragma region Testar funções clientes
 
@@ -54,10 +54,10 @@ int main() {
 #pragma region Testar funções meios de mobilidade
 
     // Adiciona alguns meios de mobilidade
-    //Cliente* meio1 = novoMeioMobilidade(100,"Bicicleta",50.0,3.4,"Porto","ASDAH23", 1); //Inserir ID 100
+    //Cliente* meio1 = novoMeioMobilidade(100,"Bicicleta",50.0,3.4,"Porto","ASDAH23", 0); //Inserir ID 100
     //listaMeios = adicionarMeioMobilidade(listaMeios, meio1);
 
-    //Cliente* meio2 = novoMeioMobilidade(101,"Lambreta",32.0,0.4,"Braga","ASDA3232D3", 1); //Inserir ID 101
+    //Cliente* meio2 = novoMeioMobilidade(101,"Lambreta",32.0,0.4,"Braga","ASDA3232D3", 0); //Inserir ID 101
     //listaMeios = adicionarMeioMobilidade(listaMeios, meio2);
 
     // Remove um meio de mobilidade
@@ -88,13 +88,17 @@ int main() {
 
 #pragma region Testar funções alugueres
 
-    Aluguer aluguer1 = novoAluguer(232, 1);
+    //Aluguer aluguer1 = novoAluguer(232, 1);
     
-    adicionarAluguer(listaClientes, listaMeios, listaAlugueres, &aluguer1);
+    //adicionarAluguer(listaClientes, listaMeios, listaAlugueres, &aluguer1);
     
-
     // Lista os alugueres lidos do arquivo
     //listarAlugueres(lista_alugueres);
+
+
+    //-----------------------PROBLEMAS COM O CAMPO ALUGADOOOOO MEIO DE MOBILIDADE------
+    //-----------------------PROBLEMAS COM O GERARID ALUGUER------
+    //-----------------------É PRECISO COLOCAR TUDO DO GEO E DA LOC NOS CLIENTES!!!!----
 
 #pragma endregion
 
