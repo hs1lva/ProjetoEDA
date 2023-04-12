@@ -21,14 +21,18 @@
 @param nome Nome do cliente
 @param endereco Endereço do cliente
 @param saldo Saldo do cliente
+@param localizacao Localização do cliente
+@param geocodigo Geocódigo do cliente
 @return apontador para a estrutura Cliente criada
 */
-Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo) {
+Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]) {
     Cliente* cliente = (Cliente*)malloc(sizeof(Cliente)); // Aloca espaço na memória para uma nova estrutura Cliente
     cliente->nif = nif; // Atribui o número de identificação fiscal ao novo cliente
     strcpy(cliente->nome, nome); // Copia o nome do cliente para a nova estrutura
     strcpy(cliente->endereco, endereco); // Copia o endereço do cliente para a nova estrutura
     cliente->saldo = saldo; // Atribui o saldo ao novo cliente
+    strcpy(cliente->localizacao, localizacao); // Copia a localização do cliente para a nova estrutura
+    strcpy(cliente->geocodigo, geocodigo); // Copia o geocodigo do cliente para a nova estrutura
     return cliente; // Retorna um apontador para a nova estrutura Cliente criada
 }
 
@@ -42,9 +46,6 @@ e cria um novo nó na lista com a informação do cliente. Em seguida, retorna um a
 @return Retorna um apontador para o novo nó criado na lista.
 */
 ClienteListaPtr adicionarCliente(ClienteListaPtr listaClientes, Cliente* cliente) {
-    if (listaClientes == NULL) {
-        return NULL;
-    }
     // Verifica se já existe um cliente com o mesmo NIF
     if (pesquisarCliente(listaClientes, cliente->nif) != NULL) {
         return listaClientes;
@@ -90,15 +91,19 @@ ClienteListaPtr removerCliente(ClienteListaPtr listaClientes, int nif) {
 @param nome novo nome do cliente
 @param endereco novo endereço do cliente
 @param saldo novo saldo do cliente
+@param localizacao Localização do cliente
+@param geocodigo Geocódigo do cliente
 @return bool 1 se a alteração for bem sucedida, 0 caso contrário
 */
-bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo) {
+bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]) {
     ClienteListaPtr atual = listaClientes; // Inicializa o apontador atual para o primeiro elemento da lista
     while (atual != NULL) { // enquanto a lista não for percorrida por completo
         if (atual->cliente.nif == nif) { // Percorre a lista até encontrar o cliente com o NIF especificado
             strcpy(atual->cliente.nome, nome); // Altera os dados do cliente
             strcpy(atual->cliente.endereco, endereco); // Altera os dados do cliente
             atual->cliente.saldo = saldo; // Altera os dados do cliente
+            strcpy(atual->cliente.localizacao, localizacao); // Altera os dados do cliente
+            strcpy(atual->cliente.geocodigo, geocodigo); // Altera os dados do cliente
             return true; // sucesso
         }
         atual = atual->proxclientelista; // atualiza o apontador atual para apontar para o próximo elemento da lista
@@ -159,6 +164,46 @@ bool alterarSaldoCliente(ClienteListaPtr listaClientes, int nif, float saldo) {
     while (atual != NULL) { // enquanto a lista não for percorrida por completo
         if (atual->cliente.nif == nif) { // Percorre a lista até encontrar o cliente com o NIF especificado
             atual->cliente.saldo = saldo; // Altera o saldo do cliente
+            return true; // sucesso
+        }
+        atual = atual->proxclientelista; // atualiza o apontador atual para apontar para o próximo elemento da lista
+    }
+    return false; // cliente não encontrado
+}
+
+
+/**
+@brief Altera a localização de um cliente existente com base no seu NIF
+@param listaClientes apontador para a lista de clientes
+@param nif NIF do cliente a ser alterado
+@param localizacao nova localização do cliente
+@return bool 1 se a alteração for bem sucedida, 0 caso contrário
+*/
+bool alterarLocalizacaoCliente(ClienteListaPtr listaClientes, int nif, char localizacao[]) {
+    ClienteListaPtr atual = listaClientes; // Inicializa o apontador atual para o primeiro elemento da lista
+    while (atual != NULL) { // enquanto a lista não for percorrida por completo
+        if (atual->cliente.nif == nif) { // Percorre a lista até encontrar o cliente com o NIF especificado
+            strcpy(atual->cliente.localizacao, localizacao); // Altera a localização do cliente
+            return true; // sucesso
+        }
+        atual = atual->proxclientelista; // atualiza o apontador atual para apontar para o próximo elemento da lista
+    }
+    return false; // cliente não encontrado
+}
+
+
+/**
+@brief Altera o geocódigo de um cliente existente com base no seu NIF
+@param listaClientes apontador para a lista de clientes
+@param nif NIF do cliente a ser alterado
+@param geocodigo novo geocódigo do cliente
+@return bool 1 se a alteração for bem sucedida, 0 caso contrário
+*/
+bool alterarGeocodigoCliente(ClienteListaPtr listaClientes, int nif, char geocodigo[]) {
+    ClienteListaPtr atual = listaClientes; // Inicializa o apontador atual para o primeiro elemento da lista
+    while (atual != NULL) { // enquanto a lista não for percorrida por completo
+        if (atual->cliente.nif == nif) { // Percorre a lista até encontrar o cliente com o NIF especificado
+            strcpy(atual->cliente.geocodigo, geocodigo); // Altera o geocodigo do cliente
             return true; // sucesso
         }
         atual = atual->proxclientelista; // atualiza o apontador atual para apontar para o próximo elemento da lista

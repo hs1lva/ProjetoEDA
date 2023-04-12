@@ -38,8 +38,8 @@ ClienteListaPtr lerClientesCSV(char* nomeArquivo) {
     char linha[MAX_LINHA_CLIENTES_CSV];
     while (fgets(linha, MAX_LINHA_CLIENTES_CSV, arquivo)) {
         Cliente cliente;
-        int numCampos = sscanf(linha, "%d,%[^,],%[^,],%f", &cliente.nif, cliente.nome, cliente.endereco, &cliente.saldo);
-        if (numCampos != 4) {
+        int numCampos = sscanf(linha, "%d,%[^,],%[^,],%f,%[^,],%[^,]", &cliente.nif, cliente.nome, cliente.endereco, &cliente.saldo, cliente.localizacao, cliente.geocodigo);
+        if (numCampos != 6) {
             perror("Erro ao ler linha do arquivo CSV\n");
             continue;
         }
@@ -69,7 +69,7 @@ int escreverClientesCSV(ClienteListaPtr listaClientes, char* nomeArquivo) { //Es
     }
     ClienteListaPtr atual = listaClientes;
     while (atual != NULL) {
-        fprintf(arquivo, "%d,%s,%s,%.2f\n", atual->cliente.nif, atual->cliente.nome, atual->cliente.endereco, atual->cliente.saldo);
+        fprintf(arquivo, "%d,%s,%s,%.2f,%s,%s\n", atual->cliente.nif, atual->cliente.nome, atual->cliente.endereco, atual->cliente.saldo, atual->cliente.localizacao, atual->cliente.geocodigo);
         atual = atual->proxclientelista;
     }
     fclose(arquivo);

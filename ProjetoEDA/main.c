@@ -96,9 +96,7 @@ int main() {
     //listarAlugueres(lista_alugueres);
 
 
-    //-----------------------PROBLEMAS COM O CAMPO ALUGADOOOOO MEIO DE MOBILIDADE------
     //-----------------------PROBLEMAS COM O GERARID ALUGUER------
-    //-----------------------É PRECISO COLOCAR TUDO DO GEO E DA LOC NOS CLIENTES!!!!----
 
 #pragma endregion
 

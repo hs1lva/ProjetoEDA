@@ -24,7 +24,7 @@ void listarClientes(ClienteListaPtr listaClientes) {
     ClienteListaPtr atual = listaClientes;
     printf("------ Lista de Clientes ------\n");
     while (atual != NULL) {
-        printf("NIF: %d\nNome: %s\nEndereço: %s\nSaldo: %.2f\n\n", atual->cliente.nif, atual->cliente.nome, atual->cliente.endereco, atual->cliente.saldo);
+        printf("NIF: %d\nNome: %s\nEndereço: %s\nSaldo: %.2f\nLocalização: %s\nGeocódigo: %s\n\n", atual->cliente.nif, atual->cliente.nome, atual->cliente.endereco, atual->cliente.saldo, atual->cliente.localizacao, atual->cliente.geocodigo);
         atual = atual->proxclientelista;
     }
     printf("-------------------------------\n");

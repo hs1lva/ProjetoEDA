@@ -37,7 +37,7 @@ ClienteListaPtr lerClientesBin(char* nomeArquivoBin);
 int escreverClientesCSV(ClienteListaPtr listaClientes, char* nomeArquivo);
 
 //Cria um novo cliente e retorna um ponteiro para a estrutura criada
-Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo);
+Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]);
 
 //Adiciona um novo cliente à lista de clientes
 ClienteListaPtr adicionarCliente(ClienteListaPtr listaClientes, Cliente* cliente);
@@ -46,10 +46,12 @@ ClienteListaPtr adicionarCliente(ClienteListaPtr listaClientes, Cliente* cliente
 ClienteListaPtr removerCliente(ClienteListaPtr listaClientes, int nif);
 
 //Altera os dados de um cliente existente com base no seu NIF
-bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo);
+bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]);
 bool alterarNomeCliente(ClienteListaPtr listaClientes, int nif, char nome[]);
 bool alterarEnderecoCliente(ClienteListaPtr listaClientes, int nif, char endereco[]);
 bool alterarSaldoCliente(ClienteListaPtr listaClientes, int nif, float saldo);
+bool alterarLocalizacaoCliente(ClienteListaPtr listaClientes, int nif, char localizacao[]);
+bool alterarGeocodigoCliente(ClienteListaPtr listaClientes, int nif, char geocodigo[]);
 
 //Retorna um ponteiro para o cliente com o NIF especificado, ou NULL caso não exista
 Cliente* pesquisarCliente(ClienteListaPtr listaClientes, int nif);
