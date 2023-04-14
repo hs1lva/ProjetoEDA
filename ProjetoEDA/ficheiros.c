@@ -325,7 +325,6 @@ int guardarBackupAlugueres(Aluguer aluguer) {
     fclose(ficheiro); // fecha o arquivo
     return 1; // retorna 1 para indicar que a operação foi bem sucedida
 }
-
 #pragma endregion
 
 

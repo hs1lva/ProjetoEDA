@@ -23,9 +23,6 @@ typedef struct AluguerLista {
     struct AluguerLista* proxaluguer;
 } AluguerLista, *AluguerListaPtr;
 
-//Função para gerar um ID para o aluguer automático
-int gerarIdAluguer(AluguerListaPtr listaAlugueres);
-
 //Função para criar um novo aluger
 Aluguer novoAluguer(int nifcliente, int idmeiomobilidade);
 

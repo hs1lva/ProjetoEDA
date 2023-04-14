@@ -74,7 +74,7 @@
     <ClInclude Include="alugueres.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="localizacao.h">
+    <ClInclude Include="grafos.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

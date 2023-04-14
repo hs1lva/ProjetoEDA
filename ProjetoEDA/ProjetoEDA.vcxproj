@@ -144,7 +144,7 @@
     <ClInclude Include="alugueres.h" />
     <ClInclude Include="clientes.h" />
     <ClInclude Include="gestores.h" />
-    <ClInclude Include="localizacao.h" />
+    <ClInclude Include="grafos.h" />
     <ClInclude Include="meios.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

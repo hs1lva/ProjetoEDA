@@ -18,40 +18,20 @@
 #pragma warning(disable:4996) //não chatear com _s 
 
 /**
-@brief Função que gera o próximo ID disponível para um novo aluguer.
-A função percorre a lista de alugueres recebida e determina o maior ID já utilizado.
-O próximo ID disponível é, então, o maior ID encontrado na lista mais um.
-@param listaAlugueres O apontador para a lista de alugueres existente.
-@return O próximo ID disponível para um novo aluguer.
-*/
-int gerarIdAluguer(AluguerListaPtr lista_alugueres) {
-    if (lista_alugueres == NULL) {
-        return 1;
-    }
-    int maiorId = 0;
-    AluguerListaPtr atual = lista_alugueres;
-    while (atual != NULL) {
-        if (atual->aluguer.id > maiorId) {
-            maiorId = atual->aluguer.id;
-        }
-        atual = atual->proxaluguer;
-    }
-    return maiorId + 1;
-}
-
-
-/**
 @brief Cria um novo aluguer com os dados fornecidos.
 @param nifcliente O NIF do cliente que está a fazer o aluguer.
 @param idmeiomobilidade O identificador do meio de mobilidade que está a ser alugado.
 @return Uma estrutura do tipo Aluguer preenchida com os dados fornecidos.
 */
 Aluguer novoAluguer(int nifcliente, int idmeiomobilidade) {
+    static int totAluguer = 0;
     Aluguer aluguer;
     aluguer.nifcliente = nifcliente;
     aluguer.idmeio = idmeiomobilidade;
     aluguer.preco = 0; // inicialmente, o preço é zero
     aluguer.data = time(NULL); // data atual
+    aluguer.id=totAluguer;
+    totAluguer++;
     return aluguer;
 }
 
@@ -82,7 +62,7 @@ int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr list
     aluguer->preco = custo;
     // Inserir o custo do aluguer no saldo do cliente
     cliente->saldo -= custo;
-    //Adicionar o aluguer à lista de alugueres
+    //Adicionar o aluguer à lista de alug(ueres
     inserirAluguerLista(listaAlugueres, *aluguer);
     // Marcar o meio de mobilidade como indisponível
     alterarAlugadoMeioMobilidade(listaMeiosMobilidad, meiomobilidade);
@@ -90,7 +70,6 @@ int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr list
     guardarBackupAlugueres(*aluguer);
     return 1;
 }
-
 
 
 /**
@@ -102,8 +81,6 @@ int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr list
 int inserirAluguerLista(AluguerListaPtr* listaAlugueres, Aluguer aluguer) {
     // Cria um novo nó da lista de alugueres
     AluguerListaPtr novo_aluguer = (AluguerListaPtr)malloc(sizeof(AluguerLista));
-    int id = gerarIdAluguer(listaAlugueres);        //REVER
-    aluguer.id = id;
     novo_aluguer->aluguer = aluguer;
     novo_aluguer->proxaluguer = NULL;
     // Se a lista estiver vazia, insere o novo aluguer como primeiro elemento
@@ -118,9 +95,8 @@ int inserirAluguerLista(AluguerListaPtr* listaAlugueres, Aluguer aluguer) {
         }
         ultimo_aluguer->proxaluguer = novo_aluguer;
     }
-    return 1; // Retorna 1 para indicar que a operação foi bem sucedida
+    return 1;
 }
-
 
 
 /**
