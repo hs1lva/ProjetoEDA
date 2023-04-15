@@ -64,7 +64,7 @@ int main() {
     //listaMeios = removerMeioMobilidade(listaMeios, 1); //ID 1 a remover
 
     // Altera um meio de mobilidade
-    //alterarMeioMobilidade(listaMeios, 2, "Triciclo", 20.0, 3.1, "Guimaraes", "UEDED2"); //Alterar ID 2
+    alterarMeioMobilidade(listaMeios, 1, "Triciclo", 20.0, 3.1, "Guimaraes", "UEDED2", 0); //Alterar ID 1
 
     // Escreve os dados atualizados dos meios de mobilidade de volta para o arquivo CSV
     //escreverMeios(listaMeios, "meiosmobilidade.csv");
@@ -98,13 +98,11 @@ int main() {
     // Listar alugueres
     listarAlugueres(listaAlugueres);
 
-    //Reescrever ficheiro bin nos meios de mobilidade para o meio usado no aluguer acima ficar a 1 no binario e reescrever tambem os novos dados de todos os clientes (saldo atualizado)
+    //Reescrever os ficheiros .bin para o seguinte:
+    //---Atualizar o meio de mobilidade usado no aluguer acima para ficar a 1(alugado) e guardar no backup_binario o novo estado alugado.
+    //---Atualizar o cliente usado no aluguer para depois de ser feito o calculo do custo de aluguer, descontar no saldo e guardar no backup_binario novo saldo.
     guardarBackupMeiosMobilidade(listaMeios);
-    //guardarBackupClientes(listaClientes);
-
-    listarClientes(listaClientes);
-
-    // O PREÇO NAO ESTÁ A FICAR NO ALUGUER E A DURAÇÃO USADA TAMBEM NÃO. !! DATA AINDA ESTRAGADA
+    guardarBackupClientes(listaClientes);
 
 #pragma endregion
 
