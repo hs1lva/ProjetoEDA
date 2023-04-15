@@ -29,7 +29,7 @@ typedef struct AluguerLista {
 } AluguerLista, *AluguerListaPtr;
 
 //Função para criar um novo aluger
-Aluguer novoAluguer(int nifcliente, int idmeiomobilidade);
+Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int duracaominutos);
 
 //Função para inserir o aluguer na lista de alugueres
 int inserirAluguerLista(AluguerListaPtr* listaAlugueres, Aluguer aluguer);

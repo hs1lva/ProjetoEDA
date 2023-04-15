@@ -89,18 +89,21 @@ int main() {
 #pragma region Testar funções alugueres
 
     // Adicionar alguns alugueres manualmente
-    Aluguer aluguer1 = novoAluguer(232, 1); // idCliente=232, idMeioMobilidade=1
+    Aluguer aluguer1 = novoAluguer(232, 1, 34); // idCliente=232, idMeioMobilidade=1, NºMinutos=34min
     adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1);
 
-    //Aluguer aluguer2 = novoAluguer(232, 100); // idCliente=232, idMeioMobilidade=100
+    //Aluguer aluguer2 = novoAluguer(232, 100, 35.5); // idCliente=232, idMeioMobilidade=100, NºMinutos=35.5min
     //adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer2);
 
     // Listar alugueres
     listarAlugueres(listaAlugueres);
 
-    listarMeiosMobilidade(listaMeios);
+    //Reescrever ficheiro bin nos meios de mobilidade para o meio usado no aluguer acima ficar a 1 no binario e reescrever tambem os novos dados de todos os clientes (saldo atualizado)
+    guardarBackupMeiosMobilidade(listaMeios);
+    //guardarBackupClientes(listaClientes);
 
-    //-----------------------PROBLEMAS COM O GUARDARBACKUP ALUGUERES ----> ID DO ALUGUER E DATA ESTRAGADA NA FASE DE GUARDAR, SERÁ ISSO QUE DANIFICA O FICHEIRO BIN?------
+    listarClientes(listaClientes);
+
     // O PREÇO NAO ESTÁ A FICAR NO ALUGUER E A DURAÇÃO USADA TAMBEM NÃO. !! DATA AINDA ESTRAGADA
 
 #pragma endregion

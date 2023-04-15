@@ -214,22 +214,13 @@ bool alterarGeocodigoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade
 
 
 /**
-@brief Altera o estado alugado de um meio de mobilidade existente com base no seu ID.
-@param listaMeiosMobilidade apontador para a lista de meios de mobilidade.
-@param id ID do meio de mobilidade a ser alterado.
-@param alugado Estado alugado do meio de mobilidade.
+@brief Altera o estado alugado de um meio de mobilidade existente.
+@param meioMobilidade ponteiro para o meio de mobilidade a ser alterado.
 @return true se o estado do aluguer do meio de mobilidade foi alterado com sucesso, false caso contrário.
 */
-bool alterarAlugadoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id) {
-    MeiosMobilidadeListaPtr atual = listaMeiosMobilidade; // apontador para o início da lista
-    while (atual != NULL) { // percorre a lista de meios de mobilidade
-        if (atual->meioMobilidade.id == id) { // verifica se o meio de mobilidade tem o ID especificado
-            atual->meioMobilidade.alugado = 1; // altera o estado para alugado (1) do meio de mobilidade
-            return true; // retorna true indicando que o estado de aluguer do meio de mobilidade foi alterado com sucesso
-        }
-        atual = atual->proxmeiomobilidadelista; // avança para o próximo meio de mobilidade na lista
-    }
-    return false; // retorna false indicando que não foi possível encontrar o meio de mobilidade com o ID especificado
+bool alterarAlugadoMeioMobilidade(MeioMobilidade* meioMobilidade) {
+    meioMobilidade->alugado = 1; // altera o estado para alugado (1) do meio de mobilidade
+    return true; // retorna true indicando que o estado de aluguer do meio de mobilidade foi alterado com sucesso
 }
 
 

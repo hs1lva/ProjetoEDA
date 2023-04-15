@@ -16,13 +16,15 @@
 @brief Cria um novo aluguer com os dados fornecidos.
 @param nifcliente O NIF do cliente que está a fazer o aluguer.
 @param idmeiomobilidade O identificador do meio de mobilidade que está a ser alugado.
+@param duracaominutos O numero de minutos para realizar um aluguer.
 @return Uma estrutura do tipo Aluguer preenchida com os dados fornecidos.
 */
-Aluguer novoAluguer(int nifcliente, int idmeiomobilidade) {
+Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int duracaominutos) {
     static int totAluguer = 0; //Atribuição de ID's ao aluguer, estático para o primeiro ser sempre 0 e ir encrementando
     Aluguer aluguer;
     aluguer.nifcliente = nifcliente;
     aluguer.idmeio = idmeiomobilidade;
+    aluguer.duracaominutos = duracaominutos;
     aluguer.preco = 0; // inicialmente, o preço é zero
     aluguer.data = time(NULL); // data atual
     aluguer.id=totAluguer;
@@ -130,6 +132,7 @@ float calcularCustoAluguer(MeioMobilidade* meiomobilidade, int duracaominutos, f
 */
 int verificarEstadoMeioMobilidade(MeioMobilidade* meiomobilidade) {
     if (meiomobilidade->alugado == 0) {
+        alterarAlugadoMeioMobilidade(meiomobilidade);
         return 1;
     }
     return 0;

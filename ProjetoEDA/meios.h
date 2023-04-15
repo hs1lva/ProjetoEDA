@@ -55,7 +55,7 @@ bool alterarAutonomiaMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade
 bool alterarCustoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, float custo);
 bool alterarLocalizacaoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char localizacao[]);
 bool alterarGeocodigoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char geocodigo[]);
-bool alterarAlugadoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id);
+bool alterarAlugadoMeioMobilidade(MeioMobilidade* meioMobilidade);
 
 //Função para pesquisar meios de mobilidade
 MeioMobilidade* pesquisarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id);
