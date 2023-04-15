@@ -18,7 +18,7 @@ int main() {
     
     ClienteListaPtr listaClientes = lerClientesBin("backup_clientes.bin");
     MeiosMobilidadeListaPtr listaMeios = lerMeiosMobilidadeBin("backup_meiosmobilidade.bin");
-    //AluguerListaPtr listaAlugueres = lerAlugueresBin("backup_alugueres.bin");
+    AluguerListaPtr listaAlugueres = lerAlugueresBin("backup_alugueres.bin");
 
 #pragma region Testar funções clientes
 
@@ -73,7 +73,7 @@ int main() {
     //guardarBackupMeiosMobilidade(listaMeios);
 
     //Apresentar lista de meios de mobilidade em memória
-    listarMeiosMobilidade(listaMeios);
+    //listarMeiosMobilidade(listaMeios);
 
     //Apresentar lista de meios de mobilidade em memória ordenados pela autonomia
     //listarMeiosMobilidadeOrdenadosAutonomia(listaMeios);
@@ -88,9 +88,6 @@ int main() {
 
 #pragma region Testar funções alugueres
 
-    // Criar nova lista de alugueres vazia
-    AluguerListaPtr listaAlugueres = NULL;
-
     // Adicionar alguns alugueres manualmente
     Aluguer aluguer1 = novoAluguer(232, 1); // idCliente=232, idMeioMobilidade=1
     adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1);
@@ -101,9 +98,10 @@ int main() {
     // Listar alugueres
     listarAlugueres(listaAlugueres);
 
+    listarMeiosMobilidade(listaMeios);
+
     //-----------------------PROBLEMAS COM O GUARDARBACKUP ALUGUERES ----> ID DO ALUGUER E DATA ESTRAGADA NA FASE DE GUARDAR, SERÁ ISSO QUE DANIFICA O FICHEIRO BIN?------
     // O PREÇO NAO ESTÁ A FICAR NO ALUGUER E A DURAÇÃO USADA TAMBEM NÃO. !! DATA AINDA ESTRAGADA
-    // ID STATIC COMO O PROF DISSE
 
 #pragma endregion
 

@@ -6,10 +6,6 @@
  * \date   March 2023
  *********************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "clientes.h"
 #include "meios.h"
 #include "alugueres.h"

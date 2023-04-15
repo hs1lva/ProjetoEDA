@@ -6,11 +6,6 @@
  * \date   March 2023
  *********************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
-
 #include "meios.h"
 #include "clientes.h"
 #include "alugueres.h"
@@ -24,7 +19,7 @@
 @return Uma estrutura do tipo Aluguer preenchida com os dados fornecidos.
 */
 Aluguer novoAluguer(int nifcliente, int idmeiomobilidade) {
-    static int totAluguer = 0;
+    static int totAluguer = 0; //Atribuição de ID's ao aluguer, estático para o primeiro ser sempre 0 e ir encrementando
     Aluguer aluguer;
     aluguer.nifcliente = nifcliente;
     aluguer.idmeio = idmeiomobilidade;
@@ -129,7 +124,7 @@ float calcularCustoAluguer(MeioMobilidade* meiomobilidade, int duracaominutos, f
 
 
 /**
-@brief Verifica se o meio de mobilidade está disponível para alugar
+@brief Verifica se o meio de mobilidade está disponível para alugar e chama a função alterar o valor para 1 (alugado)
 @param meiomobilidade apontador para o meio de mobilidade a verificar
 @return int retorna 1 se o meio de mobilidade estiver disponível para alugar, 0 caso contrário
 */

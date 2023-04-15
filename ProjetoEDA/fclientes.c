@@ -6,11 +6,6 @@
  * \date   March 2023
  *********************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
-
 #include "clientes.h"
 
 #pragma warning(disable:4996) //não chatear com _s 

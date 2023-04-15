@@ -6,14 +6,9 @@
  * \date   March 2023
  *********************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "meios.h"
 
 #pragma warning(disable:4996) //não chatear com _s 
-
 
  /**
  @brief Lista todos os meios de mobilidade em memória

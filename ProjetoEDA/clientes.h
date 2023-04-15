@@ -6,7 +6,11 @@
  * \date   March 2023
  *********************************************************************/
 #pragma once
+
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define TAM_NOME 50 //Definir tamanho char para nome cliente
 #define TAM_END 100 //Definir tamanho char para endereço do cliente

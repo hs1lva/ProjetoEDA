@@ -7,6 +7,11 @@
  *********************************************************************/
 #pragma once
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
 //Estrutura para aluguer
 typedef struct Aluguer {
     int id; //ID da transação de aluguer

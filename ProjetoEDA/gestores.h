@@ -7,6 +7,10 @@
  *********************************************************************/
 #pragma once
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 //Não é necessário nenhuma struct para os gestores
 
 #define MAX_USER 20
