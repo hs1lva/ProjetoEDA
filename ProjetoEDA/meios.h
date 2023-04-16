@@ -74,4 +74,3 @@ void listarMeiosMobilidadeOrdenadosAutonomia(MeiosMobilidadeListaPtr listaMeiosM
 
 //Lista apenas os meios de mobilidade num determinado Geocodigo
 void listarMeiosMobilidadePorLocalizacao(MeiosMobilidadeListaPtr listaMeiosMobilidade);
-

@@ -8,27 +8,38 @@
 
 #pragma once
 
-//fazer matriz de adjacência
+#include "clientes.h"
+#include "meios.h"
 
-typedef struct GrafoNo {
-    int id; // ID do nó
-    char geocodigo[50]; // geocódigo (what3words.com)
-    float latitude; // latitude
-    float longitude; // longitude
-    int idcliente; // ID do cliente correspondente
-    int idmeiomobilidade; // ID do meio de mobilidade correspondente
-    struct GrafoNo* proxno; // próximo nó na lista ligada de nós do grafo
-    struct GrafoAresta* proxa; // primeira aresta adjacente ao nó
-} GrafoNo, * GrafoNoPtr;
+#define TAM_GEO 30
 
-typedef struct GrafoAresta {
-    GrafoNoPtr destino; // nó de destino da aresta
-    float peso; // peso (distância) da aresta
-    struct GrafoAresta* proxima; // próxima aresta adjacente ao nó origem
-} GrafoAresta, * GrafoArestaPtr;
+typedef struct No {
+    char geocodigo[TAM_GEO]; // geocódigo (what3words.com)
+    float latitude;
+    float longitude;
+    ClienteListaPtr clientes;
+    MeiosMobilidadeListaPtr meiosMobilidade;
+    struct Aresta* prox; // próxima aresta
+} No;
+
+typedef struct Aresta {
+    float peso;
+    No* destino;
+    struct Aresta* prox; // próxima aresta
+} Aresta;
 
 typedef struct Grafo {
-    GrafoNoPtr primeiro; // primeiro nó na lista ligada de nós do grafo
-    int numvertices; // número de nós no grafo
-} Grafo, * GrafoPtr;
+    No* inicio;
+    int numVertices;
+} Grafo;
+
+// Estrutura para a lista de meios de mobilidade elétrica
+typedef struct MeioMobilidadeListaFiltrada {
+    MeioMobilidade meioMobilidade;
+    struct MeioMobilidadeListaFiltrada* proxmeiomobilidadelista; // próximo meio de mobilidade na lista ligada
+} MeiosMobilidadeListaFiltrada, * MeiosMobilidadeListaFiltradaPtr;
+
+float calcularDistancia(float x1, float y1, float x2, float y2);
+
+MeiosMobilidadeListaFiltradaPtr listarMeiosPorTipoERaio(Cliente cliente, MeiosMobilidadeListaPtr listaMeios, char* tipo, float raio);
 

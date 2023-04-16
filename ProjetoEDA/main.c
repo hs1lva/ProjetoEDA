@@ -64,7 +64,7 @@ int main() {
     //listaMeios = removerMeioMobilidade(listaMeios, 1); //ID 1 a remover
 
     // Altera um meio de mobilidade
-    alterarMeioMobilidade(listaMeios, 1, "Triciclo", 20.0, 3.1, "Guimaraes", "UEDED2", 0); //Alterar ID 1
+    //alterarMeioMobilidade(listaMeios, 1, "Triciclo", 20.0, 3.1, "Guimaraes", "UEDED2", 0); //Alterar ID 1
 
     // Escreve os dados atualizados dos meios de mobilidade de volta para o arquivo CSV
     //escreverMeios(listaMeios, "meiosmobilidade.csv");
@@ -89,20 +89,20 @@ int main() {
 #pragma region Testar funções alugueres
 
     // Adicionar alguns alugueres manualmente
-    Aluguer aluguer1 = novoAluguer(232, 1, 34); // idCliente=232, idMeioMobilidade=1, NºMinutos=34min
-    adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1);
+    //Aluguer aluguer1 = novoAluguer(232, 1, 34); // idCliente=232, idMeioMobilidade=1, NºMinutos=34min
+    //adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1);
 
     //Aluguer aluguer2 = novoAluguer(232, 100, 35.5); // idCliente=232, idMeioMobilidade=100, NºMinutos=35.5min
     //adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer2);
 
     // Listar alugueres
-    listarAlugueres(listaAlugueres);
+    //listarAlugueres(listaAlugueres);
 
     //Reescrever os ficheiros .bin para o seguinte:
     //---Atualizar o meio de mobilidade usado no aluguer acima para ficar a 1(alugado) e guardar no backup_binario o novo estado alugado.
     //---Atualizar o cliente usado no aluguer para depois de ser feito o calculo do custo de aluguer, descontar no saldo e guardar no backup_binario novo saldo.
-    guardarBackupMeiosMobilidade(listaMeios);
-    guardarBackupClientes(listaClientes);
+    //guardarBackupMeiosMobilidade(listaMeios);
+    //guardarBackupClientes(listaClientes);
 
 #pragma endregion
 

@@ -131,6 +131,7 @@
     <ClCompile Include="falugueres.c" />
     <ClCompile Include="fclientes.c" />
     <ClCompile Include="fgestores.c" />
+    <ClCompile Include="fgrafos.c" />
     <ClCompile Include="ficheiros.c" />
     <ClCompile Include="fmeios.c" />
     <ClCompile Include="main.c" />

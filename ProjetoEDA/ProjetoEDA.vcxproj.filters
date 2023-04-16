@@ -60,6 +60,9 @@
     <ClCompile Include="valugueres.c">
       <Filter>View</Filter>
     </ClCompile>
+    <ClCompile Include="fgrafos.c">
+      <Filter>Controller</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clientes.h">
