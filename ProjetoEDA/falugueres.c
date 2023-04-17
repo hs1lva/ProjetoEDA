@@ -26,7 +26,8 @@ Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int duracaominutos) {
     aluguer.idmeio = idmeiomobilidade;
     aluguer.duracaominutos = duracaominutos;
     aluguer.preco = 0; // inicialmente, o preço é zero
-    aluguer.data = time(NULL); // data atual
+    time_t now = time(NULL);
+    aluguer.data = now; // data atual
     aluguer.id=totAluguer;
     totAluguer++;
     return aluguer;
@@ -140,6 +141,18 @@ int verificarEstadoMeioMobilidade(MeioMobilidade* meiomobilidade) {
 
 
 /**
+@brief Converte uma data em formato time_t para uma string formatada.
+@param t A data a ser convertida.
+@return A data formatada como uma string.
+*/
+char* timeToString(time_t t) {
+    static char str[20];
+    strftime(str, sizeof(str), "%Y-%m-%d %H:%M:%S", localtime(&t));
+    return str;
+}
+
+
+/**
 @brief Lista os alugueres da lista de alugueres
 @param lista_alugueres apontador para a lista de alugueres
 */
@@ -156,6 +169,7 @@ void listarAlugueres(AluguerListaPtr lista_alugueres) {
         printf("ID do meio de mobilidade: %d\n", p->aluguer.idmeio);
         printf("Preço do aluguer: %.2f\n", p->aluguer.preco);
         printf("Duração do aluguer (minutos): %d\n", p->aluguer.duracaominutos);
+        printf("Data do aluguer: %s\n", timeToString(p->aluguer.data));
         printf("\n");
         p = p->proxaluguer;
     }

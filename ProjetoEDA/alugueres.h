@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <time.h>
 
 //Estrutura para aluguer
 typedef struct Aluguer {
@@ -54,3 +55,6 @@ AluguerListaPtr lerAlugueresBin(char* nomeArquivo);
 
 //Função para listar os alugueres/transações feitas
 void listarAlugueres(AluguerListaPtr lista_alugueres);
+
+//Função para converter time_t em uma string no formato de data e hora
+char* timeToString(time_t t);
