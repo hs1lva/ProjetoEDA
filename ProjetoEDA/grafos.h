@@ -1,6 +1,6 @@
 /*****************************************************************//**
- * \file   localizacao.h
- * \brief  Header para localizações
+ * \file   grafos.h
+ * \brief  Header para localizações utilizando os grafos
  * 
  * \author hugo2
  * \date   March 2023
@@ -11,35 +11,34 @@
 #include "clientes.h"
 #include "meios.h"
 
-#define TAM_GEO 30
+#define MAX_LINHA 200
+#define N 20
 
-typedef struct No {
-    char geocodigo[TAM_GEO]; // geocódigo (what3words.com)
-    float latitude;
-    float longitude;
-    ClienteListaPtr clientes;
-    MeiosMobilidadeListaPtr meiosMobilidade;
-    struct Aresta* prox; // próxima aresta
-} No;
+typedef struct Adj {
+    int idVerticeAdj;
+    float dist;
+    struct Adj* prox;
+} Adj;
 
-typedef struct Aresta {
-    float peso;
-    No* destino;
-    struct Aresta* prox; // próxima aresta
-} Aresta;
+typedef struct Vertice {
+    int id;
+    char cidade[N];
+    struct Vertice* prox;
+    Adj* adj;
+} Vertice;
 
-typedef struct Grafo {
-    No* inicio;
-    int numVertices;
-} Grafo;
+Vertice* criaGrafo();
 
-// Estrutura para a lista de meios de mobilidade elétrica
-typedef struct MeioMobilidadeListaFiltrada {
-    MeioMobilidade meioMobilidade;
-    struct MeioMobilidadeListaFiltrada* proxmeiomobilidadelista; // próximo meio de mobilidade na lista ligada
-} MeiosMobilidadeListaFiltrada, * MeiosMobilidadeListaFiltradaPtr;
+//Vertice* lerGrafosCSV(char* nomeArquivo);
 
-float calcularDistancia(float x1, float y1, float x2, float y2);
+//Vertice* lerGrafosBin(char* nomeArquivo);
 
-MeiosMobilidadeListaFiltradaPtr listarMeiosPorTipoERaio(Cliente cliente, MeiosMobilidadeListaPtr listaMeios, char* tipo, float raio);
+Vertice* criaVertice(char* cidade);
 
+Vertice* inserirVertice(Vertice* grafo, Vertice* novo, bool* res);
+
+Vertice* pesquisaVertice(Vertice* grafo, char* cidade, bool* res);
+
+Vertice* insereAdjacente(Vertice* grafo, char* origem, char* destino, float peso, bool* res);
+
+void mostraGrafo(Vertice* grafo);

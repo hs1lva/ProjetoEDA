@@ -1,0 +1,59 @@
+#,Ponto de Interesse,Adjacenccia 1,Distance 1 (m),Adjacenccia 2,Distance 2 (m),Adjacenccia 3,Distance 3 (m)
+1,Torre do Cimo da Vila,2,350,3,300,4,400
+2,Igreja do Bom Jesus da Cruz,1,350,11,50,5,400
+3,Museu de Olaria,1,300,4,200,7,450
+4,Igreja Matriz da Paróquia de Santa Maria Maior,1,400,3,200,5,150
+5,Paço dos Condes de Barcelos,2,400,4,150,6,350
+6,Ponte Medieval de Barcelos,5,350,12,400,7,600
+7,Museu Arqueológico de Barcelos,3,450,5,500,6,600
+8,Convento de São Salvador de Vilar de Frades,9,1500,10,1700,16,2000
+9,Rua Dom Antonio Barroso,8,1500,10,200,4,1000
+10,Igreja de Nossa Senhora do Terço,9,200,8,1700,4,1200
+11,Jardim das Barrocas - Passeio dos Assentos,2,50,21,100,22,200
+12,Rio Cávado,6,400,24,800,17,1000
+13,Pelourinho de Barcelos,14,100,15,200,19,300
+14,Chafariz do Campo da Feira,13,100,15,100,19,200
+15,Monumento - Estatua Galo de Barcelos,13,200,14,100,19,100
+16,Solar do Benfeito e Capela de Santa Ana,8,2000,17,2200,18,2300
+17,Cruzeiro do Senhor do Galo,12,1000,16,2200,18,200
+18,Casa de Beça Meneses,17,200,20,100,19,200
+19,Largo de Apoio,13,300,14,200,15,100
+20,Parque da Cidade,21,500,22,550,23,600
+21,Capela de Nossa Senhora da Ponte,11,100,20,500,22,300
+22,Igreja de Santo André,11,200,20,550,21,300
+23,Capela de Nossa Senhora das Necessidades,20,600,24,250,25,300
+24,Mosteiro de São Martinho de Manhente,12,800,23,250,25,200
+25,Capela de Santa Maria Madalena,23,300,24,200,26,100
+26,Convento de Santo António dos Capuchos,25,100,27,200,28,300
+27,Igreja de São Tiago,26,200,28,100,29,400
+28,Solar dos Pinheiros,26,300,27,100,29,200
+29,Quinta do Padrão,27,400,28,200,30,150
+30,Miradouro do Padrão,29,150,31,200,32,300
+31,Castro de Alvarelhos,30,200,32,100,33,350
+32,Capela de Nossa Senhora de Fátima,30,300,31,100,33,250
+33,Solar dos Vasconcelos,31,350,32,250,34,200
+34,Igreja de Santa Eulália,33,200,35,150,36,300
+35,Solar de Remião,34,150,36,150,37,350
+36,Capela de Nossa Senhora da Guia,34,300,35,150,37,200
+37,Igreja de São Salvador,35,350,36,200,38,400
+38,Parque de Lazer da Ribeira,37,400,39,200,40,300
+39,Ponte do Poço,38,200,40,100,41,250
+40,Igreja de São Mamede,38,300,39,100,41,200
+41,Museu Geológico da Barroca,39,250,40,200,42,350
+42,Casa dos Coimbras,41,350,43,150,44,300
+43,Capela de Nossa Senhora da Boa Viagem,42,150,44,150,45,200
+44,Igreja de Santa Maria do Souto,42,300,43,150,45,100
+45,Centro de Interpretação Ambiental da Ribeira da Póvoa,43,200,44,100,46,250
+46,Parque da Devesa,45,250,47,200,48,300
+47,Igreja de São Vicente,46,200,48,100,49,400
+48,Capela de Nossa Senhora do Rosário,46,300,47,100,49,350
+49,Palácio dos Condes de Barcelos,47,400,48,350,50,450
+50,Igreja de Santa Luzia,49,450,51,200,52,300
+51,Torre do Cimo da Vila,50,200,52,100,53,400
+52,Arquivo Municipal Alfredo Pimenta,50,300,51,100,53,300
+53,Igreja de São Pedro,51,400,52,300,54,250
+54,Mosteiro de Santa Clara,53,250,55,150,56,200
+55,Solar dos Peixotos,54,150,56,100,57,350
+55,Solar dos Peixotos,54,150,56,100,57,350
+56,Jardim da Rua de Santo António,54,200,55,100,57,200
+57,Igreja da Misericórdia,55,350,56,200,--,--

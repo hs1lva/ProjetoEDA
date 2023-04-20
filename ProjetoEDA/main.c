@@ -10,6 +10,7 @@
 #include "gestores.h"
 #include "meios.h"
 #include "alugueres.h"
+#include "grafos.h"
 
 #pragma warning(disable:4996) //não chatear com _s 
 
@@ -102,6 +103,46 @@ int main() {
     //---Atualizar o cliente usado no aluguer para depois de ser feito o calculo do custo de aluguer, descontar no saldo e guardar no backup_binario novo saldo.
     //guardarBackupMeiosMobilidade(listaMeios);
     //guardarBackupClientes(listaClientes);
+
+#pragma endregion
+
+#pragma region Testar funções grafos (localizações)
+
+    Vertice* grafo = criaGrafo();
+    bool res;
+
+    Vertice* novoVertice = criaVertice("Braga");
+    grafo = inserirVertice(grafo, novoVertice, &res);
+
+    novoVertice = criaVertice("Porto");
+    grafo = inserirVertice(grafo, novoVertice, &res);
+
+    novoVertice = criaVertice("Lisboa");
+    grafo = inserirVertice(grafo, novoVertice, &res);
+
+    novoVertice = criaVertice("Funchal");
+    grafo = inserirVertice(grafo, novoVertice, &res);
+
+    printf("Grafo:\n");
+    mostraGrafo(grafo);
+    printf("\n");
+
+    Vertice* origem = pesquisaVertice(grafo, "Braga", &res);
+    Vertice* destino = pesquisaVertice(grafo, "Porto", &res);
+    origem = insereAdjacente(grafo, "Braga", "Porto", 40.0, &res);
+    destino = pesquisaVertice(grafo, "Lisboa", &res);
+    origem = insereAdjacente(grafo, "Braga", "Lisboa", 300.0, &res);
+    destino = pesquisaVertice(grafo, "Funchal", &res);
+    origem = insereAdjacente(grafo, "Braga", "Funchal", 900.0, &res);
+
+    origem = pesquisaVertice(grafo, "Porto", &res);
+    destino = pesquisaVertice(grafo, "Lisboa", &res);
+    origem = insereAdjacente(grafo, "Porto", "Lisboa", 300.0, &res);
+    destino = pesquisaVertice(grafo, "Funchal", &res);
+    origem = insereAdjacente(grafo, "Porto", "Funchal", 1000.0, &res);
+
+    printf("Grafo com arestas:\n");
+    mostraGrafo(grafo);
 
 #pragma endregion
 
