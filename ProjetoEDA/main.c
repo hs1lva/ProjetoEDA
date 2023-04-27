@@ -108,7 +108,15 @@ int main() {
 
 #pragma region Testar funções grafos (localizações)
 
-    Vertice* grafo = criaGrafo();
+    // Chama a função lerGrafoCSV() para obter o grafo a partir do arquivo CSV
+    //Vertice* grafo = lerGrafoBinario("grafos.bin");
+
+    Vertice* grafo = lerGrafoCSV("grafos.csv");
+    mostraGrafo(grafo);
+
+
+
+   /**Vertice* grafo = criaGrafo();
     bool res;
 
     Vertice* novoVertice = criaVertice("Braga");
@@ -142,7 +150,7 @@ int main() {
     origem = insereAdjacente(grafo, "Porto", "Funchal", 1000.0, &res);
 
     printf("Grafo com arestas:\n");
-    mostraGrafo(grafo);
+    mostraGrafo(grafo);*/
 
 #pragma endregion
 

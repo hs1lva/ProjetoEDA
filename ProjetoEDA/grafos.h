@@ -11,34 +11,31 @@
 #include "clientes.h"
 #include "meios.h"
 
-#define MAX_LINHA 200
-#define N 20
+#define N 100
 
 typedef struct Adj {
-    int idVerticeAdj;
-    float dist;
+    char cidadeAdj[N];
+    float peso;  //dist para peso
     struct Adj* prox;
 } Adj;
 
-typedef struct Vertice {
-    int id;
+typedef struct Vertice { //GRAFO
     char cidade[N];
+    Adj* listaAdj; //adj para listaAdj
     struct Vertice* prox;
-    Adj* adj;
 } Vertice;
 
-Vertice* criaGrafo();
+Vertice* lerGrafoCSV(char* nomeArquivoCSV);
 
-//Vertice* lerGrafosCSV(char* nomeArquivo);
-
-//Vertice* lerGrafosBin(char* nomeArquivo);
+//Vertice* lerGrafoBinario(char* nomeArquivoBinario);
 
 Vertice* criaVertice(char* cidade);
+Adj* criaAdjacente(char* cidade, float peso);
 
-Vertice* inserirVertice(Vertice* grafo, Vertice* novo, bool* res);
+Vertice* inserirVertice(Vertice* grafo, Vertice* novo);
+Vertice* insereAdjacente(Vertice* grafo, char* origem, char* destino, float peso);
 
-Vertice* pesquisaVertice(Vertice* grafo, char* cidade, bool* res);
-
-Vertice* insereAdjacente(Vertice* grafo, char* origem, char* destino, float peso, bool* res);
+Vertice* pesquisaVertice(Vertice* grafo, char* cidade);
+Adj* pesquisaAdjacente(Adj* adjacencia, char* cidade);
 
 void mostraGrafo(Vertice* grafo);

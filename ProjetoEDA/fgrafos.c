@@ -10,121 +10,67 @@
 
 #pragma warning(disable:4996) //não chatear com _s 
 
-Vertice* criaGrafo() {
-    return NULL;
+Vertice* lerGrafoCSV(char* nomeArquivoCSV) {
+    FILE* fp = fopen(nomeArquivoCSV, "r");
+    if (fp == NULL) {
+        perror("Erro ao abrir arquivo\n");
+        return NULL;
+    }
+    Vertice* grafo = NULL;
+    char linha[1024];
+    while (fgets(linha, 1024, fp)) {
+        char cidade[N];
+        char cidadeAdj[N];
+        float peso;
+        if (sscanf(linha, "%[^,],%[^,],%f\n", cidade, cidadeAdj, &peso) == 3) {
+            Vertice* vertice = pesquisaVertice(grafo, cidade);
+            if (vertice == NULL) {
+                vertice = criaVertice(cidade);
+                if (vertice == NULL) {
+                    perror("Erro ao criar vertice\n");
+                    continue;
+                }
+                grafo = inserirVertice(grafo, vertice);
+            }
+            Adj* adjacente = pesquisaAdjacente(vertice->listaAdj, cidadeAdj);
+            if (adjacente != NULL) {
+                perror("Adjacência já existente\n");
+                continue;
+            }
+            adjacente = criaAdjacente(cidadeAdj, peso);
+            if (adjacente == NULL) {
+                perror("Erro ao criar adjacente\n");
+                continue;
+            }
+            vertice->listaAdj = insereAdjacente(grafo, vertice->cidade, cidadeAdj, peso);
+        }
+    }
+    fclose(fp);
+    return grafo;
 }
-
-/**Vertice* lerGrafosCSV(char* nomeArquivo) {
-    FILE* arquivo = fopen(nomeArquivo, "r");
-    if (arquivo == NULL) {
-        printf("Erro ao abrir arquivo.\n");
-        return NULL;
-    }
-
-    char linha[100];
-    char* token;
-    Vertice* grafo = NULL;
-    bool primeiraLinha = true;
-    int idVertice = 0;
-
-    while (fgets(linha, 100, arquivo) != NULL) {
-        if (primeiraLinha) {
-            primeiraLinha = false;
-            continue;
-        }
-        token = strtok(linha, ",");
-        idVertice = atoi(token);
-        token = strtok(NULL, ",");
-        Vertice* novoVertice = criaVertice(token);
-        novoVertice->id = idVertice;
-        while ((token = strtok(NULL, ",")) != NULL) {
-            if (atoi(token) != 0) {
-                int idAdjacente = atoi(token);
-                token = strtok(NULL, ",");
-                double distancia = atof(token);
-                Vertice* adjacente = pesquisaVertice(grafo, "", NULL);
-                while (adjacente != NULL) {
-                    if (adjacente->id == idAdjacente) {
-                        break;
-                    }
-                    adjacente = adjacente->prox;
-                }
-                if (adjacente == NULL) {
-                    char nomeAdjacente[30];
-                    sprintf(nomeAdjacente, "Vertice%d", idAdjacente);
-                    adjacente = criaVertice(nomeAdjacente);
-                    adjacente->id = idAdjacente;
-                    grafo = inserirVertice(grafo, adjacente, NULL);
-                }
-                insereAdjacente(grafo, novoVertice, adjacente, distancia, NULL);
-            }
-            else {
-                break;
-            }
-        }
-    }
-
-    fclose(arquivo);
-    return grafo;
-}*/
-
-
-/**Vertice* lerGrafosBin(char* nomeArquivo) {
-    FILE* arquivo = fopen(nomeArquivo, "rb");
-    if (arquivo == NULL) {
-        printf("Erro ao abrir arquivo.\n");
-        return NULL;
-    }
-
-    Vertice* grafo = NULL;
-    int numVertices;
-    fread(&numVertices, sizeof(int), 1, arquivo);
-    for (int i = 0; i < numVertices; i++) {
-        Vertice* novoVertice = (Vertice*)malloc(sizeof(Vertice));
-        if (novoVertice == NULL) {
-            printf("Erro ao alocar memoria.\n");
-            return NULL;
-        }
-        fread(novoVertice, sizeof(Vertice), 1, arquivo);
-        novoVertice->prox = NULL;
-        novoVertice->adj = NULL;
-        grafo = inserirVertice(grafo, novoVertice, NULL);
-    }
-
-    int numArestas;
-    fread(&numArestas, sizeof(int), 1, arquivo);
-    for (int i = 0; i < numArestas; i++) {
-        int idOrigem, idDestino;
-        double peso;
-        fread(&idOrigem, sizeof(int), 1, arquivo);
-        fread(&idDestino, sizeof(int), 1, arquivo);
-        fread(&peso, sizeof(double), 1, arquivo);
-        Vertice* origem = buscaVerticePorId(grafo, idOrigem);
-        Vertice* destino = buscaVerticePorId(grafo, idDestino);
-        insereAdjacente(grafo, origem, destino, peso, NULL);
-    }
-
-    fclose(arquivo);
-    return grafo;
-}  */
 
 
 Vertice* criaVertice(char* cidade) {
-    static int tot = 0;
     Vertice* novo = (Vertice*)calloc(1, sizeof(Vertice));
     if (novo == NULL) return NULL;
-    novo->id = tot;
     strcpy(novo->cidade, cidade);
     novo->prox = NULL;
-    novo->adj = NULL;
-    tot++;
+    novo->listaAdj = NULL;
     return novo;
 }
 
-Vertice* inserirVertice(Vertice* grafo, Vertice* novo, bool* res) {
+Adj* criaAdjacente(char* cidade, float peso) {
+    Adj* novo = (Adj*)calloc(1, sizeof(Adj));
+    if (novo == NULL) return NULL;
+    strcpy(novo->cidadeAdj, cidade);
+    novo->peso = peso;
+    novo->prox = NULL;
+    return novo;
+}
+
+Vertice* inserirVertice(Vertice* grafo, Vertice* novo) {
     if (grafo == NULL) {
         grafo = novo;
-        *res = true;
         return grafo;
     }
     else {
@@ -135,76 +81,79 @@ Vertice* inserirVertice(Vertice* grafo, Vertice* novo, bool* res) {
             aux = aux->prox;
         }
         if (aux == grafo) {
-            *res = true;
             novo->prox = grafo;
             grafo = novo;
         }
         else {
             novo->prox = aux;
             anterior->prox = novo;
-            *res = true;
         }
-        *res = true;
     }
     return grafo;
 }
 
-Vertice* pesquisaVertice(Vertice* grafo, char* cidade, bool* res) {
+
+Vertice* pesquisaVertice(Vertice* grafo, char* cidade) {
     Vertice* aux = grafo;
     while (aux != NULL && strcmp(aux->cidade, cidade) != 0) {
         aux = aux->prox;
     }
-    if (aux == NULL) *res = false;
-    else *res = true;
     return aux;
 }
 
-Vertice* insereAdjacente(Vertice* grafo, char* origem, char* destino, float peso, bool* res) {
-    Vertice* origemVertice = pesquisaVertice(grafo, origem, res);
+Adj* pesquisaAdjacente(Adj* adjacencia, char* cidade) {
+    Adj* aux = adjacencia;
+    while (aux != NULL && strcmp(aux->cidadeAdj, cidade) != 0) {
+        aux = aux->prox;
+    }
+    return aux;
+}
+
+
+Vertice* insereAdjacente(Vertice* grafo, char* origem, char* destino, float peso) {
+    Vertice* origemVertice = pesquisaVertice(grafo, origem);
     if (origemVertice == NULL) {
-        printf("Vertice de origem nao encontrado\n");
-        *res = false;
+        perror("Vertice de origem nao encontrado\n");
         return grafo;
     }
 
-    Vertice* destinoVertice = pesquisaVertice(grafo, destino, res);
+    Vertice* destinoVertice = pesquisaVertice(grafo, destino);
     if (destinoVertice == NULL) {
-        printf("Vertice de destino nao encontrado\n");
-        *res = false;
+        perror("Vertice de destino nao encontrado\n");
         return grafo;
     }
 
     // Insere o nó adjacente no final da lista de adjacência
     Adj* novoAdj = (Adj*)malloc(sizeof(Adj));
     if (novoAdj == NULL) {
-        *res = false;
         return grafo;
     }
-    novoAdj->idVerticeAdj = destinoVertice->id;
-    novoAdj->dist = peso;
+    strcpy(novoAdj->cidadeAdj, destino);
+    novoAdj->peso = peso;
     novoAdj->prox = NULL;
 
-    if (origemVertice->adj == NULL) {
-        origemVertice->adj = novoAdj;
+    if (origemVertice->listaAdj == NULL) {
+        origemVertice->listaAdj = novoAdj;
     }
     else {
-        Adj* ultimoAdj = origemVertice->adj;
+        Adj* ultimoAdj = origemVertice->listaAdj;
         while (ultimoAdj->prox != NULL) {
             ultimoAdj = ultimoAdj->prox;
         }
         ultimoAdj->prox = novoAdj;
     }
 
-    *res = true;
     return grafo;
 }
 
+
+
 void mostraGrafo(Vertice* grafo) {
     if (grafo == NULL) return;
-    printf("V%d %s ->", grafo->id, grafo->cidade);
-    Adj* aux = grafo->adj;
+    printf("%s ->", grafo->cidade);
+    Adj* aux = grafo->listaAdj;
     while (aux != NULL) {
-        printf(" V%d %f", aux->idVerticeAdj, aux->dist);
+        printf(" %s:%.2f", aux->cidadeAdj, aux->peso);
         aux = aux->prox;
     }
     printf("\n");
