@@ -108,49 +108,10 @@ int main() {
 
 #pragma region Testar funções grafos (localizações)
 
-    // Chama a função lerGrafoCSV() para obter o grafo a partir do arquivo CSV
-    //Vertice* grafo = lerGrafoBinario("grafos.bin");
+    lerGrafoCSV("grafos.csv");
+    imprimeGrafo();
 
-    Vertice* grafo = lerGrafoCSV("grafos.csv");
-    mostraGrafo(grafo);
-
-
-
-   /**Vertice* grafo = criaGrafo();
-    bool res;
-
-    Vertice* novoVertice = criaVertice("Braga");
-    grafo = inserirVertice(grafo, novoVertice, &res);
-
-    novoVertice = criaVertice("Porto");
-    grafo = inserirVertice(grafo, novoVertice, &res);
-
-    novoVertice = criaVertice("Lisboa");
-    grafo = inserirVertice(grafo, novoVertice, &res);
-
-    novoVertice = criaVertice("Funchal");
-    grafo = inserirVertice(grafo, novoVertice, &res);
-
-    printf("Grafo:\n");
-    mostraGrafo(grafo);
-    printf("\n");
-
-    Vertice* origem = pesquisaVertice(grafo, "Braga", &res);
-    Vertice* destino = pesquisaVertice(grafo, "Porto", &res);
-    origem = insereAdjacente(grafo, "Braga", "Porto", 40.0, &res);
-    destino = pesquisaVertice(grafo, "Lisboa", &res);
-    origem = insereAdjacente(grafo, "Braga", "Lisboa", 300.0, &res);
-    destino = pesquisaVertice(grafo, "Funchal", &res);
-    origem = insereAdjacente(grafo, "Braga", "Funchal", 900.0, &res);
-
-    origem = pesquisaVertice(grafo, "Porto", &res);
-    destino = pesquisaVertice(grafo, "Lisboa", &res);
-    origem = insereAdjacente(grafo, "Porto", "Lisboa", 300.0, &res);
-    destino = pesquisaVertice(grafo, "Funchal", &res);
-    origem = insereAdjacente(grafo, "Porto", "Funchal", 1000.0, &res);
-
-    printf("Grafo com arestas:\n");
-    mostraGrafo(grafo);*/
+    //FALTA FAZER FUNÇOES PARA GUARDAR BIN E LER BIN
 
 #pragma endregion
 

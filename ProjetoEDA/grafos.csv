@@ -1,7 +1,7 @@
-cidade,cidadeAdj,peso
+cidade1,cidade2,peso
 Lisboa,Porto,10.5
 Lisboa,Coimbra,20.3
-Porto,Lisboa,10.5
+Porto,Lisboa,15
 Porto,Faro,15.2
 Porto,Évora,8.6
 Coimbra,Lisboa,20.3
@@ -11,3 +11,17 @@ Faro,Coimbra,12.1
 Faro,Évora,5.4
 Évora,Porto,8.6
 Évora,Faro,5.4
+Lisboa,Barcelona,50.2
+Barcelona,Lisboa,50.2
+Lisboa,Madrid,35.6
+Madrid,Lisboa,35.6
+Porto,Paris,75.1
+Paris,Porto,75.1
+Porto,London,80.5
+London,Porto,80.5
+Faro,Malaga,20.8
+Malaga,Faro,20.8
+Faro,Seville,15.9
+Seville,Faro,15.9
+Évora,Lyon,62.3
+Lyon,Évora,62.3
