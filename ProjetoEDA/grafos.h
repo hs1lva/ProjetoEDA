@@ -11,26 +11,26 @@
 #include "clientes.h"
 #include "meios.h"
 
-#define MAX_CIDADES 100
+#define MAX_ORIGENS 100
 
 typedef struct adj {
-    char* cidadeadj;
+    char* destino;
     float peso;
     struct adj* prox;
 } Adj;
 
 typedef struct vertice {
-    char* cidade;
+    char* origem;
     Adj* listaadj;
 } Vertice;
 
-Vertice* vertices[MAX_CIDADES]; // Apenas dar a possibilidade de ler 100 cidades
+Vertice* vertices[MAX_ORIGENS]; // Apenas dar a possibilidade de ler 100 origens
 
-Vertice* pesquisaVertice(char* cidade);
-Adj* pesquisaAdjacente(Adj* listaAdj, char* cidadeAdj);
+Vertice* pesquisaVertice(char* origem);
+Adj* pesquisaAdjacente(Adj* listaAdj, char* destino);
 
 Vertice* adicionaVertice(char* cidade);
-Adj* adicionaAdjacente(Vertice* v, char* cidadeAdj, float peso);
+Adj* adicionaAdjacente(Vertice* v, char* destino, float peso);
 
 int lerGrafoCSV(char* nomeArquivo);
 

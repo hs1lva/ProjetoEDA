@@ -12,40 +12,40 @@
 
 int numVertices = 0; // Contagem de vértices
 
-// Pesquisa um vértice pelo nome da cidade
-Vertice* pesquisaVertice(char* cidade) {
+// Pesquisa um vértice pelo nome da origem
+Vertice* pesquisaVertice(char* origem) {
     for (int i = 0; i < numVertices; i++) {
-        if (strcmp(vertices[i]->cidade, cidade) == 0) {
+        if (strcmp(vertices[i]->origem, origem) == 0) {
             return vertices[i];
         }
     }
     return NULL;
 }
 
-// Pesquisa um adjacente na lista de adjacências de um vértice
-Adj* pesquisaAdjacente(Adj* listaadj, char* cidadeadj) {
+// Pesquisa um destino na lista de adjacências de um vértice
+Adj* pesquisaAdjacente(Adj* listaadj, char* destino) {
     for (Adj* adj = listaadj; adj != NULL; adj = adj->prox) {
-        if (strcmp(adj->cidadeadj, cidadeadj) == 0) {
+        if (strcmp(adj->destino, destino) == 0) {
             return adj;
         }
     }
     return NULL;
 }
 
-// Adiciona um vértice à lista de vértices
-Vertice* adicionaVertice(char* cidade) {
-    if (pesquisaVertice(cidade) == NULL) {
+// Adiciona uma origem à lista de vértices
+Vertice* adicionaVertice(char* origem) {
+    if (pesquisaVertice(origem) == NULL) {
         Vertice* v = malloc(sizeof(Vertice));
-        v->cidade = strdup(cidade); // Cópia da string cidade, que permanece na memória mesmo após a saída do loop.
+        v->origem = strdup(origem); // Cópia da string origem, que permanece na memória mesmo após a saída do loop.
         v->listaadj = NULL;
         vertices[numVertices++] = v;
     }
 }
 
-// Adiciona um adjacente à lista de adjacências de um vértice
-Adj* adicionaAdjacente(Vertice* v, char* cidadeAdj, float peso) {
+// Adiciona um destino à lista de adjacências de um vértice
+Adj* adicionaAdjacente(Vertice* v, char* destino, float peso) {
     Adj* adj = malloc(sizeof(Adj));
-    adj->cidadeadj = strdup(cidadeAdj); // Cópia da string cidadeAdj, que permanece na memória mesmo após a saída do loop.
+    adj->destino = strdup(destino); // Cópia da string destino, que permanece na memória mesmo após a saída do loop.
     adj->peso = peso;
     adj->prox = v->listaadj;
     v->listaadj = adj;
@@ -64,13 +64,13 @@ int lerGrafoCSV(char* nomeArquivo) {
     fgets(linha, 100, arquivo); // Lê e descarta a primeira linha (cabeçalho)
 
     while (fgets(linha, 100, arquivo) != NULL) {
-        char* cidade = strtok(linha, ","); // Origem
-        char* cidadeAdj = strtok(NULL, ","); // Destino
+        char* origem = strtok(linha, ",");
+        char* destino = strtok(NULL, ",");
         float peso = atof(strtok(NULL, ",\n")); // Atof para converter essa string em float
 
         Vertice* vertice = NULL;
         for (int i = 0; i < numVertices; i++) {
-            if (strcmp(vertices[i]->cidade, cidade) == 0) {
+            if (strcmp(vertices[i]->origem, origem) == 0) {
                 vertice = vertices[i];
                 break;
             }
@@ -78,15 +78,15 @@ int lerGrafoCSV(char* nomeArquivo) {
 
         if (vertice == NULL) {
             vertice = (Vertice*)malloc(sizeof(Vertice));
-            vertice->cidade = strdup(cidade);
+            vertice->origem = strdup(origem);
             vertice->listaadj = NULL;
             vertices[numVertices++] = vertice;
         }
 
-        Adj* adjacente = pesquisaAdjacente(vertice->listaadj, cidadeAdj);
+        Adj* adjacente = pesquisaAdjacente(vertice->listaadj, destino);
         if (adjacente == NULL) {
             adjacente = (Adj*)malloc(sizeof(Adj));
-            adjacente->cidadeadj = strdup(cidadeAdj);
+            adjacente->destino = strdup(destino);
             adjacente->peso = peso;
             adjacente->prox = vertice->listaadj;
             vertice->listaadj = adjacente;
@@ -100,9 +100,9 @@ int lerGrafoCSV(char* nomeArquivo) {
 // Imprime o grafo
 void imprimeGrafo() {
     for (int i = 0; i < numVertices; i++) {
-        printf("%s:\n", vertices[i]->cidade);
+        printf("%s:\n", vertices[i]->origem);
         for (Adj* adj = vertices[i]->listaadj; adj != NULL; adj = adj->prox) {
-            printf("  %s (%.1f)\n", adj->cidadeadj, adj->peso);
+            printf("  %s (%.1f)\n", adj->destino, adj->peso);
         }
     }
 }
