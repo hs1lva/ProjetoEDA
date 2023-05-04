@@ -8,6 +8,7 @@
 
 #include "meios.h"
 #include "clientes.h"
+#include "grafos.h"
 
 #pragma warning(disable:4996) //não chatear com _s 
 
@@ -259,6 +260,36 @@ bool libertarMeiosMobilidadeLista(MeiosMobilidadeListaPtr lista) {
 }
 
 
+/**
+@brief Pesquisa o meio de mobilidade mais próximo do local do cliente.
+@param listaMeiosMobilidade A lista de meios de mobilidade disponíveis.
+@param grafo O grafo de localizações da cidade.
+@param localCliente O local do cliente a partir do qual será feita a busca.
+@return Retorna um apontador para a estrutura MeiosMobilidadeListaPtr do meio de mobilidade mais próximo encontrado ou NULL se não encontrar nenhum.
+*/
+MeiosMobilidadeListaPtr pesquisarMeioMobilidadeMaisProximo(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente) {
+    MeiosMobilidadeListaPtr meioMobilidadeAtual = listaMeiosMobilidade;
+    MeiosMobilidadeListaPtr meioMobilidadeMaisProximo = NULL;
+    float menorDistancia = INFINITY;
 
+    while (meioMobilidadeAtual != NULL) {
+        if (meioMobilidadeAtual->meioMobilidade.alugado == 0) { // Meio de mobilidade está disponível?
+            Caminho* caminho = pesquisarEmLargura(grafo, localCliente, meioMobilidadeAtual->meioMobilidade.localizacao);
+            if (caminho == NULL) {
+                return NULL;
+            }
 
+            float distancia = distanciaCaminho(caminho);
 
+            if (distancia != INFINITY) {
+                if (distancia < menorDistancia) {
+                    menorDistancia = distancia;
+                    meioMobilidadeMaisProximo = meioMobilidadeAtual;
+                }
+            }
+        }
+        meioMobilidadeAtual = meioMobilidadeAtual->proxmeiomobilidadelista;
+    }
+
+    return meioMobilidadeMaisProximo;
+}

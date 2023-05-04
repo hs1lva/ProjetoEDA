@@ -6,6 +6,7 @@
  * \date   March 2023
  *********************************************************************/
 #pragma once
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,3 +75,6 @@ void listarMeiosMobilidadeOrdenadosAutonomia(MeiosMobilidadeListaPtr listaMeiosM
 
 //Lista apenas os meios de mobilidade num determinado Geocodigo
 void listarMeiosMobilidadePorLocalizacao(MeiosMobilidadeListaPtr listaMeiosMobilidade);
+
+// Função para pesquisar meio de mobilidade mais proximo com grafos
+MeiosMobilidadeListaPtr pesquisarMeioMobilidadeMaisProximo(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente);

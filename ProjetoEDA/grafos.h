@@ -8,30 +8,77 @@
 
 #pragma once
 
-#include "clientes.h"
-#include "meios.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
-#define MAX_ORIGENS 100
+#define TAM_CIDADE 100
 
-typedef struct adj {
-    char* destino;
-    float peso;
-    struct adj* prox;
-} Adj;
+typedef struct Adjacente {
+	int idVertice;
+	float distancia;
+	struct Adjacente* proximo;
+}Adjacente;
 
-typedef struct vertice {
-    char* origem;
-    Adj* listaadj;
-} Vertice;
+//Grafo
+typedef struct Vertice {
+	int idVertice;
+	char cidade[TAM_CIDADE];
+	struct Vertice* proximo;
+	struct Adjacente* adjacentes;
+	int visitado;
+	int predecessor;
+	float distancia;
+	int numAdjacentes;
+}Vertice;
 
-Vertice* vertices[MAX_ORIGENS]; // Apenas dar a possibilidade de ler 100 origens
+typedef struct Caminho {
+	int idVertice;
+	float distancia;
+	struct Caminho* proximo;
+} Caminho;
 
-Vertice* pesquisaVertice(char* origem);
-Adj* pesquisaAdjacente(Adj* listaAdj, char* destino);
+// Fila para ver o melhor caminho
+typedef struct Fila {
+	struct NodeFila* proximo;
+	struct NodeFila* anterior;
+} Fila;
 
-Vertice* adicionaVertice(char* cidade);
-Adj* adicionaAdjacente(Vertice* v, char* destino, float peso);
+typedef struct NodeFila {
+	Vertice* vertice;
+	struct NodeFila* proximo;
+} NodeFila;
 
-int lerGrafoCSV(char* nomeArquivo);
+// Funções para ler ficheiros .csv e ficheiros .bin
+int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro);
+int lerVerticesBin(Vertice** grafo);
+int lerAdjacentesBin(Vertice* grafo);
 
-void imprimeGrafo();
+// Funções para guardar ficheiros .bin
+int guardarBackupVertices(Vertice* grafo);
+int guardarBackupAdjacentes(Vertice* grafo);
+
+// Funções para criar
+Vertice* criarVertice(int idVertice, char cidade[]);
+Adjacente* criarAdjacente(int idVertice, float distancia);
+Caminho* criarCaminho(int idVertice, float distancia);
+Fila* criarFila();
+
+// Funções para inserir
+Vertice* inserirVertice(Vertice* grafo, Vertice* novo);
+Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoAdjacente);
+int inserirElemFinalFila(Fila* fila, Vertice* vertice);
+
+// Funções para imprimir
+void imprimirGrafo(Vertice* grafo);
+
+// Funções para remover ou limpar
+Vertice* removerElemFila(Fila* fila);
+int filaVazia(Fila* fila);
+void limparCamposGrafo(Vertice* grafo);
+
+// Funções de pesquisa
+Vertice* pesquisarVertice(Vertice* grafo, int idVertice);
+float distanciaCaminho(Caminho* caminho);
+int pesquisarEmLargura(Vertice* grafo, int origem, int destino);

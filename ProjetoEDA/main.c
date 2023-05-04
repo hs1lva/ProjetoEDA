@@ -108,10 +108,9 @@ int main() {
 
 #pragma region Testar funções grafos (localizações)
 
-    lerGrafoCSV("grafos.csv");
-    imprimeGrafo();
-
-    //FALTA FAZER FUNÇOES PARA GUARDAR BIN E LER BIN
+    Vertice* grafo = NULL;
+    int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
+    imprimirGrafo(grafo);
 
 #pragma endregion
 
