@@ -14,7 +14,6 @@
 #define MAX_LINHA_CLIENTES_CSV 200 //Definir tamanho char linha importar clientes em CSV
 #define MAX_LINHA_MEIOS_CSV 200 //Definir tamanho char linha importar meios de mobilidade em CSV
 #define MAX_LINHA_GRAFO_CSV 200
-#define MAX_ID 100
 
 #pragma warning(disable:4996) //não chatear com _s 
 
@@ -339,7 +338,7 @@ int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro) {
     ficheiro = fopen(nomeFicheiro, "r");
     int totalVertices = 0;
     if (ficheiro == NULL) {
-        printf("Erro ao abrir ficheiro grafos");
+        perror("Erro ao abrir ficheiro grafos");
         return 0;
     }
     char linha[MAX_LINHA_GRAFO_CSV];
@@ -347,11 +346,7 @@ int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro) {
     while (fgets(linha, MAX_LINHA_GRAFO_CSV, ficheiro) != NULL) {
         int id, adj1, dist1, adj2, dist2, adj3, dist3;
         char title[256];
-        sscanf(linha, "%d,%[^,],%d,%d,%d,%d,%d,%d",
-            &id, title,
-            &adj1, &dist1,
-            &adj2, &dist2,
-            &adj3, &dist3);
+        sscanf(linha, "%d,%[^,],%d,%d,%d,%d,%d,%d", &id, title, &adj1, &dist1, &adj2, &dist2, &adj3, &dist3);
 
         Vertice* novoVertice = CriarVertice(id, title);
         *grafo = InsereVertice(*grafo, novoVertice);
@@ -389,8 +384,8 @@ int lerVerticesBin(Vertice** grafo) {
     }
 
     int id;
-    char cidade[MAX_ID];
-    while (fread(&id, sizeof(int), 1, file) == 1 && fread(cidade, sizeof(char), MAX_ID, file) == MAX_ID) {
+    char cidade[TAM_CIDADE];
+    while (fread(&id, sizeof(int), 1, file) == 1 && fread(cidade, sizeof(char), TAM_CIDADE, file) == TAM_CIDADE) {
         Vertice* novoVertice = CriarVertice(id, cidade);
         *grafo = InsereVertice(*grafo, novoVertice);
     }
@@ -438,7 +433,7 @@ int guardarBackupVertices(Vertice* grafo) {
     Vertice* aux = grafo;
     while (aux != NULL) {
         fwrite(&aux->idVertice, sizeof(int), 1, file);
-        fwrite(aux->cidade, sizeof(char), MAX_ID, file);
+        fwrite(aux->cidade, sizeof(char), TAM_CIDADE, file);
         aux = aux->proximo;
     }
 

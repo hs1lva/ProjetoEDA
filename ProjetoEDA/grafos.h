@@ -76,7 +76,7 @@ void imprimirGrafo(Vertice* grafo);
 // Funções para remover ou limpar
 Vertice* removerElemFila(Fila* fila);
 int filaVazia(Fila* fila);
-void limparCamposGrafo(Vertice* grafo);
+int limparCamposGrafo(Vertice* grafo);
 
 // Funções de pesquisa
 Vertice* pesquisarVertice(Vertice* grafo, int idVertice);
