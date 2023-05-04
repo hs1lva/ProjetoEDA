@@ -103,29 +103,6 @@ Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoAdjacente) 
 }
 
 /**
-@brief Imprime na tela o grafo representado pela lista de adjacência.
-@param grafo Apontador para o primeiro vértice do grafo.
-@return void.
-*/
-void imprimirGrafo(Vertice* grafo) {
-    Vertice* vertice = grafo;
-
-    while (vertice) { // Loop nos vértices
-        printf("ID: %d\tCidade: %s\n", vertice->idVertice, vertice->cidade);
-
-        Adjacente* adjacent = vertice->adjacentes;
-
-        while (adjacent) { // Loop nas adjacentes
-            printf("  -> ID: %d\tDistancia: %.2f\n", adjacent->idVertice, adjacent->distancia);
-            adjacent = adjacent->proximo;
-        }
-
-        printf("\n");
-        vertice = vertice->proximo;
-    }
-}
-
-/**
 @brief Cria um novo caminho com um vértice e distância.
 @param idVertice ID do vértice do caminho.
 @param distancia Distância do caminho.

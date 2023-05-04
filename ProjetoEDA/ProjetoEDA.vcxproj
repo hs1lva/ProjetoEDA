@@ -139,6 +139,7 @@
     <ClCompile Include="valugueres.c" />
     <ClCompile Include="vclientes.c" />
     <ClCompile Include="vgestores.c" />
+    <ClCompile Include="vgrafos.c" />
     <ClCompile Include="vmeios.c" />
   </ItemGroup>
   <ItemGroup>

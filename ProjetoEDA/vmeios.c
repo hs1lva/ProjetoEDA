@@ -10,11 +10,11 @@
 
 #pragma warning(disable:4996) //não chatear com _s 
 
- /**
- @brief Lista todos os meios de mobilidade em memória
- @param listaMeiosMobilidade apontador para a lista de meios de mobilidade
- @return void lista de meios de mobilidade em memória
- */
+/**
+@brief Lista todos os meios de mobilidade em memória
+@param listaMeiosMobilidade apontador para a lista de meios de mobilidade
+@return void lista de meios de mobilidade em memória
+*/
 void listarMeiosMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade) {
 	MeiosMobilidadeListaPtr atual = listaMeiosMobilidade;
 	printf("------ Lista de Meios de Mobilidade ------\n");
