@@ -17,16 +17,16 @@
 @return Apontador para o novo vértice criado, ou NULL se não for possível alocar memória.
 */
 Vertice* criarVertice(int idVertice, char cidade[]) {
-	Vertice* novo = (Vertice*)calloc(1, sizeof(Vertice));
-	if (novo == NULL) {
+	Vertice* vertice = (Vertice*)calloc(1, sizeof(Vertice));
+	if (vertice == NULL) {
 		return NULL;
 	}
 
-	novo->idVertice = idVertice;
-	strcpy(novo->cidade, cidade);
-	novo->proximo = NULL;
+    vertice->idVertice = idVertice;
+	strcpy(vertice->cidade, cidade);
+    vertice->proximo = NULL;
 
-	return novo;
+	return vertice;
 }
 
 /**
@@ -63,17 +63,17 @@ Vertice* inserirVertice(Vertice* grafo, Vertice* novo) {
 @return Apontador para o novo nó adjacente criado.
 */
 Adjacente* criarAdjacente(int idVertice, float distancia) {
-    Adjacente* novo = (Adjacente*)malloc(sizeof(Adjacente));
+    Adjacente* adjacente = (Adjacente*)malloc(sizeof(Adjacente));
 
-    if (novo == NULL) {
+    if (adjacente == NULL) {
         return NULL;
     }
 
-    novo->idVertice = idVertice;
-    novo->distancia = distancia;
-    novo->proximo = NULL;
+    adjacente->idVertice = idVertice;
+    adjacente->distancia = distancia;
+    adjacente->proximo = NULL;
 
-    return novo;
+    return adjacente;
 }
 
 /**
@@ -132,11 +132,11 @@ void imprimirGrafo(Vertice* grafo) {
 @return Apontador para o novo caminho criado.
 */
 Caminho* criarCaminho(int idVertice, float distancia) {
-    Caminho* novoCaminho = (Caminho*)malloc(sizeof(Caminho));
-    novoCaminho->idVertice = idVertice;
-    novoCaminho->distancia = distancia;
-    novoCaminho->proximo = NULL;
-    return novoCaminho;
+    Caminho* caminho = (Caminho*)malloc(sizeof(Caminho));
+    caminho->idVertice = idVertice;
+    caminho->distancia = distancia;
+    caminho->proximo = NULL;
+    return caminho;
 }
 
 /**
@@ -144,13 +144,13 @@ Caminho* criarCaminho(int idVertice, float distancia) {
 @return Apontador para a nova fila criada ou NULL caso não seja possível alocar memória
 */
 Fila* criarFila() {
-    Fila* novaFila = (Fila*)malloc(sizeof(Fila));
-    if (!novaFila) {
+    Fila* fila = (Fila*)malloc(sizeof(Fila));
+    if (!fila) {
         return NULL;
     }
-    novaFila->proximo = NULL;
-    novaFila->anterior = NULL;
-    return novaFila;
+    fila->proximo = NULL;
+    fila->anterior = NULL;
+    return fila;
 }
 
 
