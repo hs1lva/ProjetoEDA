@@ -79,6 +79,7 @@ int filaVazia(Fila* fila);
 int limparCamposGrafo(Vertice* grafo);
 
 // Funções de pesquisa
-Vertice* pesquisarVertice(Vertice* grafo, int idVertice);
+Vertice* pesquisarVerticePorID(Vertice* grafo, int idVertice);
+Vertice* pesquisarVerticePorNomeCidade(Vertice* grafo, const char* cidade);
 float distanciaCaminho(Caminho* caminho);
 int pesquisarEmLargura(Vertice* grafo, int origem, int destino);

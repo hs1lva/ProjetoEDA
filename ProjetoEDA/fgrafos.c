@@ -198,12 +198,31 @@ int filaVazia(Fila* fila) {
 @param idVertice ID do vértice a ser pesquisado.
 @return Apontador para o vértice encontrado, ou NULL se não encontrado.
 */
-Vertice* pesquisarVertice(Vertice* grafo, int idVertice) {
+Vertice* pesquisarVerticePorID(Vertice* grafo, int idVertice) {
     
     Vertice* aux = grafo;
 
     while (aux) {
         if (aux->idVertice == idVertice) {
+            return aux;
+        }
+        aux = aux->proximo;
+    }
+    return NULL;
+}
+
+/**
+@brief Pesquisa um vértice no grafo pelo nome da cidade.
+@param grafo Apontador para o primeiro vértice do grafo.
+@param cidade Nome da cidade do vértice a ser pesquisado.
+@return Apontador para o vértice encontrado, ou NULL se não encontrado.
+*/
+Vertice* pesquisarVerticePorNomeCidade(Vertice* grafo, const char* cidade) {
+
+    Vertice* aux = grafo;
+
+    while (aux) {
+        if (strcmp(aux->cidade, cidade) == 0) {
             return aux;
         }
         aux = aux->proximo;
@@ -266,8 +285,8 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) {
 
     limparCamposGrafo(grafo);
 
-    Vertice* verticeOrigem = pesquisarVertice(grafo, origem); // Pesquisar vértices de origem
-    Vertice* verticeDestino = pesquisarVertice(grafo, destino); // Pesquisar vértices de destino
+    Vertice* verticeOrigem = pesquisarVerticePorID(grafo, origem); // Pesquisar vértices de origem
+    Vertice* verticeDestino = pesquisarVerticePorID(grafo, destino); // Pesquisar vértices de destino
 
     if (verticeOrigem == NULL || verticeDestino == NULL) { // NULL se esses vértices não existem
         return NULL;
@@ -286,7 +305,7 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) {
         Adjacente* adjacenteAtual = verticeAtual->adjacentes;
 
         while (adjacenteAtual) { // Loop para todos os vértices adjacentes do vértice atual
-            Vertice* adjacente = pesquisarVertice(grafo, adjacenteAtual->idVertice);
+            Vertice* adjacente = pesquisarVerticePorID(grafo, adjacenteAtual->idVertice);
 
             if (!adjacente->visitado) {
                 
@@ -321,7 +340,7 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) {
             atual = NULL;
         }
         else {
-            atual = pesquisarVertice(grafo, atual->predecessor);
+            atual = pesquisarVerticePorID(grafo, atual->predecessor);
         }
     }
 
