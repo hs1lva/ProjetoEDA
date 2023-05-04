@@ -112,6 +112,7 @@ int main() {
     int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
     imprimirGrafo(grafo);
 
+    // Atualizar funções de leitura de grafos para char* variavel em vez de colocar la diretamente o nome do ficheiro
     // Atualizar os alugueres com o preço com os caminhos dos grafos
 
 #pragma endregion
