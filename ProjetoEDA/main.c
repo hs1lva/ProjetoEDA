@@ -112,6 +112,8 @@ int main() {
     int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
     imprimirGrafo(grafo);
 
+    // Atualizar os alugueres com o preço com os caminhos dos grafos
+
 #pragma endregion
 
     return 0;
