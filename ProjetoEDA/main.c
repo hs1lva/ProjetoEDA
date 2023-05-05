@@ -109,13 +109,19 @@ int main() {
 #pragma region Testar funções grafos (localizações)
 
     Vertice* grafo = NULL;
-    int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
+    //int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
+
+    //guardarBackupVertices(grafo, "backup_vertices.bin");
+    //guardarBackupAdjacentes(grafo, "backup_adjacentes.bin");
+
+    //int totalVertices = lerVerticesBin(&grafo, "backup_vertices.bin");
+    //lerAdjacentesBin(&grafo, "backup_adjacentes.bin");
+
     imprimirGrafo(grafo);
 
-    // Atualizar funções de leitura de grafos para char* variavel em vez de colocar la diretamente o nome do ficheiro
-    // Atualizar os alugueres com o preço com os caminhos dos grafos
-
 #pragma endregion
+
+    // Atualizar os alugueres com o preço com os caminhos dos grafos
 
     return 0;
 }

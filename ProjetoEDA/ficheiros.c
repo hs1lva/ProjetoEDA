@@ -330,12 +330,12 @@ int guardarBackupAlugueres(Aluguer aluguer) {
 /**
 @brief Lê um grafo no formato CSV e adiciona os vértices e arestas a uma lista de adjacência.
 @param grafo Duplo apontador do primeiro vértice da lista de adjacência.
-@param nomeFicheiro Nome do ficheiro que contém o grafo no formato CSV.
+@param nomeficheiro Nome do ficheiro que contém o grafo no formato CSV.
 @return Número total de vértices do grafo.
 */
-int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro) {
+int lerGrafoCSV(Vertice** grafo, char* nomeficheiro) {
     FILE* ficheiro;
-    ficheiro = fopen(nomeFicheiro, "r");
+    ficheiro = fopen(nomeficheiro, "r");
     int totalVertices = 0;
     if (ficheiro == NULL) {
         perror("Erro ao abrir ficheiro grafos");
@@ -375,80 +375,84 @@ int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro) {
 /**
 @brief Função que lê os vértices de um backup binário e insere num grafo.
 @param grafo Apontador para o grafo onde os vértices serão inseridos.
+@param nomeficheiro Nome do arquivo binário de backup.
 @return int Retorna 1 em caso de sucesso na leitura do backup ou 0 em caso contrário.
 */
-int lerVerticesBin(Vertice** grafo) {
-    FILE* file = fopen("backup_vertices.bin", "rb");
-    if (file == NULL) {
+int lerVerticesBin(Vertice** grafo, char* nomeficheiro) {
+    FILE* ficheiro = fopen(nomeficheiro, "rb");
+    if (ficheiro == NULL) {
         return 0;
     }
 
     int id;
     char cidade[TAM_CIDADE];
-    while (fread(&id, sizeof(int), 1, file) == 1 && fread(cidade, sizeof(char), TAM_CIDADE, file) == TAM_CIDADE) {
+    while (fread(&id, sizeof(int), 1, ficheiro) == 1 && fread(cidade, sizeof(char), TAM_CIDADE, ficheiro) == TAM_CIDADE) {
         Vertice* novoVertice = criarVertice(id, cidade);
         *grafo = inserirVertice(*grafo, novoVertice);
     }
 
-    fclose(file);
+    fclose(ficheiro);
     return 1;
 }
 
 /**
 @brief Função que lê os adjacentes de um backup binário e insere num grafo.
 @param grafo Apontador para o grafo onde os adjacentes serão inseridos.
+@param nomeficheiro Nome do arquivo de backup.
 @return int Retorna 1 em caso de sucesso na leitura do backup ou 0 em caso contrário.
 */
-int lerAdjacentesBin(Vertice* grafo) {
-    FILE* file = fopen("backup_adjacentes.bin", "rb");
-    if (file == NULL) {
+int lerAdjacentesBin(Vertice* grafo, char* nomeficheiro) {
+    FILE* ficheiro = fopen(nomeficheiro, "rb");
+    if (ficheiro == NULL) {
         return 0;
     }
 
     int origem, destino;
     float distancia;
-    while (fread(&origem, sizeof(int), 1, file) == 1 &&
-        fread(&destino, sizeof(int), 1, file) == 1 &&
-        fread(&distancia, sizeof(float), 1, file) == 1) {
+    while (fread(&origem, sizeof(int), 1, ficheiro) == 1 &&
+        fread(&destino, sizeof(int), 1, ficheiro) == 1 &&
+        fread(&distancia, sizeof(float), 1, ficheiro) == 1) {
         Adjacente* novoAdjacente = criarAdjacente(destino, distancia);
         grafo = inserirAdjacente(grafo, origem, novoAdjacente);
     }
 
-    fclose(file);
+    fclose(ficheiro);
     return 1;
 }
 
 /**
 @brief Função que guarda os vértices de um grafo num backup binário.
 @param grafo Apontador para o grafo que será salvo.
+@param nomeficheiro Nome do ficheiro binário que será gerado.
 @return int Retorna 1 em caso de sucesso na escrita do backup ou 0 em caso contrário.
 */
-int guardarBackupVertices(Vertice* grafo) {
-    FILE* file = fopen("backup_vertices.bin", "wb");
-    if (file == NULL) {
+int guardarBackupVertices(Vertice* grafo, char* nomeficheiro) {
+    FILE* ficheiro = fopen(nomeficheiro, "wb");
+    if (ficheiro == NULL) {
         perror("Erro ao abrir o arquivo");
         exit(1);
     }
 
     Vertice* aux = grafo;
     while (aux != NULL) {
-        fwrite(&aux->idVertice, sizeof(int), 1, file);
-        fwrite(aux->cidade, sizeof(char), TAM_CIDADE, file);
+        fwrite(&aux->idVertice, sizeof(int), 1, ficheiro);
+        fwrite(aux->cidade, sizeof(char), TAM_CIDADE, ficheiro);
         aux = aux->proximo;
     }
 
-    fclose(file);
+    fclose(ficheiro);
     return 1;
 }
 
 /**
 @brief Função que guarda os adjacentes de um grafo num backup binário.
 @param grafo Apontador para o grafo que será salvo.
+@param nomeficheiro Nome do arquivo binário onde os adjacentes serão salvos.
 @return int Retorna 1 em caso de sucesso na escrita do backup ou 0 em caso contrário.
 */
-int guardarBackupAdjacentes(Vertice* grafo) {
-    FILE* file = fopen("backup_adjacentes.bin", "wb");
-    if (file == NULL) {
+int guardarBackupAdjacentes(Vertice* grafo, char* nomeficheiro) {
+    FILE* ficheiro = fopen(nomeficheiro, "wb");
+    if (ficheiro == NULL) {
         perror("Erro ao abrir o arquivo");
         exit(1);
     }
@@ -457,15 +461,15 @@ int guardarBackupAdjacentes(Vertice* grafo) {
     while (aux != NULL) {
         Adjacente* adj = aux->adjacentes;
         while (adj != NULL) {
-            fwrite(&aux->idVertice, sizeof(int), 1, file);
-            fwrite(&adj->idVertice, sizeof(int), 1, file);
-            fwrite(&adj->distancia, sizeof(float), 1, file);
+            fwrite(&aux->idVertice, sizeof(int), 1, ficheiro);
+            fwrite(&adj->idVertice, sizeof(int), 1, ficheiro);
+            fwrite(&adj->distancia, sizeof(float), 1, ficheiro);
             adj = adj->proximo;
         }
         aux = aux->proximo;
     }
 
-    fclose(file);
+    fclose(ficheiro);
     return 1;
 }
 
