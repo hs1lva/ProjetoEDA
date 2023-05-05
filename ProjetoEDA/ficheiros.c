@@ -348,22 +348,22 @@ int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro) {
         char title[256];
         sscanf(linha, "%d,%[^,],%d,%d,%d,%d,%d,%d", &id, title, &adj1, &dist1, &adj2, &dist2, &adj3, &dist3);
 
-        Vertice* novoVertice = CriarVertice(id, title);
-        *grafo = InsereVertice(*grafo, novoVertice);
+        Vertice* novoVertice = criarVertice(id, title);
+        *grafo = inserirVertice(*grafo, novoVertice);
 
         Adjacente* novoAdjacente;
 
         if (adj1) {
-            novoAdjacente = CriaAdjacente(adj1, dist1);
-            *grafo = InsereAdjacente(*grafo, id, novoAdjacente);
+            novoAdjacente = criarAdjacente(adj1, dist1);
+            *grafo = inserirAdjacente(*grafo, id, novoAdjacente);
         }
         if (adj2) {
-            novoAdjacente = CriaAdjacente(adj2, dist2);
-            *grafo = InsereAdjacente(*grafo, id, novoAdjacente);
+            novoAdjacente = criarAdjacente(adj2, dist2);
+            *grafo = inserirAdjacente(*grafo, id, novoAdjacente);
         }
         if (adj3) {
-            novoAdjacente = CriaAdjacente(adj3, dist3);
-            *grafo = InsereAdjacente(*grafo, id, novoAdjacente);
+            novoAdjacente = criarAdjacente(adj3, dist3);
+            *grafo = inserirAdjacente(*grafo, id, novoAdjacente);
         }
 
         totalVertices++;
@@ -386,8 +386,8 @@ int lerVerticesBin(Vertice** grafo) {
     int id;
     char cidade[TAM_CIDADE];
     while (fread(&id, sizeof(int), 1, file) == 1 && fread(cidade, sizeof(char), TAM_CIDADE, file) == TAM_CIDADE) {
-        Vertice* novoVertice = CriarVertice(id, cidade);
-        *grafo = InsereVertice(*grafo, novoVertice);
+        Vertice* novoVertice = criarVertice(id, cidade);
+        *grafo = inserirVertice(*grafo, novoVertice);
     }
 
     fclose(file);
@@ -410,8 +410,8 @@ int lerAdjacentesBin(Vertice* grafo) {
     while (fread(&origem, sizeof(int), 1, file) == 1 &&
         fread(&destino, sizeof(int), 1, file) == 1 &&
         fread(&distancia, sizeof(float), 1, file) == 1) {
-        Adjacente* novoAdjacente = CriaAdjacente(destino, distancia);
-        grafo = InsereAdjacente(grafo, origem, novoAdjacente);
+        Adjacente* novoAdjacente = criarAdjacente(destino, distancia);
+        grafo = inserirAdjacente(grafo, origem, novoAdjacente);
     }
 
     fclose(file);

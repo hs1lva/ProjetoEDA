@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "grafos.h"
 
 #define TAM_TIPO 20 //Definir tamanho char para tipo do meio de mobilidade
 #define TAM_LOCMEIO 30 //Definir tamanho char para localização do meio de mobilidade
