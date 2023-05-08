@@ -36,7 +36,7 @@ ClienteListaPtr lerClientesCSV(char* nomeArquivo) {
     char linha[MAX_LINHA_CLIENTES_CSV];
     while (fgets(linha, MAX_LINHA_CLIENTES_CSV, arquivo)) {
         Cliente cliente;
-        int numCampos = sscanf(linha, "%d,%[^,],%[^,],%f,%[^,],%[^,]", &cliente.nif, cliente.nome, cliente.endereco, &cliente.saldo, cliente.localizacao, cliente.geocodigo);
+        int numCampos = sscanf(linha, "%d,%[^,],%[^,],%f,%d,%[^,]", &cliente.nif, cliente.nome, cliente.endereco, &cliente.saldo, &cliente.localizacao, cliente.geocodigo);
         if (numCampos != 6) {
             perror("Erro ao ler linha do arquivo CSV\n");
             continue;
@@ -67,7 +67,7 @@ int escreverClientesCSV(ClienteListaPtr listaClientes, char* nomeArquivo) { //Es
     }
     ClienteListaPtr atual = listaClientes;
     while (atual != NULL) {
-        fprintf(arquivo, "%d,%s,%s,%.2f,%s,%s\n", atual->cliente.nif, atual->cliente.nome, atual->cliente.endereco, atual->cliente.saldo, atual->cliente.localizacao, atual->cliente.geocodigo);
+        fprintf(arquivo, "%d,%s,%s,%.2f,%d,%s\n", atual->cliente.nif, atual->cliente.nome, atual->cliente.endereco, atual->cliente.saldo, atual->cliente.localizacao, atual->cliente.geocodigo);
         atual = atual->proxclientelista;
     }
     fclose(arquivo);
@@ -92,7 +92,7 @@ MeiosMobilidadeListaPtr lerMeiosMobilidadeCSV(char* nomeArquivo) {
     char linha[MAX_LINHA_MEIOS_CSV];
     while (fgets(linha, MAX_LINHA_MEIOS_CSV, arquivo)) {
         MeioMobilidade meioMobilidade;
-        int numCampos = sscanf(linha, "%d,%[^,],%f,%f,%[^,],%[^,], %d", &meioMobilidade.id, meioMobilidade.tipo, &meioMobilidade.autonomia, &meioMobilidade.custo, meioMobilidade.localizacao, meioMobilidade.geocodigo, &meioMobilidade.alugado);
+        int numCampos = sscanf(linha, "%d,%[^,],%f,%f,%d,%[^,], %d", &meioMobilidade.id, meioMobilidade.tipo, &meioMobilidade.autonomia, &meioMobilidade.custo, &meioMobilidade.localizacao, meioMobilidade.geocodigo, &meioMobilidade.alugado);
         if (numCampos != 7) {
             perror("Erro ao ler linha do arquivo CSV\n");
             continue;
@@ -122,7 +122,7 @@ int escreverMeios(MeiosMobilidadeListaPtr listaMobilidade, char* nomeArquivo) { 
     }
     MeiosMobilidadeListaPtr atual = listaMobilidade;
     while (atual != NULL) {
-        fprintf(arquivo, "%d,%s,%.2f,%.2f,%s,%s,%d\n", atual->meioMobilidade.id, atual->meioMobilidade.tipo, atual->meioMobilidade.autonomia, atual->meioMobilidade.custo, atual->meioMobilidade.localizacao, atual->meioMobilidade.geocodigo, atual->meioMobilidade.alugado);
+        fprintf(arquivo, "%d,%s,%.2f,%.2f,%d,%s,%d\n", atual->meioMobilidade.id, atual->meioMobilidade.tipo, atual->meioMobilidade.autonomia, atual->meioMobilidade.custo, atual->meioMobilidade.localizacao, atual->meioMobilidade.geocodigo, atual->meioMobilidade.alugado);
         atual = atual->proxmeiomobilidadelista;
     }
     fclose(arquivo);

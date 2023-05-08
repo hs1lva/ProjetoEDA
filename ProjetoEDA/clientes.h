@@ -14,7 +14,6 @@
 
 #define TAM_NOME 50 //Definir tamanho char para nome cliente
 #define TAM_END 100 //Definir tamanho char para endereço do cliente
-#define TAM_LOCCLIENTE 30 //Definir tamanho char para localização do cliente
 #define TAM_GEOCLIENTE 100 //Definir tamanho char para geocódigo do cliente
 
 //Estrutura para clientes
@@ -23,7 +22,7 @@ typedef struct Cliente {
     char nome[TAM_NOME]; // nome completo
     char endereco[TAM_END]; // endereço completo
     float saldo; // saldo disponível
-    char localizacao[TAM_LOCCLIENTE]; // localização do cliente
+    int localizacao; // localização do cliente (corresponde ao ID da cidade do grafo)
     char geocodigo[TAM_GEOCLIENTE]; // geocódigo (what3words.com)
 } Cliente;
 
@@ -41,7 +40,7 @@ ClienteListaPtr lerClientesBin(char* nomeArquivoBin);
 int escreverClientesCSV(ClienteListaPtr listaClientes, char* nomeArquivo);
 
 //Cria um novo cliente e retorna um ponteiro para a estrutura criada
-Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]);
+Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo, int localizacao, char geocodigo[]);
 
 //Adiciona um novo cliente à lista de clientes
 ClienteListaPtr adicionarCliente(ClienteListaPtr listaClientes, Cliente* cliente);
@@ -50,11 +49,11 @@ ClienteListaPtr adicionarCliente(ClienteListaPtr listaClientes, Cliente* cliente
 ClienteListaPtr removerCliente(ClienteListaPtr listaClientes, int nif);
 
 //Altera os dados de um cliente existente com base no seu NIF
-bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]);
+bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo, int localizacao, char geocodigo[]);
 bool alterarNomeCliente(ClienteListaPtr listaClientes, int nif, char nome[]);
 bool alterarEnderecoCliente(ClienteListaPtr listaClientes, int nif, char endereco[]);
 bool alterarSaldoCliente(ClienteListaPtr listaClientes, int nif, float saldo);
-bool alterarLocalizacaoCliente(ClienteListaPtr listaClientes, int nif, char localizacao[]);
+bool alterarLocalizacaoCliente(ClienteListaPtr listaClientes, int nif, int localizacao);
 bool alterarGeocodigoCliente(ClienteListaPtr listaClientes, int nif, char geocodigo[]);
 
 //Retorna um ponteiro para o cliente com o NIF especificado, ou NULL caso não exista

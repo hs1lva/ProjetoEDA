@@ -23,17 +23,17 @@ int main() {
 #pragma region Testar funções clientes
 
     // Adiciona alguns clientes
-    //Cliente* cliente1 = novoCliente(89, "João Silva", "Rua das Flores, 123", 1000.0);
+    //Cliente* cliente1 = novoCliente(89, "João Silva", "Rua das Flores, 123", 1000.0, 4, "DASDA");
     //listaClientes = adicionarCliente(listaClientes, cliente1);
 
-    //Cliente* cliente2 = novoCliente(987654321, "Maria Santos", "Avenida Central, 456", 2000.0);
+    //Cliente* cliente2 = novoCliente(987654321, "Maria Santos", "Avenida Central, 456", 2000.0, 5, "DSDADDD");
     //listaClientes = adicionarCliente(listaClientes, cliente2);
 
     //Remove um cliente
     //listaClientes = removerCliente(listaClientes, 123456789);
 
     //Altera um cliente
-    //alterarCliente(listaClientes, 987654321, "Maria Oliveira", "Avenida Principal, 789", 3000.0);
+    //alterarCliente(listaClientes, 987654321, "Maria Oliveira", "Avenida Principal, 789", 3000.0, 5, "DSADSSS");
 
     //Escreve os dados atualizados dos clientes de volta para o arquivo CSV
     //escreverClientesCSV(listaClientes, "clientes.csv");
@@ -42,29 +42,29 @@ int main() {
     //pesquisarCliente(listaClientes, 232);
 
     //Apresentar lista de clientes em memória
-    //listarClientes(listaClientes);
+    listarClientes(listaClientes);
 
     //Libertar memória da lista de clientes
     //libertarClientesLista(listaClientes);
 
-    //guardarBackupClientes(listaClientes);
+    guardarBackupClientes(listaClientes);
 
 #pragma endregion
 
 #pragma region Testar funções meios de mobilidade
 
     // Adiciona alguns meios de mobilidade
-    //Cliente* meio1 = novoMeioMobilidade(100,"Bicicleta",50.0,3.4,"Porto","ASDAH23", 0); //Inserir ID 100
+    //Cliente* meio1 = novoMeioMobilidade(100,"Bicicleta",50.0,3.4,"6","ASDAH23", 0); //Inserir ID 100
     //listaMeios = adicionarMeioMobilidade(listaMeios, meio1);
 
-    //Cliente* meio2 = novoMeioMobilidade(101,"Lambreta",32.0,0.4,"Braga","ASDA3232D3", 0); //Inserir ID 101
+    //Cliente* meio2 = novoMeioMobilidade(101,"Lambreta",32.0,0.4,"7","ASDA3232D3", 0); //Inserir ID 101
     //listaMeios = adicionarMeioMobilidade(listaMeios, meio2);
 
     // Remove um meio de mobilidade
     //listaMeios = removerMeioMobilidade(listaMeios, 1); //ID 1 a remover
 
     // Altera um meio de mobilidade
-    //alterarMeioMobilidade(listaMeios, 1, "Triciclo", 20.0, 3.1, "Guimaraes", "UEDED2", 0); //Alterar ID 1
+    //alterarMeioMobilidade(listaMeios, 1, "Triciclo", 20.0, 3.1, "3", "UEDED2", 0); //Alterar ID 1
 
     // Escreve os dados atualizados dos meios de mobilidade de volta para o arquivo CSV
     //escreverMeios(listaMeios, "meiosmobilidade.csv");
@@ -73,7 +73,7 @@ int main() {
     //guardarBackupMeiosMobilidade(listaMeios);
 
     //Apresentar lista de meios de mobilidade em memória
-    //listarMeiosMobilidade(listaMeios);
+    listarMeiosMobilidade(listaMeios);
 
     //Apresentar lista de meios de mobilidade em memória ordenados pela autonomia
     //listarMeiosMobilidadeOrdenadosAutonomia(listaMeios);
@@ -109,7 +109,7 @@ int main() {
 #pragma region Testar funções grafos (localizações)
 
     Vertice* grafo = NULL;
-    //int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
+    int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
 
     //guardarBackupVertices(grafo, "backup_vertices.bin");
     //guardarBackupAdjacentes(grafo, "backup_adjacentes.bin");

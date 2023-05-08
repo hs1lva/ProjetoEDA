@@ -42,7 +42,7 @@ Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int duracaominutos) {
 @param aluguer apontador para o aluguer a ser adicionado
 @return int retorna 1 se o aluguer foi adicionado com sucesso, 0 caso contrário
 */
-int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr listaMeiosMobilidad, AluguerListaPtr listaAlugueres, Aluguer* aluguer) {
+int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr listaMeiosMobilidad, AluguerListaPtr listaAlugueres, Aluguer* aluguer, Vertice* grafo) {
     // Verificar se o cliente tem saldo suficiente para realizar o aluguer
     Cliente* cliente = pesquisarCliente(listaClientes, aluguer->nifcliente);
     if (!verificarSaldoCliente(cliente, aluguer->duracaominutos)) {
@@ -55,6 +55,8 @@ int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr list
         perror("Meio de mobilidade nao disponivel para aluguer.\n");
         return 0;
     }
+    // Verificar caminho entre a localização do cliente (origem) e o destino
+    //pesquisarEmLargura(grafo, cliente->localizacao, 5); //ALTERAR ISTO
     // Calcular o custo do aluguer
     float custo = calcularCustoAluguer(meiomobilidade, aluguer->duracaominutos, meiomobilidade->custo);
     aluguer->preco = custo;

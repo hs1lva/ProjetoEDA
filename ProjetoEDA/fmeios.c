@@ -22,13 +22,13 @@
 @param geocodigo o geocódigo da localização atual do meio de mobilidade
 @return um apontador para a estrutura do meio de mobilidade criado
 */
-MeioMobilidade* novoMeioMobilidade(int id, char tipo[], float autonomia, float custo, char localizacao[], char geocodigo[], int alugado) {
+MeioMobilidade* novoMeioMobilidade(int id, char tipo[], float autonomia, float custo, int localizacao, char geocodigo[], int alugado) {
     MeioMobilidade* meioMobilidade = (MeioMobilidade*)malloc(sizeof(MeioMobilidade)); // aloca memória para a estrutura do meio de mobilidade
     meioMobilidade->id = id; // atribui o identificador ao meio de mobilidade
     strcpy(meioMobilidade->tipo, tipo); // copia o tipo para o meio de mobilidade
     meioMobilidade->autonomia = autonomia; // atribui a autonomia ao meio de mobilidade
     meioMobilidade->custo = custo; // atribui o custo ao meio de mobilidade
-    strcpy(meioMobilidade->localizacao, localizacao); // copia a localização para o meio de mobilidade
+    meioMobilidade->localizacao = localizacao; // copia a localização para o meio de mobilidade
     strcpy(meioMobilidade->geocodigo, geocodigo); // copia o geocodigo(site para usar fase 2) para o meio de mobilidade
     meioMobilidade->alugado = alugado; // escreve se o meio de mobilidade está alugado
     return meioMobilidade; // retorna um apontador para a estrutura do meio de mobilidade criado
@@ -96,14 +96,14 @@ MeiosMobilidadeListaPtr removerMeioMobilidade(MeiosMobilidadeListaPtr listaMeios
 @param geocodigo Geocódigo do meio de mobilidade.
 @return true se o meio de mobilidade foi alterado com sucesso, false caso contrário.
 */
-bool alterarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char tipo[], float autonomia, float custo, char localizacao[], char geocodigo[], int alugado) {
+bool alterarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char tipo[], float autonomia, float custo, int localizacao, char geocodigo[], int alugado) {
     MeiosMobilidadeListaPtr atual = listaMeiosMobilidade; // apontador para o início da lista
     while (atual != NULL) { // percorre a lista de meios de mobilidade
         if (atual->meioMobilidade.id == id) { // verifica se o meio de mobilidade tem o ID especificado
             strcpy(atual->meioMobilidade.tipo, tipo); // altera o tipo do meio de mobilidade
             atual->meioMobilidade.autonomia = autonomia; // altera a autonomia do meio de mobilidade
             atual->meioMobilidade.custo = custo; // altera o custo do meio de mobilidade
-            strcpy(atual->meioMobilidade.localizacao, localizacao); // altera a localização do meio de mobilidade
+            atual->meioMobilidade.localizacao = localizacao; // altera a localização do meio de mobilidade
             strcpy(atual->meioMobilidade.geocodigo, geocodigo); // altera o geocódigo do meio de mobilidade
             atual->meioMobilidade.alugado = alugado; // altera se o meio de mobilidade está ou não alugado
             return true; // retorna true indicando que o meio de mobilidade foi alterado com sucesso
@@ -181,11 +181,11 @@ bool alterarCustoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, in
 @param localizacao Nova localização do meio de mobilidade.
 @return true se o meio de mobilidade foi alterado com sucesso, false caso contrário.
 */
-bool alterarLocalizacaoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char localizacao[]) {
+bool alterarLocalizacaoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, int localizacao) {
     MeiosMobilidadeListaPtr atual = listaMeiosMobilidade; // apontador para o início da lista
     while (atual != NULL) { // percorre a lista de meios de mobilidade
         if (atual->meioMobilidade.id == id) { // verifica se o meio de mobilidade tem o ID especificado
-            strcpy(atual->meioMobilidade.localizacao, localizacao); // altera a localização do meio de mobilidade
+            atual->meioMobilidade.localizacao = localizacao; // altera a localização do meio de mobilidade
             return true; // retorna true indicando que o meio de mobilidade foi alterado com sucesso
         }
         atual = atual->proxmeiomobilidadelista; // avança para o próximo meio de mobilidade na lista

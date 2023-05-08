@@ -20,13 +20,13 @@
 @param geocodigo Geocódigo do cliente
 @return apontador para a estrutura Cliente criada
 */
-Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]) {
+Cliente* novoCliente(int nif, char nome[], char endereco[], float saldo, int localizacao, char geocodigo[]) {
     Cliente* cliente = (Cliente*)malloc(sizeof(Cliente)); // Aloca espaço na memória para uma nova estrutura Cliente
     cliente->nif = nif; // Atribui o número de identificação fiscal ao novo cliente
     strcpy(cliente->nome, nome); // Copia o nome do cliente para a nova estrutura
     strcpy(cliente->endereco, endereco); // Copia o endereço do cliente para a nova estrutura
     cliente->saldo = saldo; // Atribui o saldo ao novo cliente
-    strcpy(cliente->localizacao, localizacao); // Copia a localização do cliente para a nova estrutura
+    cliente->localizacao = localizacao; // Copia a localização do cliente para a nova estrutura
     strcpy(cliente->geocodigo, geocodigo); // Copia o geocodigo do cliente para a nova estrutura
     return cliente; // Retorna um apontador para a nova estrutura Cliente criada
 }
@@ -90,14 +90,14 @@ ClienteListaPtr removerCliente(ClienteListaPtr listaClientes, int nif) {
 @param geocodigo Geocódigo do cliente
 @return bool 1 se a alteração for bem sucedida, 0 caso contrário
 */
-bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo, char localizacao[], char geocodigo[]) {
+bool alterarCliente(ClienteListaPtr listaClientes, int nif, char nome[], char endereco[], float saldo, int localizacao, char geocodigo[]) {
     ClienteListaPtr atual = listaClientes; // Inicializa o apontador atual para o primeiro elemento da lista
     while (atual != NULL) { // enquanto a lista não for percorrida por completo
         if (atual->cliente.nif == nif) { // Percorre a lista até encontrar o cliente com o NIF especificado
             strcpy(atual->cliente.nome, nome); // Altera os dados do cliente
             strcpy(atual->cliente.endereco, endereco); // Altera os dados do cliente
             atual->cliente.saldo = saldo; // Altera os dados do cliente
-            strcpy(atual->cliente.localizacao, localizacao); // Altera os dados do cliente
+            atual->cliente.localizacao = localizacao; // Altera os dados do cliente
             strcpy(atual->cliente.geocodigo, geocodigo); // Altera os dados do cliente
             return true; // sucesso
         }
@@ -174,11 +174,11 @@ bool alterarSaldoCliente(ClienteListaPtr listaClientes, int nif, float saldo) {
 @param localizacao nova localização do cliente
 @return bool 1 se a alteração for bem sucedida, 0 caso contrário
 */
-bool alterarLocalizacaoCliente(ClienteListaPtr listaClientes, int nif, char localizacao[]) {
+bool alterarLocalizacaoCliente(ClienteListaPtr listaClientes, int nif, int localizacao) {
     ClienteListaPtr atual = listaClientes; // Inicializa o apontador atual para o primeiro elemento da lista
     while (atual != NULL) { // enquanto a lista não for percorrida por completo
         if (atual->cliente.nif == nif) { // Percorre a lista até encontrar o cliente com o NIF especificado
-            strcpy(atual->cliente.localizacao, localizacao); // Altera a localização do cliente
+            atual->cliente.localizacao = localizacao; // Altera a localização do cliente
             return true; // sucesso
         }
         atual = atual->proxclientelista; // atualiza o apontador atual para apontar para o próximo elemento da lista

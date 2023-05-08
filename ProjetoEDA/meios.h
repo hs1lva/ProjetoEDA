@@ -14,7 +14,6 @@
 #include "grafos.h"
 
 #define TAM_TIPO 20 //Definir tamanho char para tipo do meio de mobilidade
-#define TAM_LOCMEIO 30 //Definir tamanho char para localização do meio de mobilidade
 #define TAM_GEOMEIO 100 //Definir tamanho char para geocódigo do meio de mobilidade
 
 //Estrutura para meios de mobilidade
@@ -23,7 +22,7 @@ typedef struct MeioMobilidade {
     char tipo[TAM_TIPO]; // tipo do meio de mobilidade elétrica (bicicleta, trotinete, etc.)
     float autonomia; // autonomia da bateria
     float custo; // custo de aluguer por unidade de tempo
-    char localizacao[TAM_LOCMEIO]; // localização do meio de mobilidade elétrica
+    int localizacao; // localização do meio de mobilidade elétrica (corresponde ao ID da cidade no grafo)
     char geocodigo[TAM_GEOMEIO]; // geocódigo (what3words.com)
     int alugado; // Está (1) ou não está alugado (0)
 } MeioMobilidade;
@@ -42,7 +41,7 @@ MeiosMobilidadeListaPtr lerMeiosMobilidadeBin(char* nomeArquivo);
 int escreverMeios(MeiosMobilidadeListaPtr listaMobilidade, char* nomeArquivo);
 
 //Função para criar um novo meio de mobilidade.
-MeioMobilidade* novoMeioMobilidade(int id, char tipo[], float autonomia, float custo, char localizacao[], char geocodigo[], int alugado);
+MeioMobilidade* novoMeioMobilidade(int id, char tipo[], float autonomia, float custo, int localizacao, char geocodigo[], int alugado);
 
 //Função para adicionar um novo meio de mobilidade
 MeiosMobilidadeListaPtr adicionarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, MeioMobilidade* meioMobilidade);
@@ -51,11 +50,11 @@ MeiosMobilidadeListaPtr adicionarMeioMobilidade(MeiosMobilidadeListaPtr listaMei
 MeiosMobilidadeListaPtr removerMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id);
 
 //Função para alterar dados de um meio de mobilidade
-bool alterarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char tipo[], float autonomia, float custo, char localizacao[], char geocodigo[], int alugado);
+bool alterarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char tipo[], float autonomia, float custo, int localizacao, char geocodigo[], int alugado);
 bool alterarTipoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char tipo[]);
 bool alterarAutonomiaMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, float autonomia);
 bool alterarCustoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, float custo);
-bool alterarLocalizacaoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char localizacao[]);
+bool alterarLocalizacaoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, int localizacao);
 bool alterarGeocodigoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, char geocodigo[]);
 bool alterarAlugadoMeioMobilidade(MeioMobilidade* meioMobilidade);
 

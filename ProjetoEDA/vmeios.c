@@ -19,7 +19,7 @@ void listarMeiosMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade) {
 	MeiosMobilidadeListaPtr atual = listaMeiosMobilidade;
 	printf("------ Lista de Meios de Mobilidade ------\n");
 	while (atual != NULL) {
-		printf("ID: %d\nTipo: %s\nAutonomia: %.2f\nCusto: %.2f\nLocalização: %s\nGeocódigo: %s\nAlugado: %d\n\n",
+		printf("ID: %d\nTipo: %s\nAutonomia: %.2f\nCusto: %.2f\nLocalização: %d\nGeocódigo: %s\nAlugado: %d\n\n",
 			atual->meioMobilidade.id, atual->meioMobilidade.tipo, atual->meioMobilidade.autonomia,
 			atual->meioMobilidade.custo, atual->meioMobilidade.localizacao, atual->meioMobilidade.geocodigo, atual->meioMobilidade.alugado);
 		atual = atual->proxmeiomobilidadelista;
@@ -52,7 +52,7 @@ void listarMeiosMobilidadeOrdenadosAutonomia(MeiosMobilidadeListaPtr listaMeiosM
     }
     printf("------ Lista de Meios de Mobilidade ------\n");
     for (MeiosMobilidadeListaPtr ptr = listaTemp; ptr != NULL; ptr = ptr->proxmeiomobilidadelista) {
-        printf("ID: %d\nTipo: %s\nAutonomia: %.2f \nCusto: %.2f euros/hora\nLocalizacao: %s\nGeocodigo: %s\nAlugado: %d\n\n",
+        printf("ID: %d\nTipo: %s\nAutonomia: %.2f \nCusto: %.2f euros/hora\nLocalizacao: %d\nGeocodigo: %s\nAlugado: %d\n\n",
             ptr->meioMobilidade.id, ptr->meioMobilidade.tipo, ptr->meioMobilidade.autonomia, ptr->meioMobilidade.custo,
             ptr->meioMobilidade.localizacao, ptr->meioMobilidade.geocodigo, ptr->meioMobilidade.alugado);
     }
@@ -75,7 +75,7 @@ void listarMeiosMobilidadePorLocalizacao(MeiosMobilidadeListaPtr listaMeiosMobil
     int count = 0; // contador para verificar se nenhum meio de mobilidade foi encontrado
     for (MeiosMobilidadeListaPtr ptr = listaMeiosMobilidade; ptr != NULL; ptr = ptr->proxmeiomobilidadelista) {
         if (strcmp(ptr->meioMobilidade.geocodigo, geocodigo) == 0) { // se o geocodigo da localização do meio de mobilidade for igual ao geocodigo especificado pelo scanf
-            printf("ID: %d\nTipo: %s\nAutonomia: %.2f \nCusto: %.2f euros/hora\nLocalizacao: %s\nGeocodigo: %s\nAlugado: %d\n\n",
+            printf("ID: %d\nTipo: %s\nAutonomia: %.2f \nCusto: %.2f euros/hora\nLocalizacao: %d\nGeocodigo: %s\nAlugado: %d\n\n",
                 ptr->meioMobilidade.id, ptr->meioMobilidade.tipo, ptr->meioMobilidade.autonomia, ptr->meioMobilidade.custo,
                 ptr->meioMobilidade.localizacao, ptr->meioMobilidade.geocodigo, ptr->meioMobilidade.alugado);
             count++;
