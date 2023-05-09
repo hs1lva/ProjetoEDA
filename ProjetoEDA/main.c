@@ -19,6 +19,8 @@ int main() {
     ClienteListaPtr listaClientes = lerClientesBin("backup_clientes.bin");
     MeiosMobilidadeListaPtr listaMeios = lerMeiosMobilidadeBin("backup_meiosmobilidade.bin");
     AluguerListaPtr listaAlugueres = lerAlugueresBin("backup_alugueres.bin");
+    Vertice* grafo = NULL;
+    int totalVertices = carregarFicheiroGrafo(&grafo, "grafos.csv");
 
 #pragma region Testar funções clientes
 
@@ -86,30 +88,7 @@ int main() {
 
 #pragma endregion
 
-#pragma region Testar funções alugueres
-
-    // Adicionar alguns alugueres manualmente
-    //Aluguer aluguer1 = novoAluguer(232, 1, 34); // idCliente=232, idMeioMobilidade=1, NºMinutos=34min
-    //adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1);
-
-    //Aluguer aluguer2 = novoAluguer(232, 100, 35.5); // idCliente=232, idMeioMobilidade=100, NºMinutos=35.5min
-    //adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer2);
-
-    // Listar alugueres
-    //listarAlugueres(listaAlugueres);
-
-    //Reescrever os ficheiros .bin para o seguinte:
-    //---Atualizar o meio de mobilidade usado no aluguer acima para ficar a 1(alugado) e guardar no backup_binario o novo estado alugado.
-    //---Atualizar o cliente usado no aluguer para depois de ser feito o calculo do custo de aluguer, descontar no saldo e guardar no backup_binario novo saldo.
-    //guardarBackupMeiosMobilidade(listaMeios);
-    //guardarBackupClientes(listaClientes);
-
-#pragma endregion
-
 #pragma region Testar funções grafos (localizações)
-
-    Vertice* grafo = NULL;
-    int totalVertices = lerGrafoCSV(&grafo, "grafos.csv");
 
     //guardarBackupVertices(grafo, "backup_vertices.bin");
     //guardarBackupAdjacentes(grafo, "backup_adjacentes.bin");
@@ -118,6 +97,26 @@ int main() {
     //lerAdjacentesBin(&grafo, "backup_adjacentes.bin");
 
     imprimirGrafo(grafo);
+
+#pragma endregion
+
+#pragma region Testar funções alugueres
+
+    // Adicionar alguns alugueres manualmente
+    Aluguer aluguer1 = novoAluguer(232, 1); // idCliente=232, idMeioMobilidade=1
+    adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1); // Testar com a cidade termino ID 24
+
+    //Fazer backup do aluguer criado acima
+    guardarBackupAlugueres(aluguer1);
+
+    // Listar alugueres
+    listarAlugueres(listaAlugueres);
+
+    //Reescrever os ficheiros .bin para o seguinte:
+    //---Atualizar o meio de mobilidade usado no aluguer acima para ficar a 1(alugado) e guardar no backup_binario o novo estado alugado.
+    //---Atualizar o cliente usado no aluguer para depois de ser feito o calculo do custo de aluguer, descontar no saldo e guardar no backup_binario novo saldo.
+    //guardarBackupMeiosMobilidade(listaMeios);
+    //guardarBackupClientes(listaClientes);
 
 #pragma endregion
 

@@ -33,12 +33,6 @@ typedef struct Vertice {
 	int numAdjacentes;
 }Vertice;
 
-typedef struct Caminho {
-	int idVertice;
-	float distancia;
-	struct Caminho* proximo;
-} Caminho;
-
 // Fila para ver o melhor caminho
 typedef struct Fila {
 	struct NodeFila* proximo;
@@ -51,6 +45,7 @@ typedef struct NodeFila {
 } NodeFila;
 
 // Funções para ler ficheiros .csv e ficheiros .bin
+int carregarFicheiroGrafo(Vertice** grafo, char* nomeficheiro);
 int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro);
 int lerVerticesBin(Vertice** grafo);
 int lerAdjacentesBin(Vertice* grafo);
@@ -62,7 +57,6 @@ int guardarBackupAdjacentes(Vertice* grafo);
 // Funções para criar
 Vertice* criarVertice(int idVertice, char cidade[]);
 Adjacente* criarAdjacente(int idVertice, float distancia);
-Caminho* criarCaminho(int idVertice, float distancia);
 Fila* criarFila();
 
 // Funções para inserir
@@ -72,6 +66,7 @@ int inserirElemFinalFila(Fila* fila, Vertice* vertice);
 
 // Funções para imprimir
 void imprimirGrafo(Vertice* grafo);
+int verificarInt();
 
 // Funções para remover ou limpar
 Vertice* removerElemFila(Fila* fila);
@@ -81,5 +76,4 @@ int limparCamposGrafo(Vertice* grafo);
 // Funções de pesquisa
 Vertice* pesquisarVerticePorID(Vertice* grafo, int idVertice);
 Vertice* pesquisarVerticePorNomeCidade(Vertice* grafo, const char* cidade);
-float distanciaCaminho(Caminho* caminho);
 int pesquisarEmLargura(Vertice* grafo, int origem, int destino);

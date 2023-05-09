@@ -274,12 +274,7 @@ MeiosMobilidadeListaPtr pesquisarMeioMobilidadeMaisProximo(MeiosMobilidadeListaP
 
     while (meioMobilidadeAtual != NULL) {
         if (meioMobilidadeAtual->meioMobilidade.alugado == 0) { // Meio de mobilidade está disponível?
-            Caminho* caminho = pesquisarEmLargura(grafo, localCliente, meioMobilidadeAtual->meioMobilidade.localizacao);
-            if (caminho == NULL) {
-                return NULL;
-            }
-
-            float distancia = distanciaCaminho(caminho);
+            float distancia = pesquisarEmLargura(grafo, localCliente, meioMobilidadeAtual->meioMobilidade.localizacao);
 
             if (distancia != INFINITY) {
                 if (distancia < menorDistancia) {

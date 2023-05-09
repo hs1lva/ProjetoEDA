@@ -19,7 +19,7 @@ typedef struct Aluguer {
     int nifcliente; //Corresponde ao NIF do cliente (ID unico)
     int idmeio;
     float preco;
-    float duracaominutos;
+    float distancia;
     time_t data;
 } Aluguer;
 
@@ -30,16 +30,16 @@ typedef struct AluguerLista {
 } AluguerLista, *AluguerListaPtr;
 
 //Função para criar um novo aluger
-Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int duracaominutos);
+Aluguer novoAluguer(int nifcliente, int idmeiomobilidade);
 
 //Função para inserir o aluguer na lista de alugueres
 int inserirAluguerLista(AluguerListaPtr* listaAlugueres, Aluguer aluguer);
 
 //Função para verificar se o saldo do cliente é suficiente para realizar o aluguer
-int verificarSaldoCliente(Cliente* cliente, int duracaominutos);
+int verificarSaldoCliente(Cliente* cliente, float custofinal);
 
 //Função para calcular o custo do aluguer
-float calcularCustoAluguer(MeioMobilidade* meiomobilidade, int duracaominutos, float custoporminuto);
+float calcularCustoAluguer(MeioMobilidade* meiomobilidade, float custoporkm, float distancia);
 
 //Função para verificar se o meio de mobilidade está apto para realizar aluguer e já não se encontra alugado
 int verificarEstadoMeioMobilidade(MeioMobilidade* meiomobilidade);

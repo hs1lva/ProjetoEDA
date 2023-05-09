@@ -327,26 +327,44 @@ int guardarBackupAlugueres(Aluguer aluguer) {
 
 #pragma region Funções para ficheiros grafos (.csv) e (.bin)
 
-/**
-@brief Lê um grafo no formato CSV e adiciona os vértices e arestas a uma lista de adjacência.
-@param grafo Duplo apontador do primeiro vértice da lista de adjacência.
-@param nomeficheiro Nome do ficheiro que contém o grafo no formato CSV.
-@return Número total de vértices do grafo.
+/*
+@brief Abre o ficheiro e chama a função de leitura lerGrafoCSV
+@param grafo Duplo apontador para a estrutura Vertice (grafo)
+@param nomeFicheiro Nome do ficheiro csv a ler
+@return totalVertices Número total de vértices lidos
 */
-int lerGrafoCSV(Vertice** grafo, char* nomeficheiro) {
+int carregarFicheiroGrafo(Vertice** grafo, char* nomeficheiro) {
     FILE* ficheiro;
     ficheiro = fopen(nomeficheiro, "r");
     int totalVertices = 0;
     if (ficheiro == NULL) {
-        perror("Erro ao abrir ficheiro grafos");
+        printf("Erro ao abrir ficheiro grafos");
         return 0;
     }
+    totalVertices = lerGrafoCSV(grafo, ficheiro);
+    fclose(ficheiro);
+    return totalVertices;
+}
+
+/*
+@brief Lê o ficheiro grafos.csv
+@param grafo Duplo apontador para a estrutura Vertice (grafo)
+@param nomeficheiro Nome do ficheiro csv a ler
+@return totalVertices Número total de vértices lidos
+*/
+int lerGrafoCSV(Vertice** grafo, FILE* nomeficheiro) {
     char linha[MAX_LINHA_GRAFO_CSV];
-    fgets(linha, MAX_LINHA_GRAFO_CSV, ficheiro); // Passar cabeçalho
-    while (fgets(linha, MAX_LINHA_GRAFO_CSV, ficheiro) != NULL) {
+    int totalVertices = 0;
+
+    fgets(linha, MAX_LINHA_GRAFO_CSV, nomeficheiro); // Pular a primeira linha (cabeçalho)
+    while (fgets(linha, MAX_LINHA_GRAFO_CSV, nomeficheiro) != NULL) {
         int id, adj1, dist1, adj2, dist2, adj3, dist3;
         char title[256];
-        sscanf(linha, "%d,%[^,],%d,%d,%d,%d,%d,%d", &id, title, &adj1, &dist1, &adj2, &dist2, &adj3, &dist3);
+        sscanf(linha, "%d,%[^,],%d,%d,%d,%d,%d,%d",
+            &id, title,
+            &adj1, &dist1,
+            &adj2, &dist2,
+            &adj3, &dist3);
 
         Vertice* novoVertice = criarVertice(id, title);
         *grafo = inserirVertice(*grafo, novoVertice);
@@ -368,7 +386,6 @@ int lerGrafoCSV(Vertice** grafo, char* nomeficheiro) {
 
         totalVertices++;
     }
-    fclose(ficheiro);
     return totalVertices;
 }
 

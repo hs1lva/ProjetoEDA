@@ -16,16 +16,15 @@
 @brief Cria um novo aluguer com os dados fornecidos.
 @param nifcliente O NIF do cliente que está a fazer o aluguer.
 @param idmeiomobilidade O identificador do meio de mobilidade que está a ser alugado.
-@param duracaominutos O numero de minutos para realizar um aluguer.
 @return Uma estrutura do tipo Aluguer preenchida com os dados fornecidos.
 */
-Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int duracaominutos) {
+Aluguer novoAluguer(int nifcliente, int idmeiomobilidade) {
     static int totAluguer = 0; //Atribuição de ID's ao aluguer, estático para o primeiro ser sempre 0 e ir encrementando
     Aluguer aluguer;
     aluguer.nifcliente = nifcliente;
     aluguer.idmeio = idmeiomobilidade;
-    aluguer.duracaominutos = duracaominutos;
     aluguer.preco = 0; // inicialmente, o preço é zero
+    aluguer.distancia = 0; // inicialmente, a distancia é zero
     time_t now = time(NULL);
     aluguer.data = now; // data atual
     aluguer.id=totAluguer;
@@ -43,31 +42,37 @@ Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int duracaominutos) {
 @return int retorna 1 se o aluguer foi adicionado com sucesso, 0 caso contrário
 */
 int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr listaMeiosMobilidad, AluguerListaPtr listaAlugueres, Aluguer* aluguer, Vertice* grafo) {
-    // Verificar se o cliente tem saldo suficiente para realizar o aluguer
+    // Pesquisar cliente
     Cliente* cliente = pesquisarCliente(listaClientes, aluguer->nifcliente);
-    if (!verificarSaldoCliente(cliente, aluguer->duracaominutos)) {
-        perror("Cliente nao tem saldo suficiente para realizar este aluguer.\n");
-        return 0;
-    }
     // Verificar se o meio de mobilidade está disponível
     MeioMobilidade* meiomobilidade = pesquisarMeioMobilidade(listaMeiosMobilidad, aluguer->idmeio);
     if (!verificarEstadoMeioMobilidade(meiomobilidade)) {
         perror("Meio de mobilidade nao disponivel para aluguer.\n");
         return 0;
     }
-    // Verificar caminho entre a localização do cliente (origem) e o destino
-    //pesquisarEmLargura(grafo, cliente->localizacao, 5); //ALTERAR ISTO
+    // Perguntar ao utilizador onde é que terminou a viagem para efetuar o custo da mesma
+    int idlocaltermino;
+    printf("Onde estás a terminar o aluguer? (ID local cidade) ");
+    idlocaltermino = verificarInt();
+    // Verificar distancia entre a localização do cliente (origem) e o destino
+    float distanciatotal = pesquisarEmLargura(&grafo, cliente->localizacao, idlocaltermino);
     // Calcular o custo do aluguer
-    float custo = calcularCustoAluguer(meiomobilidade, aluguer->duracaominutos, meiomobilidade->custo);
-    aluguer->preco = custo;
+    float custofinal = calcularCustoAluguer(meiomobilidade, meiomobilidade->custo, distanciatotal);
+    // Verificar se o cliente tem saldo suficiente para realizar o aluguer
+    if (!verificarSaldoCliente(cliente, custofinal)) {
+        perror("Cliente nao tem saldo suficiente para realizar este aluguer.\n");
+        return 0;
+    }
+    aluguer->preco = custofinal;
+    aluguer->distancia = distanciatotal;
     // Inserir o custo do aluguer no saldo do cliente
-    cliente->saldo -= custo;
-    //Adicionar o aluguer à lista de alug(ueres
+    cliente->saldo -= custofinal;
+    // Adicionar o aluguer à lista de alug(ueres
     inserirAluguerLista(listaAlugueres, *aluguer);
     // Marcar o meio de mobilidade como indisponível
     alterarAlugadoMeioMobilidade(listaMeiosMobilidad, meiomobilidade);
-    //Fazer backup do aluguer
-    guardarBackupAlugueres(*aluguer);
+    // Atualizar localização do cliente para destino da viagem
+    alterarLocalizacaoCliente(listaClientes, aluguer->nifcliente, idlocaltermino);
     return 1;
 }
 
@@ -102,12 +107,13 @@ int inserirAluguerLista(AluguerListaPtr* listaAlugueres, Aluguer aluguer) {
 /**
 @brief Verifica se o cliente tem saldo suficiente para realizar um aluguer
 @param cliente apontador para o cliente
-@param duracaominutos duração do aluguer em minutos
+@param custofinal custo total do aluguer
 @return int retorna 1 se o cliente tem saldo suficiente, 0 caso contrário
 */
-int verificarSaldoCliente(Cliente* cliente, int duracaominutos) {
-    float custo_total = cliente->saldo / duracaominutos;
-    if (custo_total >= 1.0) {
+int verificarSaldoCliente(Cliente* cliente, float custofinal) {
+    float saldocliente = cliente->saldo;
+    float clientetemsaldo = saldocliente - custofinal;
+    if (clientetemsaldo >= 1.0) {
         return 1;
     }
     else {
@@ -117,14 +123,19 @@ int verificarSaldoCliente(Cliente* cliente, int duracaominutos) {
 
 
 /**
-@brief Realiza o cálculo do custo do aluguer
+@brief Realiza o cálculo do custo do aluguer com base na distância percorrida e na duração do aluguer
 @param meiomobilidade apontador para o meio de mobilidade
-@param duracaominutos duração do aluguer em minutos
-@param custoporminuto custo do aluguer por minuto
+@param custoporkm custo do aluguer por km
+@param distancia distancia percorrida em metros
 @return custo do aluguer
 */
-float calcularCustoAluguer(MeioMobilidade* meiomobilidade, int duracaominutos, float custoporminuto) {
-    return custoporminuto * duracaominutos;
+float calcularCustoAluguer(MeioMobilidade* meiomobilidade, float custoporkm, float distancia) {
+    custoporkm = meiomobilidade->custo;
+    // Converter a distancia de metros para km
+    float distanciakm = distancia / 1000.0;
+    // Calcular o custo total do aluguer
+    float custo_total = custoporkm * distanciakm;
+    return custo_total;
 }
 
 
@@ -170,7 +181,7 @@ void listarAlugueres(AluguerListaPtr lista_alugueres) {
         printf("NIF do cliente: %d\n", p->aluguer.nifcliente);
         printf("ID do meio de mobilidade: %d\n", p->aluguer.idmeio);
         printf("Preço do aluguer: %.2f\n", p->aluguer.preco);
-        printf("Duração do aluguer (minutos): %d\n", p->aluguer.duracaominutos);
+        printf("Distancia percorrida (metros): %f\n", p->aluguer.distancia);
         printf("Data do aluguer: %s\n", timeToString(p->aluguer.data));
         printf("\n");
         p = p->proxaluguer;

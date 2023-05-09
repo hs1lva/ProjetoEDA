@@ -102,19 +102,6 @@ Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoAdjacente) 
     return grafo;
 }
 
-/**
-@brief Cria um novo caminho com um vértice e distância.
-@param idVertice ID do vértice do caminho.
-@param distancia Distância do caminho.
-@return Apontador para o novo caminho criado.
-*/
-Caminho* criarCaminho(int idVertice, float distancia) {
-    Caminho* caminho = (Caminho*)malloc(sizeof(Caminho));
-    caminho->idVertice = idVertice;
-    caminho->distancia = distancia;
-    caminho->proximo = NULL;
-    return caminho;
-}
 
 /**
 @brief Cria uma nova fila vazia
@@ -230,23 +217,25 @@ Vertice* pesquisarVerticePorNomeCidade(Vertice* grafo, const char* cidade) {
     return NULL;
 }
 
-/**
-@brief Calcula a distância total percorrida num caminho
-@param caminho Apontador para o primeiro nó de um caminho
-@return float A distância total percorrida no caminho, ou INFINITY se o caminho for nulo (libraria math.h)
+/*
+@brief Lê um inteiro do input do user e verifica se é válido.  
+@return Retorna o inteiro lido e validado.
 */
-float distanciaCaminho(Caminho* caminho) {
-    if (caminho == NULL) {
-        return INFINITY;
-    }
+int verificarInt() {
+    int resultado = 0;
+    // tamanho maximo do buffer inicializado a 0
+    char buffer[1024] = { 0 };
 
-    float distancia = 0;
-    while (caminho != NULL) {
-        distancia = caminho->distancia;
-        caminho = caminho->proximo;
+    // enquanto o utilizador não inserir um inteiro válido
+    while (1) {
+        fgets(buffer, 1024, stdin);
+        if (sscanf(buffer, "%d", &resultado) == 1) {
+            return resultado;
+        }
+        else if (buffer[0] != '\n') {
+            printf("Insere um numero inteiro: ");
+        }
     }
-
-    return distancia;
 }
 
 /**
@@ -275,7 +264,7 @@ int limparCamposGrafo(Vertice* grafo) {
 @param grafo Apontador para o primeiro vértice do grafo.
 @param origem Identificador do vértice de origem.
 @param destino Identificador do vértice de destino.
-@return Apontador para a lista encadeada de vértices do caminho encontrado, ou NULL se não for encontrado.
+@return distancia Apontador para distancia mais curta entre a origem e o destino.
 */
 int pesquisarEmLargura(Vertice* grafo, int origem, int destino) {
 
@@ -329,20 +318,6 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) {
         return NULL;
     }
 
-    Caminho* caminho = NULL;
-    Vertice* atual = verticeDestino;
-    while (atual != NULL) { // Loop para construir lista de vértices com predecessores e distâncias
-        Caminho* novoCaminho = criarCaminho(atual->idVertice, atual->distancia);
-        novoCaminho->proximo = caminho;
-        caminho = novoCaminho;
-
-        if (atual->predecessor == -1) {
-            atual = NULL;
-        }
-        else {
-            atual = pesquisarVerticePorID(grafo, atual->predecessor);
-        }
-    }
-
-    return caminho;
+    float distancia = verticeDestino->distancia;
+    return distancia;
 }

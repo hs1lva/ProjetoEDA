@@ -21,7 +21,7 @@ typedef struct MeioMobilidade {
     int id; // identificador único
     char tipo[TAM_TIPO]; // tipo do meio de mobilidade elétrica (bicicleta, trotinete, etc.)
     float autonomia; // autonomia da bateria
-    float custo; // custo de aluguer por unidade de tempo
+    float custo; // custo de aluguer por distancia(km)
     int localizacao; // localização do meio de mobilidade elétrica (corresponde ao ID da cidade no grafo)
     char geocodigo[TAM_GEOMEIO]; // geocódigo (what3words.com)
     int alugado; // Está (1) ou não está alugado (0)

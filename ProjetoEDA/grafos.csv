@@ -1,27 +1,27 @@
 #,Ponto de Interesse,Adjacenccia 1,Distance 1 (m),Adjacenccia 2,Distance 2 (m),Adjacenccia 3,Distance 3 (m)
-1,Castro de Alvarelhos,30,200,32,100,33,350
-2,Capela de Nossa Senhora de Fátima,30,300,31,100,33,250
-3,Solar dos Vasconcelos,31,350,32,250,34,200
-4,Igreja de Santa Eulália,33,200,35,150,36,300
-5,Solar de Remião,34,150,36,150,37,350
-6,Capela de Nossa Senhora da Guia,34,300,35,150,37,200
-7,Igreja de São Salvador,35,350,36,200,38,400
-8,Parque de Lazer da Ribeira,37,400,39,200,40,300
-9,Ponte do Poço,38,200,40,100,41,250
-10,Igreja de São Mamede,38,300,39,100,41,200
-11,Museu Geológico da Barroca,39,250,40,200,42,350
-12,Casa dos Coimbras,41,350,43,150,44,300
-13,Capela de Nossa Senhora da Boa Viagem,42,150,44,150,45,200
-14,Igreja de Santa Maria do Souto,42,300,43,150,45,100
-15,Centro de Interpretação Ambiental da Ribeira da Póvoa,43,200,44,100,46,250
-16,Parque da Devesa,45,250,47,200,48,300
-17,Igreja de São Vicente,46,200,48,100,49,400
-18,Capela de Nossa Senhora do Rosário,46,300,47,100,49,350
-19,Palácio dos Condes de Barcelos,47,400,48,350,50,450
-20,Igreja de Santa Luzia,49,450,51,200,52,300
-21,Torre do Cimo da Vila,50,200,52,100,53,400
-22,Arquivo Municipal Alfredo Pimenta,50,300,51,100,53,300
-23,Igreja de São Pedro,51,400,52,300,54,250
-24,Mosteiro de Santa Clara,53,250,55,150,56,200
-25,Solar dos Peixotos,54,150,56,100,57,350
-26,Jardim da Rua de Santo António,54,200,55,100,57,200
+1,Castro de Alvarelhos,26,200,25,100,25,350
+2,Capela de Nossa Senhora de Fátima,24,300,23,100,23,250
+3,Solar dos Vasconcelos,22,350,21,250,21,200
+4,Igreja de Santa Eulália,20,200,19,150,19,300
+5,Solar de Remião,18,150,17,150,17,350
+6,Capela de Nossa Senhora da Guia,16,300,15,150,15,200
+7,Igreja de São Salvador,14,350,13,200,13,400
+8,Parque de Lazer da Ribeira,12,400,11,200,11,300
+9,Ponte do Poço,10,200,9,100,9,250
+10,Igreja de São Mamede,8,300,7,100,7,200
+11,Museu Geológico da Barroca,6,250,5,200,5,350
+12,Casa dos Coimbras,4,350,3,150,3,300
+13,Capela de Nossa Senhora da Boa Viagem,2,150,1,150,1,200
+14,Igreja de Santa Maria do Souto,11,300,12,150,13,100
+15,Centro de Interpretação Ambiental da Ribeira da Póvoa,13,200,14,100,15,250
+16,Parque da Devesa,16,250,17,200,18,300
+17,Igreja de São Vicente,19,200,20,100,21,400
+18,Capela de Nossa Senhora do Rosário,22,300,23,100,24,350
+19,Palácio dos Condes de Barcelos,25,400,26,350,9,450
+20,Igreja de Santa Luzia,8,450,7,200,6,300
+21,Torre do Cimo da Vila,5,200,4,100,3,400
+22,Arquivo Municipal Alfredo Pimenta,2,300,1,100,10,300
+23,Igreja de São Pedro,11,400,12,300,13,250
+24,Mosteiro de Santa Clara,14,250,4,150,8,200
+25,Solar dos Peixotos,12,150,13,100,14,350
+26,Jardim da Rua de Santo António,9,200,17,100,21,200
