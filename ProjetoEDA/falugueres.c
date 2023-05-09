@@ -174,7 +174,7 @@ void listarAlugueres(AluguerListaPtr lista_alugueres) {
         printf("A lista de alugueres está vazia.\n");
         return;
     }
-    printf("Lista de alugueres:\n");
+    printf("------ Lista de alugueres: ------\n");
     AluguerListaPtr p = lista_alugueres;
     while (p != NULL) {
         printf("ID do aluguer: %d\n", p->aluguer.id);

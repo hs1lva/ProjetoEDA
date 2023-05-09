@@ -78,3 +78,5 @@ void listarMeiosMobilidadePorLocalizacao(MeiosMobilidadeListaPtr listaMeiosMobil
 
 // Função para pesquisar meio de mobilidade mais proximo com grafos (usa estrutura de grafos.h)
 MeiosMobilidadeListaPtr pesquisarMeioMobilidadeMaisProximo(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente);
+void mostrarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente, float raio);
+void mostrarMeioMobilidade(MeioMobilidade meioMobilidade, float distancia);

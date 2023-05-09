@@ -87,4 +87,37 @@ void listarMeiosMobilidadePorLocalizacao(MeiosMobilidadeListaPtr listaMeiosMobil
     printf("-----------------------------------------\n");
 }
 
+/**
+ * @brief Mostra as informações de um meio de mobilidade.
+ * @param meioMobilidade O meio de mobilidade a ser mostrado.
+ */
+void mostrarMeioMobilidade(MeioMobilidade meioMobilidade, float distancia) {
+    printf("ID do meio: %d\n", meioMobilidade.id);
+    printf("Tipo: %s\n", meioMobilidade.tipo);
+    printf("Autonomia: %.2f\n", meioMobilidade.autonomia);
+    printf("Preco por km: %.2f\n", meioMobilidade.custo);
+    printf("ID Localizacao: %d\n", meioMobilidade.localizacao);
+    printf("Alugado: %d\n", meioMobilidade.alugado);
+    printf("Distância(m) entre cliente e meio: %.2f\n", distancia);
+    printf("\n");
+}
 
+/**
+@brief Mostra os meios de mobilidade mais próximos do local do cliente.
+@param listaMeiosMobilidade A lista de meios de mobilidade disponíveis.
+@param grafo O grafo de localizações da cidade.
+@param localCliente O local do cliente a partir do qual será feita a pesquisa.
+@param raio O raio de pesquisa em metros.
+*/
+void mostrarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente, float raio) {
+    printf("------ Meios de mobilidade disponíveis a menos de %.0f metros: ------ \n", raio);
+
+    MeiosMobilidadeListaPtr meioMobilidadeMaisProximo = pesquisarMeioMobilidadeMaisProximo(listaMeiosMobilidade, grafo, localCliente);
+    while (meioMobilidadeMaisProximo != NULL) {
+        float distancia = pesquisarEmLargura(grafo, localCliente, meioMobilidadeMaisProximo->meioMobilidade.localizacao);
+        if (distancia <= raio) {
+            mostrarMeioMobilidade(meioMobilidadeMaisProximo->meioMobilidade, distancia);
+        }
+        meioMobilidadeMaisProximo = pesquisarMeioMobilidadeMaisProximo(meioMobilidadeMaisProximo->proxmeiomobilidadelista, grafo, localCliente);
+    }
+}
