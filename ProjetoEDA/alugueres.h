@@ -21,6 +21,8 @@ typedef struct Aluguer {
     float preco;
     float distancia;
     time_t data;
+    int origem;
+    int destino;
 } Aluguer;
 
 //Estrutura para lista de aluguer

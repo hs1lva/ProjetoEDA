@@ -128,7 +128,7 @@ int main() {
 #pragma endregion
 
     //--------- TAREFAS A REALIZAR ------------
-    // Fazer funções para mostrar os meios de mobilidade mais proximos de um cliente escolhido num determinado raio
+    // Fazer funções para mostrar os meios de mobilidade mais proximos de um cliente escolhido num determinado raio (JÁ FEITO??)
     // Fazer funções etc para caixeiro viajante
 
     return 0;

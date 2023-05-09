@@ -18,7 +18,7 @@
 @param idmeiomobilidade O identificador do meio de mobilidade que está a ser alugado.
 @return Uma estrutura do tipo Aluguer preenchida com os dados fornecidos.
 */
-Aluguer novoAluguer(int nifcliente, int idmeiomobilidade) {
+Aluguer novoAluguer(int nifcliente, int idmeiomobilidade, int origem, int destino) {
     static int totAluguer = 0; //Atribuição de ID's ao aluguer, estático para o primeiro ser sempre 0 e ir encrementando
     Aluguer aluguer;
     aluguer.nifcliente = nifcliente;
@@ -28,13 +28,15 @@ Aluguer novoAluguer(int nifcliente, int idmeiomobilidade) {
     time_t now = time(NULL);
     aluguer.data = now; // data atual
     aluguer.id=totAluguer;
+    aluguer.origem = origem;
+    aluguer.destino = destino;
     totAluguer++;
     return aluguer;
 }
 
 
 /**
-@brief Insere um novo aluguer na lista de alugueres
+@brief Esta função verifica todas as validações necessárias para realizar o aluguer antes de o inserir na lista de alugueres
 @param listaClientes apontador para lista de clientes
 @param listaMeiosMobilidad apontador para lista de meios de mobilidade
 @param listaAlugueres apontador para a lista de alugueres
@@ -50,23 +52,27 @@ int adicionarAluguer(ClienteListaPtr listaClientes, MeiosMobilidadeListaPtr list
         perror("Meio de mobilidade nao disponivel para aluguer.\n");
         return 0;
     }
-    // Perguntar ao utilizador onde é que terminou a viagem para efetuar o custo da mesma
+    // Perguntar ao utilizador onde é que terminou a viagem para efetuar o custo da mesma (ID local)
     int idlocaltermino;
+    int idorigem = cliente->localizacao;
     printf("Onde estás a terminar o aluguer? (ID local cidade) ");
     idlocaltermino = verificarInt();
     // Verificar distancia entre a localização do cliente (origem) e o destino
-    float distanciatotal = pesquisarEmLargura(&grafo, cliente->localizacao, idlocaltermino);
+    float distanciaorigemdestino = pesquisarEmLargura(&grafo, cliente->localizacao, idlocaltermino);
     // Calcular o custo do aluguer
-    float custofinal = calcularCustoAluguer(meiomobilidade, meiomobilidade->custo, distanciatotal);
+    float custofinalviagem = calcularCustoAluguer(meiomobilidade, meiomobilidade->custo, distanciaorigemdestino);
     // Verificar se o cliente tem saldo suficiente para realizar o aluguer
-    if (!verificarSaldoCliente(cliente, custofinal)) {
+    if (!verificarSaldoCliente(cliente, custofinalviagem)) {
         perror("Cliente nao tem saldo suficiente para realizar este aluguer.\n");
         return 0;
     }
-    aluguer->preco = custofinal;
-    aluguer->distancia = distanciatotal;
+    // Armazenar dados no aluguer
+    aluguer->preco = custofinalviagem;
+    aluguer->distancia = distanciaorigemdestino;
+    aluguer->origem = idorigem;
+    aluguer->destino = idlocaltermino;
     // Inserir o custo do aluguer no saldo do cliente
-    cliente->saldo -= custofinal;
+    cliente->saldo -= custofinalviagem;
     // Adicionar o aluguer à lista de alug(ueres
     inserirAluguerLista(listaAlugueres, *aluguer);
     // Marcar o meio de mobilidade como indisponível
@@ -123,7 +129,7 @@ int verificarSaldoCliente(Cliente* cliente, float custofinal) {
 
 
 /**
-@brief Realiza o cálculo do custo do aluguer com base na distância percorrida e na duração do aluguer
+@brief Realiza o cálculo do custo do aluguer com base na distância percorrida e no custo por kilómetro do aluguer
 @param meiomobilidade apontador para o meio de mobilidade
 @param custoporkm custo do aluguer por km
 @param distancia distancia percorrida em metros
@@ -183,6 +189,7 @@ void listarAlugueres(AluguerListaPtr lista_alugueres) {
         printf("Preço do aluguer: %.2f\n", p->aluguer.preco);
         printf("Distancia percorrida (metros): %f\n", p->aluguer.distancia);
         printf("Data do aluguer: %s\n", timeToString(p->aluguer.data));
+        printf("O cliente %d viajou do ID local %d para o ID local %d\n", p->aluguer.nifcliente, p->aluguer.origem, p->aluguer.destino);
         printf("\n");
         p = p->proxaluguer;
     }
