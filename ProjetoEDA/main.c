@@ -103,11 +103,11 @@ int main() {
 #pragma region Testar funções alugueres
 
     // Adicionar alguns alugueres manualmente
-    Aluguer aluguer1 = novoAluguer(232, 1); // idCliente=232, idMeioMobilidade=1
-    adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1); // Testar com a cidade termino ID 24
+    //Aluguer aluguer1 = novoAluguer(232, 1); // idCliente=232, idMeioMobilidade=1
+    //adicionarAluguer(listaClientes, listaMeios, &listaAlugueres, &aluguer1); // Testar com a cidade termino ID 24 (tem ligação no grafo à cidade do cliente)
 
     //Fazer backup do aluguer criado acima
-    guardarBackupAlugueres(aluguer1);
+    //guardarBackupAlugueres(aluguer1);
 
     // Listar alugueres
     listarAlugueres(listaAlugueres);
@@ -120,7 +120,9 @@ int main() {
 
 #pragma endregion
 
-    // Atualizar os alugueres com o preço com os caminhos dos grafos
+    //--------- TAREFAS A REALIZAR ------------
+    // Fazer funções para mostrar os meios de mobilidade mais proximos de um cliente escolhido num determinado raio
+    // Fazer funções etc para caixeiro viajante
 
     return 0;
 }
