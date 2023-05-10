@@ -76,7 +76,10 @@ void listarMeiosMobilidadeOrdenadosAutonomia(MeiosMobilidadeListaPtr listaMeiosM
 //Lista apenas os meios de mobilidade num determinado Geocodigo
 void listarMeiosMobilidadePorLocalizacao(MeiosMobilidadeListaPtr listaMeiosMobilidade);
 
+//Lista apenas os meios de mobilidade com bateria abaixo dos 50%
+void listarMeiosMobilidadeComCargaBateriaAbaixo50(MeiosMobilidadeListaPtr listaMeiosMobilidade);
+
 // Função para pesquisar meio de mobilidade mais proximo com grafos (usa estrutura de grafos.h)
 MeiosMobilidadeListaPtr pesquisarMeioMobilidadeMaisProximo(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente);
-void mostrarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente, float raio);
+void listarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente, float raio);
 void mostrarMeioMobilidade(MeioMobilidade meioMobilidade, float distancia);

@@ -19,7 +19,7 @@ void listarMeiosMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade) {
 	MeiosMobilidadeListaPtr atual = listaMeiosMobilidade;
 	printf("------ Lista de Meios de Mobilidade ------\n");
 	while (atual != NULL) {
-		printf("ID: %d\nTipo: %s\nAutonomia: %.2f\nCusto: %.2f\nLocalização: %d\nGeocódigo: %s\nAlugado: %d\n\n",
+		printf("ID: %d\nTipo: %s\nAutonomia(%): %.2f\nCustop/km(€): %.2f\nLocalização(ID local): %d\nGeocódigo: %s\nAlugado: %d\n\n",
 			atual->meioMobilidade.id, atual->meioMobilidade.tipo, atual->meioMobilidade.autonomia,
 			atual->meioMobilidade.custo, atual->meioMobilidade.localizacao, atual->meioMobilidade.geocodigo, atual->meioMobilidade.alugado);
 		atual = atual->proxmeiomobilidadelista;
@@ -27,6 +27,24 @@ void listarMeiosMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade) {
 	printf("------------------------------------------\n");
 }
 
+/**
+@brief Lista todos os meios de mobilidade com carga de bateria abaixo de 50%
+@param listaMeiosMobilidade apontador para a lista de meios de mobilidade
+@return void
+*/
+void listarMeiosMobilidadeComCargaBateriaAbaixo50(MeiosMobilidadeListaPtr listaMeiosMobilidade) {
+    MeiosMobilidadeListaPtr atual = listaMeiosMobilidade;
+    printf("------ Lista de Meios de Mobilidade com Carga de Bateria Abaixo de 50%% ------\n");
+    while (atual != NULL) {
+        if (atual->meioMobilidade.autonomia < 50) {
+            printf("ID: %d\nTipo: %s\nAutonomia(%): %.2f\nCustop/km(€): %.2f\nLocalização(ID local): %d\nGeocódigo: %s\nAlugado: %d\n\n",
+                atual->meioMobilidade.id, atual->meioMobilidade.tipo, atual->meioMobilidade.autonomia,
+                atual->meioMobilidade.custo, atual->meioMobilidade.localizacao, atual->meioMobilidade.geocodigo, atual->meioMobilidade.alugado);
+        }
+        atual = atual->proxmeiomobilidadelista;
+    }
+    printf("-----------------------------------------------------------------------------\n");
+}
 
 /**
 @brief Lista todos os meios de mobilidade em memória ordenados pela autonomia
@@ -103,13 +121,13 @@ void mostrarMeioMobilidade(MeioMobilidade meioMobilidade, float distancia) {
 }
 
 /**
-@brief Mostra os meios de mobilidade mais próximos do local do cliente.
+@brief Lista os meios de mobilidade mais próximos do local do cliente.
 @param listaMeiosMobilidade A lista de meios de mobilidade disponíveis.
 @param grafo O grafo de localizações da cidade.
 @param localCliente O local do cliente a partir do qual será feita a pesquisa.
 @param raio O raio de pesquisa em metros.
 */
-void mostrarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente, float raio) {
+void listarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice* grafo, int localCliente, float raio) {
     printf("------ Meios de mobilidade disponíveis a menos de %.0f metros: ------ \n", raio);
 
     MeiosMobilidadeListaPtr meioMobilidadeMaisProximo = pesquisarMeioMobilidadeMaisProximo(listaMeiosMobilidade, grafo, localCliente);

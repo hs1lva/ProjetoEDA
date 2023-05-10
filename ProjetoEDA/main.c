@@ -122,8 +122,11 @@ int main() {
 
 #pragma region Testar funções de localizações com grafos
 
-    // Imprimir meios de mobilidade mais proximos de um cliente num determinado raio (em metros)
-    mostrarMeiosMobilidadeProximosCliente(listaMeios, grafo, 3, 50000); // Cliente no ID LOCAL 2 e raio de 50000m
+    // Listar meios de mobilidade mais proximos de um cliente num determinado raio (em metros)
+    listarMeiosMobilidadeProximosCliente(listaMeios, grafo, 3, 250); // Cliente no ID LOCAL 3 e raio de 250m
+
+    // Listar meios abaixo dos 50%
+    listarMeiosMobilidadeComCargaBateriaAbaixo50(listaMeios);
 
 #pragma endregion
 
