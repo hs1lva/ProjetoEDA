@@ -12,17 +12,17 @@
 
 /**
 @brief Cria um novo vértice para o grafo.
-@param idVertice Identificador numérico do vértice.
+@param idvertice Identificador numérico do vértice.
 @param cidade Nome da cidade correspondente ao vértice.
 @return Apontador para o novo vértice criado, ou NULL se não for possível alocar memória.
 */
-Vertice* criarVertice(int idVertice, char cidade[]) {
+Vertice* criarVertice(int idvertice, char cidade[]) {
 	Vertice* vertice = (Vertice*)calloc(1, sizeof(Vertice));
 	if (vertice == NULL) {
 		return NULL;
 	}
 
-    vertice->idVertice = idVertice;
+    vertice->idVertice = idvertice;
 	strcpy(vertice->cidade, cidade);
     vertice->proximo = NULL;
 
@@ -58,18 +58,18 @@ Vertice* inserirVertice(Vertice* grafo, Vertice* novo) {
 
 /*
 @brief Cria um novo nó adjacente.
-@param idVertice ID do vértice adjacente.
+@param idvertice ID do vértice adjacente.
 @param distancia Distância entre o vértice atual e o vértice adjacente.
 @return Apontador para o novo nó adjacente criado.
 */
-Adjacente* criarAdjacente(int idVertice, float distancia) {
+Adjacente* criarAdjacente(int idvertice, float distancia) {
     Adjacente* adjacente = (Adjacente*)malloc(sizeof(Adjacente));
 
     if (adjacente == NULL) {
         return NULL;
     }
 
-    adjacente->idVertice = idVertice;
+    adjacente->idVertice = idvertice;
     adjacente->distancia = distancia;
     adjacente->proximo = NULL;
 
@@ -80,10 +80,10 @@ Adjacente* criarAdjacente(int idVertice, float distancia) {
 @brief Insere um vértice adjacente numa lista de adjacentes de um vértice no grafo.
 @param grafo Apontador para o grafo.
 @param origem Identificador do vértice de origem.
-@param novoAdjacente Apontador para o vértice adjacente a ser inserido.
+@param novoadjacente Apontador para o vértice adjacente a ser inserido.
 @return Apontador para o grafo atualizado com o novo vértice adjacente inserido na lista de adjacentes da origem, ou NULL se a origem não for encontrada no grafo.
 */
-Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoAdjacente) {
+Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoadjacente) {
 
     Vertice* aux = grafo;
     while (aux && aux->idVertice != origem) { // Loop para encontrar origem no grafo
@@ -94,8 +94,8 @@ Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoAdjacente) 
         return NULL; // Origem não encontrada
     }
 
-    novoAdjacente->proximo = aux->adjacentes; // Inserir o novo vértice adjacente na lista de adjacentes da origem
-    aux->adjacentes = novoAdjacente;
+    novoadjacente->proximo = aux->adjacentes; // Inserir o novo vértice adjacente na lista de adjacentes da origem
+    aux->adjacentes = novoadjacente;
 
     aux->numAdjacentes++; // Contador de vértices adjacentes da origem
 
@@ -182,15 +182,15 @@ int filaVazia(Fila* fila) {
 /**
 @brief Pesquisa um vértice no grafo pelo ID.
 @param grafo Apontador para o primeiro vértice do grafo.
-@param idVertice ID do vértice a ser pesquisado.
+@param idvertice ID do vértice a ser pesquisado.
 @return Apontador para o vértice encontrado, ou NULL se não encontrado.
 */
-Vertice* pesquisarVerticePorID(Vertice* grafo, int idVertice) {
+Vertice* pesquisarVerticePorID(Vertice* grafo, int idvertice) {
     
     Vertice* aux = grafo;
 
     while (aux) {
-        if (aux->idVertice == idVertice) {
+        if (aux->idVertice == idvertice) {
             return aux;
         }
         aux = aux->proximo;
@@ -321,3 +321,22 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) {
     float distancia = verticeDestino->distancia;
     return distancia;
 }
+
+/**
+@brief Calcula a distância entre dois vértices no grafo
+@param origem apontador para o vértice de origem
+@param destino apontador para o vértice de destino
+@return float distância entre os vértices
+*/
+float calcularDistanciaEntreVertices(Vertice* origem, Vertice* destino) {
+    Adjacente* adjacente = origem->adjacentes;
+    while (adjacente != NULL) {
+        if (adjacente->idVertice == destino->idVertice) {
+            return adjacente->distancia;
+        }
+        adjacente = adjacente->proximo;
+    }
+    // caso os vértices não estejam diretamente ligados
+    return INFINITY;
+}
+

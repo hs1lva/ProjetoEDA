@@ -46,13 +46,13 @@ typedef struct NodeFila {
 
 // Funções para ler ficheiros .csv e ficheiros .bin
 int carregarFicheiroGrafo(Vertice** grafo, char* nomeficheiro);
-int lerGrafoCSV(Vertice** grafo, char* nomeFicheiro);
-int lerVerticesBin(Vertice** grafo);
-int lerAdjacentesBin(Vertice* grafo);
+int lerGrafoCSV(Vertice** grafo, FILE* nomeficheiro);
+int lerVerticesBin(Vertice** grafo, char* nomeficheiro);
+int lerAdjacentesBin(Vertice* grafo, char* nomeficheiro);
 
 // Funções para guardar ficheiros .bin
-int guardarBackupVertices(Vertice* grafo);
-int guardarBackupAdjacentes(Vertice* grafo);
+int guardarBackupVertices(Vertice* grafo, char* nomeficheiro);
+int guardarBackupAdjacentes(Vertice* grafo, char* nomeficheiro);
 
 // Funções para criar
 Vertice* criarVertice(int idVertice, char cidade[]);
@@ -77,3 +77,6 @@ int limparCamposGrafo(Vertice* grafo);
 Vertice* pesquisarVerticePorID(Vertice* grafo, int idVertice);
 Vertice* pesquisarVerticePorNomeCidade(Vertice* grafo, const char* cidade);
 int pesquisarEmLargura(Vertice* grafo, int origem, int destino);
+
+// Funções para fase 3)
+float calcularDistanciaEntreVertices(Vertice* origem, Vertice* destino);
