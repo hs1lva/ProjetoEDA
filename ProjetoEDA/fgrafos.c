@@ -7,6 +7,7 @@
  *********************************************************************/
 
 #include "grafos.h"
+#include "meios.h"
 
 #pragma warning(disable:4996) //não chatear com _s 
 
@@ -266,7 +267,7 @@ int limparCamposGrafo(Vertice* grafo) {
 @param destino Identificador do vértice de destino.
 @return distancia Apontador para distancia mais curta entre a origem e o destino.
 */
-int pesquisarEmLargura(Vertice* grafo, int origem, int destino) {
+int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não ponderado, todas as arestas têm o mesmo peso...
 
     if (grafo == NULL) { // Grafo vazio então NULL
         return NULL;
@@ -339,4 +340,3 @@ float calcularDistanciaEntreVertices(Vertice* origem, Vertice* destino) {
     // caso os vértices não estejam diretamente ligados
     return INFINITY;
 }
-

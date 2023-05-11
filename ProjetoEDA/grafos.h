@@ -21,6 +21,11 @@ typedef struct Adjacente {
 	struct Adjacente* proximo;
 }Adjacente;
 
+typedef struct AdjacenteFile {
+	int idVertice;
+	float distancia;
+}AdjacenteFile;
+
 //Grafo
 typedef struct Vertice {
 	int idVertice;
@@ -32,6 +37,11 @@ typedef struct Vertice {
 	float distancia;
 	int numAdjacentes;
 }Vertice;
+
+typedef struct VerticeFile {
+	int idVertice;
+	char cidade[TAM_CIDADE];
+}VerticeFile;
 
 // Fila para ver o melhor caminho
 typedef struct Fila {
@@ -55,8 +65,8 @@ int guardarBackupVertices(Vertice* grafo, char* nomeficheiro);
 int guardarBackupAdjacentes(Vertice* grafo, char* nomeficheiro);
 
 // Funções para criar
-Vertice* criarVertice(int idVertice, char cidade[]);
-Adjacente* criarAdjacente(int idVertice, float distancia);
+Vertice* criarVertice(int idvertice, char cidade[]);
+Adjacente* criarAdjacente(int idvertice, float distancia);
 Fila* criarFila();
 
 // Funções para inserir
@@ -74,7 +84,7 @@ int filaVazia(Fila* fila);
 int limparCamposGrafo(Vertice* grafo);
 
 // Funções de pesquisa
-Vertice* pesquisarVerticePorID(Vertice* grafo, int idVertice);
+Vertice* pesquisarVerticePorID(Vertice* grafo, int idvertice);
 Vertice* pesquisarVerticePorNomeCidade(Vertice* grafo, const char* cidade);
 int pesquisarEmLargura(Vertice* grafo, int origem, int destino);
 

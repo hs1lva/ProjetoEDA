@@ -132,7 +132,9 @@ int main() {
 
     //--------- TAREFAS A REALIZAR ------------
     // Fazer funções para mostrar os meios de mobilidade mais proximos de um cliente escolhido num determinado raio (JÁ FEITO??)
+    
     // Fazer funções etc para caixeiro viajante
+    // Criei struct para camiao e função para criar camiao, sera preciso?
 
     return 0;
 }

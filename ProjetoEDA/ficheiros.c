@@ -450,10 +450,11 @@ int guardarBackupVertices(Vertice* grafo, char* nomeficheiro) {
         exit(1);
     }
 
-    Vertice* aux = grafo;
+    Vertice* aux = grafo; // Começar a trabalhar no inicio da lista
     while (aux != NULL) {
-        fwrite(&aux->idVertice, sizeof(int), 1, ficheiro);
-        fwrite(aux->cidade, sizeof(char), TAM_CIDADE, ficheiro);
+        VerticeFile auxfile = { aux->idVertice }; //auxfile com struct VerticeFile para não ter lixo
+        strncpy(auxfile.cidade, aux->cidade, TAM_CIDADE);
+        fwrite(&auxfile, sizeof(VerticeFile), 1, ficheiro);
         aux = aux->proximo;
     }
 
@@ -478,9 +479,9 @@ int guardarBackupAdjacentes(Vertice* grafo, char* nomeficheiro) {
     while (aux != NULL) {
         Adjacente* adj = aux->adjacentes;
         while (adj != NULL) {
+            AdjacenteFile adjFile = { adj->idVertice, adj->distancia };
             fwrite(&aux->idVertice, sizeof(int), 1, ficheiro);
-            fwrite(&adj->idVertice, sizeof(int), 1, ficheiro);
-            fwrite(&adj->distancia, sizeof(float), 1, ficheiro);
+            fwrite(&adjFile, sizeof(AdjacenteFile), 1, ficheiro);
             adj = adj->proximo;
         }
         aux = aux->proximo;
