@@ -1,0 +1,15 @@
+var searchData=
+[
+  ['pesquisarcliente_0',['pesquisarCliente',['../clientes_8h.html#a7ee7e12bf3961fce74c6daa2b72053a3',1,'pesquisarCliente(ClienteListaPtr listaClientes, int nif):&#160;fclientes.c'],['../fclientes_8c.html#a7ee7e12bf3961fce74c6daa2b72053a3',1,'pesquisarCliente(ClienteListaPtr listaClientes, int nif):&#160;fclientes.c']]],
+  ['pesquisaremlargura_1',['pesquisarEmLargura',['../fgrafos_8c.html#a8d8e6918ef0ac66a284f66222ce5379d',1,'pesquisarEmLargura(Vertice *grafo, int origem, int destino):&#160;fgrafos.c'],['../grafos_8h.html#a8d8e6918ef0ac66a284f66222ce5379d',1,'pesquisarEmLargura(Vertice *grafo, int origem, int destino):&#160;fgrafos.c']]],
+  ['pesquisarmeiomobilidade_2',['pesquisarMeioMobilidade',['../fmeios_8c.html#ae7296281eccdc3aaf83c80dfe533adbc',1,'pesquisarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id):&#160;fmeios.c'],['../meios_8h.html#ae7296281eccdc3aaf83c80dfe533adbc',1,'pesquisarMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id):&#160;fmeios.c']]],
+  ['pesquisarmeiomobilidademaisproximo_3',['pesquisarMeioMobilidadeMaisProximo',['../fmeios_8c.html#af745104158901af06a83745687426387',1,'pesquisarMeioMobilidadeMaisProximo(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice *grafo, int localCliente):&#160;fmeios.c'],['../meios_8h.html#af745104158901af06a83745687426387',1,'pesquisarMeioMobilidadeMaisProximo(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice *grafo, int localCliente):&#160;fmeios.c']]],
+  ['pesquisarverticeporid_4',['pesquisarVerticePorID',['../fgrafos_8c.html#a68056d856f08c721b291e3019e740ad6',1,'pesquisarVerticePorID(Vertice *grafo, int idvertice):&#160;fgrafos.c'],['../grafos_8h.html#a68056d856f08c721b291e3019e740ad6',1,'pesquisarVerticePorID(Vertice *grafo, int idvertice):&#160;fgrafos.c']]],
+  ['pesquisarverticepornomecidade_5',['pesquisarVerticePorNomeCidade',['../fgrafos_8c.html#a21d6dd9df055a9cf831047b0c94d6cbe',1,'pesquisarVerticePorNomeCidade(Vertice *grafo, const char *cidade):&#160;fgrafos.c'],['../grafos_8h.html#a21d6dd9df055a9cf831047b0c94d6cbe',1,'pesquisarVerticePorNomeCidade(Vertice *grafo, const char *cidade):&#160;fgrafos.c']]],
+  ['preco_6',['preco',['../struct_aluguer.html#a244ea2911ca08a98d609442bd751c81c',1,'Aluguer']]],
+  ['predecessor_7',['predecessor',['../struct_vertice.html#a9b32aa16d6863b77d42f3e3316b7d629',1,'Vertice']]],
+  ['proxaluguer_8',['proxaluguer',['../struct_aluguer_lista.html#a5872027592fc5d5e8abeeec29185e0e8',1,'AluguerLista']]],
+  ['proxclientelista_9',['proxclientelista',['../struct_cliente_lista.html#ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf',1,'ClienteLista']]],
+  ['proximo_10',['proximo',['../struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7',1,'Adjacente::proximo()'],['../struct_vertice.html#a40b6b8cc9000b134f9eb0609446a2ed5',1,'Vertice::proximo()'],['../struct_fila.html#a0e376adc8d356b332f48b39f71001f48',1,'Fila::proximo()'],['../struct_node_fila.html#ad852023416eda844e282a053ff5e2369',1,'NodeFila::proximo()']]],
+  ['proxmeiomobilidadelista_11',['proxmeiomobilidadelista',['../struct_meios_mobilidade_lista.html#a40003758ae22a8f7c668c4472598a405',1,'MeiosMobilidadeLista']]]
+];

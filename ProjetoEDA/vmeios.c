@@ -139,3 +139,52 @@ void listarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobi
         meioMobilidadeMaisProximo = pesquisarMeioMobilidadeMaisProximo(meioMobilidadeMaisProximo->proxmeiomobilidadelista, grafo, localCliente);
     }
 }
+
+
+/*
+---------------------------------------------------------------------
+Esta função não concluí porque teria que acrescentar campos novos à struct do meio de mobilidade e também criar uma struct para o camião etc com funções de criar camião etc..
+---------------------------------------------------------------------
+
+void recolherMobilidadeEletrica(Vertice* grafo, MeiosMobilidadeListaPtr listaMeiosMobilidade) {
+    int todosRecolhidos = 0;
+    int numRecolhidos = 0;
+    int posicaoAtualcamiao = 1; // posicao inicial do camiao
+
+    while (!todosRecolhidos) { // Continuar até todos os meios de mobilidade elétrica com carga da bateria abaixo de 50% serem recolhidos
+        todosRecolhidos = 1;
+
+        for (Vertice* v = grafo; v != NULL; v = v->proximo) { // Loop por todos os vértices do grafo
+            if (v->tipo == MOBILIDADE_ELETRICA && v->cargaBateria < 50 && !v->recolhido) { // Verificar se o vértice é um meio de mobilidade elétrica com carga da bateria abaixo de 50% e ainda não foi recolhido
+                todosRecolhidos = 0; // Se houver pelo menos um meio de mobilidade elétrica para recolher, continuar a procurar
+
+                // Encontrar caminho mais curto entre o camião e o vértice atual
+                float distancia = pesquisarEmLargura(grafo, posicaoAtualcamiao, v->idVertice);
+
+                // Verificar se o camião tem capacidade para transportar o meio de mobilidade elétrica atual
+                if (distancia > camiao->autonomia) {
+                    printf("O camiao nao consegue chegar a este meio de mobilidade eletrica.\n");
+                    continue; // Se não tiver, procurar outro vértice
+                }
+
+                // Recolher meio de mobilidade elétrica atual
+                printf("Recolher meio de mobilidade eletrica com ID %d.\n", v->idVertice);
+                posicaoAtualcamiao = v->idVertice; // Atualizar posição do camião
+                camiao->autonomia -= distancia; // Atualizar autonomia do camião
+                numRecolhidos++;
+
+                // Marcar o meio de mobilidade elétrica como recolhido
+                MeiosMobilidadeListaPtr atual = listaMeiosMobilidade;
+                while (atual != NULL) {
+                    if (atual->meioMobilidade.id == v->idVertice) {
+                        atual->meioMobilidade.recolhido = 1;
+                        break;
+                    }
+                    atual = atual->proxmeiomobilidadelista;
+                }
+            }
+        }
+    }
+
+    printf("Todos os meios de mobilidade eletrica com carga da bateria abaixo de 50%% foram recolhidos. Foram recolhidos %d meios de mobilidade eletrica.\n", numRecolhidos);
+}*/

@@ -267,7 +267,7 @@ int limparCamposGrafo(Vertice* grafo) {
 @param destino Identificador do vértice de destino.
 @return distancia Apontador para distancia mais curta entre a origem e o destino.
 */
-int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não ponderado, todas as arestas têm o mesmo peso...
+int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não ponderado.. bruteforce, ve qual caminho mais perto, encontra, posiciona-se nele e faz nova pesquisa etc etc...
 
     if (grafo == NULL) { // Grafo vazio então NULL
         return NULL;

@@ -34,7 +34,7 @@ typedef struct Vertice {
 	struct Adjacente* adjacentes;
 	int visitado;
 	int predecessor;
-	float distancia;
+	float distancia; // Armazenar a distância do vértice em relação à origem. Na função pesquisarEmLargura serve para armazenar a distância percorrida até chegar no vértice atual. 
 	int numAdjacentes;
 }Vertice;
 

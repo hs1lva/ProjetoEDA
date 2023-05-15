@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['guardarbackupadjacentes_0',['guardarBackupAdjacentes',['../ficheiros_8c.html#aad3667639f9eec323d7800c5260d0ed6',1,'guardarBackupAdjacentes(Vertice *grafo, char *nomeficheiro):&#160;ficheiros.c'],['../grafos_8h.html#aad3667639f9eec323d7800c5260d0ed6',1,'guardarBackupAdjacentes(Vertice *grafo, char *nomeficheiro):&#160;ficheiros.c']]],
+  ['guardarbackupalugueres_1',['guardarBackupAlugueres',['../alugueres_8h.html#a4299673c5457c885d7159eb5d6365757',1,'guardarBackupAlugueres(Aluguer aluguer):&#160;ficheiros.c'],['../ficheiros_8c.html#a4299673c5457c885d7159eb5d6365757',1,'guardarBackupAlugueres(Aluguer aluguer):&#160;ficheiros.c']]],
+  ['guardarbackupclientes_2',['guardarBackupClientes',['../clientes_8h.html#a744d6fbef9efb1267f481c17798b5e05',1,'guardarBackupClientes(ClienteListaPtr listaClientes):&#160;ficheiros.c'],['../ficheiros_8c.html#a744d6fbef9efb1267f481c17798b5e05',1,'guardarBackupClientes(ClienteListaPtr listaClientes):&#160;ficheiros.c']]],
+  ['guardarbackupmeiosmobilidade_3',['guardarBackupMeiosMobilidade',['../ficheiros_8c.html#a8c21001ee7a98749c2f94b9e003ab916',1,'guardarBackupMeiosMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade):&#160;ficheiros.c'],['../meios_8h.html#a8c21001ee7a98749c2f94b9e003ab916',1,'guardarBackupMeiosMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade):&#160;ficheiros.c']]],
+  ['guardarbackupvertices_4',['guardarBackupVertices',['../ficheiros_8c.html#a246be5191c1bd045cbbd510a1d66d314',1,'guardarBackupVertices(Vertice *grafo, char *nomeficheiro):&#160;ficheiros.c'],['../grafos_8h.html#a246be5191c1bd045cbbd510a1d66d314',1,'guardarBackupVertices(Vertice *grafo, char *nomeficheiro):&#160;ficheiros.c']]]
+];
