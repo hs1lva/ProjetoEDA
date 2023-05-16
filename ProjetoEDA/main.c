@@ -11,6 +11,7 @@
 #include "meios.h"
 #include "alugueres.h"
 #include "grafos.h"
+#include "camiao.h"
 
 #pragma warning(disable:4996) //não chatear com _s 
 
@@ -128,13 +129,16 @@ int main() {
     // Listar meios abaixo dos 50%
     listarMeiosMobilidadeComCargaBateriaAbaixo50(listaMeios);
 
-#pragma endregion
+    // Criar camião de exemplo
+    Camiao* camiao = criarCamiao();
 
-    //--------- TAREFAS A REALIZAR ------------
-    // Fazer funções para mostrar os meios de mobilidade mais proximos de um cliente escolhido num determinado raio (JÁ FEITO??)
-    
-    // Fazer funções etc para caixeiro viajante
-    // Criei struct para camiao e função para criar camiao, sera preciso?
+    // Alterar localização do "Carro" para a localização 6
+    alterarLocalizacaoMeioMobilidade(listaMeios, 1, 6);
+
+    // Chamar função para recolher meios de mobilidade elétrica com carga abaixo de 50%
+    recolherMobilidadeEletrica(grafo, listaMeios, camiao, "Carro");
+
+#pragma endregion
 
     return 0;
 }

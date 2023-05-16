@@ -66,6 +66,9 @@
     <ClCompile Include="vgrafos.c">
       <Filter>View</Filter>
     </ClCompile>
+    <ClCompile Include="fcamiao.c">
+      <Filter>Controller</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clientes.h">
@@ -81,6 +84,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="grafos.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="camiao.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

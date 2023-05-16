@@ -273,7 +273,7 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não p
         return NULL;
     }
 
-    limparCamposGrafo(grafo);
+    limparCamposGrafo(grafo); // limpar vertices visitados, predecessor etc..
 
     Vertice* verticeOrigem = pesquisarVerticePorID(grafo, origem); // Pesquisar vértices de origem
     Vertice* verticeDestino = pesquisarVerticePorID(grafo, destino); // Pesquisar vértices de destino

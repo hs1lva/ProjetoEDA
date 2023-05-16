@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="dados.c" />
     <ClCompile Include="falugueres.c" />
+    <ClCompile Include="fcamiao.c" />
     <ClCompile Include="fclientes.c" />
     <ClCompile Include="fgestores.c" />
     <ClCompile Include="fgrafos.c" />
@@ -144,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="alugueres.h" />
+    <ClInclude Include="camiao.h" />
     <ClInclude Include="clientes.h" />
     <ClInclude Include="gestores.h" />
     <ClInclude Include="grafos.h" />
