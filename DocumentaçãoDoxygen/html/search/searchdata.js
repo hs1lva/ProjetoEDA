@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "acdefgilmnoprstv",
   1: "acfmnv",
   2: "acdfgmv",
-  3: "acefgilmnprtv",
+  3: "acdefgilmnprtv",
   4: "acdegilmnopstv",
   5: "acfmnv",
   6: "gmt"

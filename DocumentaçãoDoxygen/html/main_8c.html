@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProjetoEDA: main.c File Reference</title>
+<title>ProjetoEDA: C:/Users/hugo2/OneDrive - Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,6 +67,10 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f1dee9464ba60067d2dd872a7f3d3ae9.html">ProjetoEDA</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -82,6 +86,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="meios_8h_source.html">meios.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="alugueres_8h_source.html">alugueres.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="grafos_8h_source.html">grafos.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="camiao_8h_source.html">camiao.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -107,142 +112,149 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   17</span>           {</div>
-<div class="line"><span class="lineno">   18</span>    </div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_struct" href="struct_cliente_lista.html">ClienteListaPtr</a> listaClientes = <a class="code hl_function" href="clientes_8h.html#a6d6979e7241c02e0c59d74ece5247ec4">lerClientesBin</a>(<span class="stringliteral">&quot;backup_clientes.bin&quot;</span>);</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_struct" href="struct_meios_mobilidade_lista.html">MeiosMobilidadeListaPtr</a> listaMeios = <a class="code hl_function" href="ficheiros_8c.html#a56d61213c5c720f67cdcc32a37a0266b">lerMeiosMobilidadeBin</a>(<span class="stringliteral">&quot;backup_meiosmobilidade.bin&quot;</span>);</div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_struct" href="struct_aluguer_lista.html">AluguerListaPtr</a> listaAlugueres = <a class="code hl_function" href="alugueres_8h.html#af24c0708dc665d42ce0febd45683f50d">lerAlugueresBin</a>(<span class="stringliteral">&quot;backup_alugueres.bin&quot;</span>);</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* grafo = NULL;</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">int</span> totalVertices = <a class="code hl_function" href="ficheiros_8c.html#a39944aca12c8dd6d49bb31d38155bc84">carregarFicheiroGrafo</a>(&amp;grafo, <span class="stringliteral">&quot;grafos.csv&quot;</span>);</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span><span class="preprocessor">#pragma region Testar funções clientes</span></div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="comment">// Adiciona alguns clientes</span></div>
-<div class="line"><span class="lineno">   28</span>    <span class="comment">//Cliente* cliente1 = novoCliente(89, &quot;João Silva&quot;, &quot;Rua das Flores, 123&quot;, 1000.0, 4, &quot;DASDA&quot;);</span></div>
-<div class="line"><span class="lineno">   29</span>    <span class="comment">//listaClientes = adicionarCliente(listaClientes, cliente1);</span></div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    <span class="comment">//Cliente* cliente2 = novoCliente(987654321, &quot;Maria Santos&quot;, &quot;Avenida Central, 456&quot;, 2000.0, 5, &quot;DSDADDD&quot;);</span></div>
-<div class="line"><span class="lineno">   32</span>    <span class="comment">//listaClientes = adicionarCliente(listaClientes, cliente2);</span></div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    <span class="comment">//Remove um cliente</span></div>
-<div class="line"><span class="lineno">   35</span>    <span class="comment">//listaClientes = removerCliente(listaClientes, 123456789);</span></div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    <span class="comment">//Altera um cliente</span></div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment">//alterarCliente(listaClientes, 987654321, &quot;Maria Oliveira&quot;, &quot;Avenida Principal, 789&quot;, 3000.0, 5, &quot;DSADSSS&quot;);</span></div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>    <span class="comment">//Escreve os dados atualizados dos clientes de volta para o arquivo CSV</span></div>
-<div class="line"><span class="lineno">   41</span>    <span class="comment">//escreverClientesCSV(listaClientes, &quot;clientes.csv&quot;);</span></div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    <span class="comment">//Pesquisar um cliente</span></div>
-<div class="line"><span class="lineno">   44</span>    <span class="comment">//pesquisarCliente(listaClientes, 232);</span></div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    <span class="comment">//Apresentar lista de clientes em memória</span></div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="clientes_8h.html#a1e1a711d74a3b6a4a15f008707f34277">listarClientes</a>(listaClientes);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <span class="comment">//Libertar memória da lista de clientes</span></div>
-<div class="line"><span class="lineno">   50</span>    <span class="comment">//libertarClientesLista(listaClientes);</span></div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    <a class="code hl_function" href="clientes_8h.html#a744d6fbef9efb1267f481c17798b5e05">guardarBackupClientes</a>(listaClientes);</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span><span class="preprocessor">#pragma endregion</span></div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span><span class="preprocessor">#pragma region Testar funções meios de mobilidade</span></div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <span class="comment">// Adiciona alguns meios de mobilidade</span></div>
-<div class="line"><span class="lineno">   59</span>    <span class="comment">//Cliente* meio1 = novoMeioMobilidade(100,&quot;Bicicleta&quot;,50.0,3.4,&quot;6&quot;,&quot;ASDAH23&quot;, 0); //Inserir ID 100</span></div>
-<div class="line"><span class="lineno">   60</span>    <span class="comment">//listaMeios = adicionarMeioMobilidade(listaMeios, meio1);</span></div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    <span class="comment">//Cliente* meio2 = novoMeioMobilidade(101,&quot;Lambreta&quot;,32.0,0.4,&quot;7&quot;,&quot;ASDA3232D3&quot;, 0); //Inserir ID 101</span></div>
-<div class="line"><span class="lineno">   63</span>    <span class="comment">//listaMeios = adicionarMeioMobilidade(listaMeios, meio2);</span></div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    <span class="comment">// Remove um meio de mobilidade</span></div>
-<div class="line"><span class="lineno">   66</span>    <span class="comment">//listaMeios = removerMeioMobilidade(listaMeios, 1); //ID 1 a remover</span></div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    <span class="comment">// Altera um meio de mobilidade</span></div>
-<div class="line"><span class="lineno">   69</span>    <span class="comment">//alterarMeioMobilidade(listaMeios, 1, &quot;Triciclo&quot;, 20.0, 3.1, &quot;3&quot;, &quot;UEDED2&quot;, 0); //Alterar ID 1</span></div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    <span class="comment">// Escreve os dados atualizados dos meios de mobilidade de volta para o arquivo CSV</span></div>
-<div class="line"><span class="lineno">   72</span>    <span class="comment">//escreverMeios(listaMeios, &quot;meiosmobilidade.csv&quot;);</span></div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment">//Guardar ficheiro bin nos meios de mobilidade para backup dados</span></div>
-<div class="line"><span class="lineno">   75</span>    <span class="comment">//guardarBackupMeiosMobilidade(listaMeios);</span></div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <span class="comment">//Apresentar lista de meios de mobilidade em memória</span></div>
-<div class="line"><span class="lineno">   78</span>    <a class="code hl_function" href="meios_8h.html#afcc614f507c4ebaa365b473006da8e47">listarMeiosMobilidade</a>(listaMeios);</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    <span class="comment">//Apresentar lista de meios de mobilidade em memória ordenados pela autonomia</span></div>
-<div class="line"><span class="lineno">   81</span>    <span class="comment">//listarMeiosMobilidadeOrdenadosAutonomia(listaMeios);</span></div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    <span class="comment">//Apresentar lista de meios de mobilidade apenas numa determinada localização com geocodigo</span></div>
-<div class="line"><span class="lineno">   84</span>    <span class="comment">//listarMeiosMobilidadePorLocalizacao(listaMeios);</span></div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    <span class="comment">//Libertar memória da lista de meios de mobilidade</span></div>
-<div class="line"><span class="lineno">   87</span>    <span class="comment">//libertarMeiosMobilidadeLista(listaMeios);</span></div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span><span class="preprocessor">#pragma endregion</span></div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span><span class="preprocessor">#pragma region Testar funções grafos (localizações)</span></div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    <span class="comment">//guardarBackupVertices(grafo, &quot;backup_vertices.bin&quot;);</span></div>
-<div class="line"><span class="lineno">   94</span>    <span class="comment">//guardarBackupAdjacentes(grafo, &quot;backup_adjacentes.bin&quot;);</span></div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>    <span class="comment">//int totalVertices = lerVerticesBin(&amp;grafo, &quot;backup_vertices.bin&quot;);</span></div>
-<div class="line"><span class="lineno">   97</span>    <span class="comment">//lerAdjacentesBin(&amp;grafo, &quot;backup_adjacentes.bin&quot;);</span></div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>    <a class="code hl_function" href="grafos_8h.html#a84abf022ec534df092d6218efc15ddb7">imprimirGrafo</a>(grafo);</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span><span class="preprocessor">#pragma endregion</span></div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span><span class="preprocessor">#pragma region Testar funções alugueres</span></div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    <span class="comment">// Adicionar alguns alugueres manualmente</span></div>
-<div class="line"><span class="lineno">  106</span>    <span class="comment">//Aluguer aluguer1 = novoAluguer(232, 1); // idCliente=232, idMeioMobilidade=1</span></div>
-<div class="line"><span class="lineno">  107</span>    <span class="comment">//adicionarAluguer(listaClientes, listaMeios, &amp;listaAlugueres, &amp;aluguer1); // Testar com a cidade termino ID 24 (tem ligação no grafo à cidade do cliente)</span></div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>    <span class="comment">//Fazer backup do aluguer criado acima</span></div>
-<div class="line"><span class="lineno">  110</span>    <span class="comment">//guardarBackupAlugueres(aluguer1);</span></div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>    <span class="comment">// Listar alugueres</span></div>
-<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="alugueres_8h.html#aac218b3d6c49b01aacc8e5403fd95dad">listarAlugueres</a>(listaAlugueres);</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    <span class="comment">//Reescrever os ficheiros .bin para o seguinte:</span></div>
-<div class="line"><span class="lineno">  116</span>    <span class="comment">//---Atualizar o meio de mobilidade usado no aluguer acima para ficar a 1(alugado) e guardar no backup_binario o novo estado alugado.</span></div>
-<div class="line"><span class="lineno">  117</span>    <span class="comment">//---Atualizar o cliente usado no aluguer para depois de ser feito o calculo do custo de aluguer, descontar no saldo e guardar no backup_binario novo saldo.</span></div>
-<div class="line"><span class="lineno">  118</span>    <span class="comment">//guardarBackupMeiosMobilidade(listaMeios);</span></div>
-<div class="line"><span class="lineno">  119</span>    <span class="comment">//guardarBackupClientes(listaClientes);</span></div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span><span class="preprocessor">#pragma endregion</span></div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span><span class="preprocessor">#pragma region Testar funções de localizações com grafos</span></div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    <span class="comment">// Listar meios de mobilidade mais proximos de um cliente num determinado raio (em metros)</span></div>
-<div class="line"><span class="lineno">  126</span>    <a class="code hl_function" href="meios_8h.html#a79d1538ef6cfd23d136d3d7c9ed5a2dc">listarMeiosMobilidadeProximosCliente</a>(listaMeios, grafo, 3, 250); <span class="comment">// Cliente no ID LOCAL 3 e raio de 250m</span></div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>    <span class="comment">// Listar meios abaixo dos 50%</span></div>
-<div class="line"><span class="lineno">  129</span>    <a class="code hl_function" href="meios_8h.html#a42c33838da8f6aa09063e14de2383803">listarMeiosMobilidadeComCargaBateriaAbaixo50</a>(listaMeios);</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span><span class="preprocessor">#pragma endregion</span></div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>    <span class="comment">//--------- TAREFAS A REALIZAR ------------</span></div>
-<div class="line"><span class="lineno">  134</span>    <span class="comment">// Fazer funções para mostrar os meios de mobilidade mais proximos de um cliente escolhido num determinado raio (JÁ FEITO??)</span></div>
-<div class="line"><span class="lineno">  135</span>    </div>
-<div class="line"><span class="lineno">  136</span>    <span class="comment">// Fazer funções etc para caixeiro viajante</span></div>
-<div class="line"><span class="lineno">  137</span>    <span class="comment">// Criei struct para camiao e função para criar camiao, sera preciso?</span></div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  140</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>           {</div>
+<div class="line"><span class="lineno">   19</span>    </div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_struct" href="struct_cliente_lista.html">ClienteListaPtr</a> listaClientes = <a class="code hl_function" href="clientes_8h.html#a6d6979e7241c02e0c59d74ece5247ec4">lerClientesBin</a>(<span class="stringliteral">&quot;backup_clientes.bin&quot;</span>);</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_struct" href="struct_meios_mobilidade_lista.html">MeiosMobilidadeListaPtr</a> listaMeios = <a class="code hl_function" href="ficheiros_8c.html#a56d61213c5c720f67cdcc32a37a0266b">lerMeiosMobilidadeBin</a>(<span class="stringliteral">&quot;backup_meiosmobilidade.bin&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_struct" href="struct_aluguer_lista.html">AluguerListaPtr</a> listaAlugueres = <a class="code hl_function" href="alugueres_8h.html#af24c0708dc665d42ce0febd45683f50d">lerAlugueresBin</a>(<span class="stringliteral">&quot;backup_alugueres.bin&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* grafo = NULL;</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">int</span> totalVertices = <a class="code hl_function" href="ficheiros_8c.html#a39944aca12c8dd6d49bb31d38155bc84">carregarFicheiroGrafo</a>(&amp;grafo, <span class="stringliteral">&quot;grafos.csv&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span><span class="preprocessor">#pragma region Testar funções clientes</span></div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">// Adiciona alguns clientes</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">//Cliente* cliente1 = novoCliente(89, &quot;João Silva&quot;, &quot;Rua das Flores, 123&quot;, 1000.0, 4, &quot;DASDA&quot;);</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">//listaClientes = adicionarCliente(listaClientes, cliente1);</span></div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">//Cliente* cliente2 = novoCliente(987654321, &quot;Maria Santos&quot;, &quot;Avenida Central, 456&quot;, 2000.0, 5, &quot;DSDADDD&quot;);</span></div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment">//listaClientes = adicionarCliente(listaClientes, cliente2);</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">//Remove um cliente</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment">//listaClientes = removerCliente(listaClientes, 123456789);</span></div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">//Altera um cliente</span></div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment">//alterarCliente(listaClientes, 987654321, &quot;Maria Oliveira&quot;, &quot;Avenida Principal, 789&quot;, 3000.0, 5, &quot;DSADSSS&quot;);</span></div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">//Escreve os dados atualizados dos clientes de volta para o arquivo CSV</span></div>
+<div class="line"><span class="lineno">   42</span>    <span class="comment">//escreverClientesCSV(listaClientes, &quot;clientes.csv&quot;);</span></div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">//Pesquisar um cliente</span></div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">//pesquisarCliente(listaClientes, 232);</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="comment">//Apresentar lista de clientes em memória</span></div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="clientes_8h.html#a1e1a711d74a3b6a4a15f008707f34277">listarClientes</a>(listaClientes);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">//Libertar memória da lista de clientes</span></div>
+<div class="line"><span class="lineno">   51</span>    <span class="comment">//libertarClientesLista(listaClientes);</span></div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="clientes_8h.html#a744d6fbef9efb1267f481c17798b5e05">guardarBackupClientes</a>(listaClientes);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span><span class="preprocessor">#pragma region Testar funções meios de mobilidade</span></div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="comment">// Adiciona alguns meios de mobilidade</span></div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">//Cliente* meio1 = novoMeioMobilidade(100,&quot;Bicicleta&quot;,50.0,3.4,&quot;6&quot;,&quot;ASDAH23&quot;, 0); //Inserir ID 100</span></div>
+<div class="line"><span class="lineno">   61</span>    <span class="comment">//listaMeios = adicionarMeioMobilidade(listaMeios, meio1);</span></div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">//Cliente* meio2 = novoMeioMobilidade(101,&quot;Lambreta&quot;,32.0,0.4,&quot;7&quot;,&quot;ASDA3232D3&quot;, 0); //Inserir ID 101</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="comment">//listaMeios = adicionarMeioMobilidade(listaMeios, meio2);</span></div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">// Remove um meio de mobilidade</span></div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">//listaMeios = removerMeioMobilidade(listaMeios, 1); //ID 1 a remover</span></div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">// Altera um meio de mobilidade</span></div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">//alterarMeioMobilidade(listaMeios, 1, &quot;Triciclo&quot;, 20.0, 3.1, &quot;3&quot;, &quot;UEDED2&quot;, 0); //Alterar ID 1</span></div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">// Escreve os dados atualizados dos meios de mobilidade de volta para o arquivo CSV</span></div>
+<div class="line"><span class="lineno">   73</span>    <span class="comment">//escreverMeios(listaMeios, &quot;meiosmobilidade.csv&quot;);</span></div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">//Guardar ficheiro bin nos meios de mobilidade para backup dados</span></div>
+<div class="line"><span class="lineno">   76</span>    <span class="comment">//guardarBackupMeiosMobilidade(listaMeios);</span></div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">//Apresentar lista de meios de mobilidade em memória</span></div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_function" href="meios_8h.html#afcc614f507c4ebaa365b473006da8e47">listarMeiosMobilidade</a>(listaMeios);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="comment">//Apresentar lista de meios de mobilidade em memória ordenados pela autonomia</span></div>
+<div class="line"><span class="lineno">   82</span>    <span class="comment">//listarMeiosMobilidadeOrdenadosAutonomia(listaMeios);</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="comment">//Apresentar lista de meios de mobilidade apenas numa determinada localização com geocodigo</span></div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">//listarMeiosMobilidadePorLocalizacao(listaMeios);</span></div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">//Libertar memória da lista de meios de mobilidade</span></div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">//libertarMeiosMobilidadeLista(listaMeios);</span></div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span><span class="preprocessor">#pragma region Testar funções grafos (localizações)</span></div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">//guardarBackupVertices(grafo, &quot;backup_vertices.bin&quot;);</span></div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">//guardarBackupAdjacentes(grafo, &quot;backup_adjacentes.bin&quot;);</span></div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="comment">//int totalVertices = lerVerticesBin(&amp;grafo, &quot;backup_vertices.bin&quot;);</span></div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">//lerAdjacentesBin(&amp;grafo, &quot;backup_adjacentes.bin&quot;);</span></div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_function" href="grafos_8h.html#a84abf022ec534df092d6218efc15ddb7">imprimirGrafo</a>(grafo);</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">#pragma region Testar funções alugueres</span></div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">// Adicionar alguns alugueres manualmente</span></div>
+<div class="line"><span class="lineno">  107</span>    <span class="comment">//Aluguer aluguer1 = novoAluguer(232, 1); // idCliente=232, idMeioMobilidade=1</span></div>
+<div class="line"><span class="lineno">  108</span>    <span class="comment">//adicionarAluguer(listaClientes, listaMeios, &amp;listaAlugueres, &amp;aluguer1); // Testar com a cidade termino ID 24 (tem ligação no grafo à cidade do cliente)</span></div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="comment">//Fazer backup do aluguer criado acima</span></div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment">//guardarBackupAlugueres(aluguer1);</span></div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <span class="comment">// Listar alugueres</span></div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_function" href="alugueres_8h.html#aac218b3d6c49b01aacc8e5403fd95dad">listarAlugueres</a>(listaAlugueres);</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="comment">//Reescrever os ficheiros .bin para o seguinte:</span></div>
+<div class="line"><span class="lineno">  117</span>    <span class="comment">//---Atualizar o meio de mobilidade usado no aluguer acima para ficar a 1(alugado) e guardar no backup_binario o novo estado alugado.</span></div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">//---Atualizar o cliente usado no aluguer para depois de ser feito o calculo do custo de aluguer, descontar no saldo e guardar no backup_binario novo saldo.</span></div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">//guardarBackupMeiosMobilidade(listaMeios);</span></div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment">//guardarBackupClientes(listaClientes);</span></div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span><span class="preprocessor">#pragma region Testar funções de localizações com grafos</span></div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>    <span class="comment">// Listar meios de mobilidade mais proximos de um cliente num determinado raio (em metros)</span></div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_function" href="meios_8h.html#a79d1538ef6cfd23d136d3d7c9ed5a2dc">listarMeiosMobilidadeProximosCliente</a>(listaMeios, grafo, 3, 250); <span class="comment">// Cliente no ID LOCAL 3 e raio de 250m</span></div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">// Listar meios abaixo dos 50%</span></div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_function" href="meios_8h.html#a42c33838da8f6aa09063e14de2383803">listarMeiosMobilidadeComCargaBateriaAbaixo50</a>(listaMeios);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="comment">// Criar camião de exemplo</span></div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_struct" href="struct_camiao.html">Camiao</a>* camiao = <a class="code hl_function" href="camiao_8h.html#aac34a7ce57aa6195369dfb26b9645996">criarCamiao</a>();</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">// Alterar localização do &quot;Carro&quot; para a localização 6</span></div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_function" href="fmeios_8c.html#a5b51b15a6fadac9097fa37018d7670a6">alterarLocalizacaoMeioMobilidade</a>(listaMeios, 1, 6);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="comment">// Chamar função para recolher meios de mobilidade elétrica com carga abaixo de 50%</span></div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_function" href="camiao_8h.html#a7b2dc5e0475513cf6441233b733277aa">recolherMobilidadeEletrica</a>(grafo, listaMeios, camiao, <span class="stringliteral">&quot;Carro&quot;</span>);</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  144</span>}</div>
 <div class="ttc" id="aalugueres_8h_html_aac218b3d6c49b01aacc8e5403fd95dad"><div class="ttname"><a href="alugueres_8h.html#aac218b3d6c49b01aacc8e5403fd95dad">listarAlugueres</a></div><div class="ttdeci">void listarAlugueres(AluguerListaPtr lista_alugueres)</div><div class="ttdoc">Lista os alugueres da lista de alugueres.</div><div class="ttdef"><b>Definition:</b> falugueres.c:178</div></div>
 <div class="ttc" id="aalugueres_8h_html_af24c0708dc665d42ce0febd45683f50d"><div class="ttname"><a href="alugueres_8h.html#af24c0708dc665d42ce0febd45683f50d">lerAlugueresBin</a></div><div class="ttdeci">AluguerListaPtr lerAlugueresBin(char *nomeArquivo)</div><div class="ttdoc">Lê um arquivo binário com dados de alugueres e cria uma lista de alugueres.</div><div class="ttdef"><b>Definition:</b> ficheiros.c:286</div></div>
+<div class="ttc" id="acamiao_8h_html_a7b2dc5e0475513cf6441233b733277aa"><div class="ttname"><a href="camiao_8h.html#a7b2dc5e0475513cf6441233b733277aa">recolherMobilidadeEletrica</a></div><div class="ttdeci">void recolherMobilidadeEletrica(Vertice *grafo, MeiosMobilidadeListaPtr listaMeiosMobilidade, Camiao *camiao, char tipo[])</div><div class="ttdoc">Recolhe meios de mobilidade elétrica do tipo especificado pelo utilizador.</div><div class="ttdef"><b>Definition:</b> fcamiao.c:70</div></div>
+<div class="ttc" id="acamiao_8h_html_aac34a7ce57aa6195369dfb26b9645996"><div class="ttname"><a href="camiao_8h.html#aac34a7ce57aa6195369dfb26b9645996">criarCamiao</a></div><div class="ttdeci">Camiao * criarCamiao()</div><div class="ttdoc">Cria um novo camião.</div><div class="ttdef"><b>Definition:</b> fcamiao.c:16</div></div>
 <div class="ttc" id="aclientes_8h_html_a1e1a711d74a3b6a4a15f008707f34277"><div class="ttname"><a href="clientes_8h.html#a1e1a711d74a3b6a4a15f008707f34277">listarClientes</a></div><div class="ttdeci">void listarClientes(ClienteListaPtr listaClientes)</div><div class="ttdoc">Lista todos os clientes em memória.</div><div class="ttdef"><b>Definition:</b> vclientes.c:18</div></div>
 <div class="ttc" id="aclientes_8h_html_a6d6979e7241c02e0c59d74ece5247ec4"><div class="ttname"><a href="clientes_8h.html#a6d6979e7241c02e0c59d74ece5247ec4">lerClientesBin</a></div><div class="ttdeci">ClienteListaPtr lerClientesBin(char *nomeArquivoBin)</div><div class="ttdoc">Lê um arquivo bin com dados de clientes e cria uma lista de clientes. Se o arquivo binário estiver vazio,...</div><div class="ttdef"><b>Definition:</b> ficheiros.c:142</div></div>
 <div class="ttc" id="aclientes_8h_html_a744d6fbef9efb1267f481c17798b5e05"><div class="ttname"><a href="clientes_8h.html#a744d6fbef9efb1267f481c17798b5e05">guardarBackupClientes</a></div><div class="ttdeci">int guardarBackupClientes(ClienteListaPtr listaClientes)</div><div class="ttdoc">Função para guardar o backup dos dados dos clientes em um arquivo binário.</div><div class="ttdef"><b>Definition:</b> ficheiros.c:188</div></div>
 <div class="ttc" id="aficheiros_8c_html_a39944aca12c8dd6d49bb31d38155bc84"><div class="ttname"><a href="ficheiros_8c.html#a39944aca12c8dd6d49bb31d38155bc84">carregarFicheiroGrafo</a></div><div class="ttdeci">int carregarFicheiroGrafo(Vertice **grafo, char *nomeficheiro)</div><div class="ttdef"><b>Definition:</b> ficheiros.c:336</div></div>
 <div class="ttc" id="aficheiros_8c_html_a56d61213c5c720f67cdcc32a37a0266b"><div class="ttname"><a href="ficheiros_8c.html#a56d61213c5c720f67cdcc32a37a0266b">lerMeiosMobilidadeBin</a></div><div class="ttdeci">MeiosMobilidadeListaPtr lerMeiosMobilidadeBin(char *nomeArquivoBin)</div><div class="ttdoc">Lê um arquivo bin com dados dos meios de mobilidade e cria uma lista de meios. Se o arquivo binário estiv...</div><div class="ttdef"><b>Definition:</b> ficheiros.c:214</div></div>
+<div class="ttc" id="afmeios_8c_html_a5b51b15a6fadac9097fa37018d7670a6"><div class="ttname"><a href="fmeios_8c.html#a5b51b15a6fadac9097fa37018d7670a6">alterarLocalizacaoMeioMobilidade</a></div><div class="ttdeci">bool alterarLocalizacaoMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id, int localizacao)</div><div class="ttdoc">Altera a localização de um meio de mobilidade existente com base no seu ID.</div><div class="ttdef"><b>Definition:</b> fmeios.c:184</div></div>
 <div class="ttc" id="agrafos_8h_html_a84abf022ec534df092d6218efc15ddb7"><div class="ttname"><a href="grafos_8h.html#a84abf022ec534df092d6218efc15ddb7">imprimirGrafo</a></div><div class="ttdeci">void imprimirGrafo(Vertice *grafo)</div><div class="ttdoc">Imprime o grafo representado pela lista de adjacência.</div><div class="ttdef"><b>Definition:</b> vgrafos.c:18</div></div>
 <div class="ttc" id="ameios_8h_html_a42c33838da8f6aa09063e14de2383803"><div class="ttname"><a href="meios_8h.html#a42c33838da8f6aa09063e14de2383803">listarMeiosMobilidadeComCargaBateriaAbaixo50</a></div><div class="ttdeci">void listarMeiosMobilidadeComCargaBateriaAbaixo50(MeiosMobilidadeListaPtr listaMeiosMobilidade)</div><div class="ttdoc">Lista todos os meios de mobilidade com carga de bateria abaixo de 50%.</div><div class="ttdef"><b>Definition:</b> vmeios.c:35</div></div>
 <div class="ttc" id="ameios_8h_html_a79d1538ef6cfd23d136d3d7c9ed5a2dc"><div class="ttname"><a href="meios_8h.html#a79d1538ef6cfd23d136d3d7c9ed5a2dc">listarMeiosMobilidadeProximosCliente</a></div><div class="ttdeci">void listarMeiosMobilidadeProximosCliente(MeiosMobilidadeListaPtr listaMeiosMobilidade, Vertice *grafo, int localCliente, float raio)</div><div class="ttdoc">Lista os meios de mobilidade mais próximos do local do cliente.</div><div class="ttdef"><b>Definition:</b> vmeios.c:130</div></div>
 <div class="ttc" id="ameios_8h_html_afcc614f507c4ebaa365b473006da8e47"><div class="ttname"><a href="meios_8h.html#afcc614f507c4ebaa365b473006da8e47">listarMeiosMobilidade</a></div><div class="ttdeci">void listarMeiosMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade)</div><div class="ttdoc">Lista todos os meios de mobilidade em memória.</div><div class="ttdef"><b>Definition:</b> vmeios.c:18</div></div>
 <div class="ttc" id="astruct_aluguer_lista_html"><div class="ttname"><a href="struct_aluguer_lista.html">AluguerLista</a></div><div class="ttdef"><b>Definition:</b> alugueres.h:29</div></div>
+<div class="ttc" id="astruct_camiao_html"><div class="ttname"><a href="struct_camiao.html">Camiao</a></div><div class="ttdef"><b>Definition:</b> camiao.h:11</div></div>
 <div class="ttc" id="astruct_cliente_lista_html"><div class="ttname"><a href="struct_cliente_lista.html">ClienteLista</a></div><div class="ttdef"><b>Definition:</b> clientes.h:30</div></div>
 <div class="ttc" id="astruct_meios_mobilidade_lista_html"><div class="ttname"><a href="struct_meios_mobilidade_lista.html">MeiosMobilidadeLista</a></div><div class="ttdef"><b>Definition:</b> meios.h:31</div></div>
 <div class="ttc" id="astruct_vertice_html"><div class="ttname"><a href="struct_vertice.html">Vertice</a></div><div class="ttdef"><b>Definition:</b> grafos.h:30</div></div>

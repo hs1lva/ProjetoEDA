@@ -1,0 +1,169 @@
+\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/main.c File Reference}
+\label{main_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/main.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/main.c}}
+
+
+Main do projeto.  
+
+
+{\ttfamily \#include \char`\"{}clientes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gestores.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}meios.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}alugueres.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grafos.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}camiao.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main do projeto. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes\ =\ \mbox{\hyperlink{clientes_8h_a6d6979e7241c02e0c59d74ece5247ec4}{lerClientesBin}}(\textcolor{stringliteral}{"{}backup\_clientes.bin"{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ listaMeios\ =\ \mbox{\hyperlink{ficheiros_8c_a56d61213c5c720f67cdcc32a37a0266b}{lerMeiosMobilidadeBin}}(\textcolor{stringliteral}{"{}backup\_meiosmobilidade.bin"{}});}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{struct_aluguer_lista}{AluguerListaPtr}}\ listaAlugueres\ =\ \mbox{\hyperlink{alugueres_8h_af24c0708dc665d42ce0febd45683f50d}{lerAlugueresBin}}(\textcolor{stringliteral}{"{}backup\_alugueres.bin"{}});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ grafo\ =\ NULL;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ totalVertices\ =\ \mbox{\hyperlink{ficheiros_8c_a39944aca12c8dd6d49bb31d38155bc84}{carregarFicheiroGrafo}}(\&grafo,\ \textcolor{stringliteral}{"{}grafos.csv"{}});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#pragma\ region\ Testar\ funções\ clientes }}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Adiciona\ alguns\ clientes}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//Cliente*\ cliente1\ =\ novoCliente(89,\ "{}João Silva"{},\ "{}Rua\ das\ Flores,\ 123"{},\ 1000.0,\ 4,\ "{}DASDA"{});}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//listaClientes\ =\ adicionarCliente(listaClientes,\ cliente1);}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//Cliente*\ cliente2\ =\ novoCliente(987654321,\ "{}Maria\ Santos"{},\ "{}Avenida\ Central,\ 456"{},\ 2000.0,\ 5,\ "{}DSDADDD"{});}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//listaClientes\ =\ adicionarCliente(listaClientes,\ cliente2);}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//Remove\ um\ cliente}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//listaClientes\ =\ removerCliente(listaClientes,\ 123456789);}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//Altera\ um\ cliente}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//alterarCliente(listaClientes,\ 987654321,\ "{}Maria\ Oliveira"{},\ "{}Avenida\ Principal,\ 789"{},\ 3000.0,\ 5,\ "{}DSADSSS"{});}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//Escreve\ os\ dados\ atualizados\ dos\ clientes\ de\ volta\ para\ o\ arquivo\ CSV}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//escreverClientesCSV(listaClientes,\ "{}clientes.csv"{});}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//Pesquisar\ um\ cliente}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//pesquisarCliente(listaClientes,\ 232);}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//Apresentar\ lista\ de\ clientes\ em\ memória}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{clientes_8h_a1e1a711d74a3b6a4a15f008707f34277}{listarClientes}}(listaClientes);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//Libertar\ memória\ da\ lista\ de\ clientes}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//libertarClientesLista(listaClientes);}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{clientes_8h_a744d6fbef9efb1267f481c17798b5e05}{guardarBackupClientes}}(listaClientes);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#pragma\ region\ Testar\ funções\ meios\ de\ mobilidade }}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ Adiciona\ alguns\ meios\ de\ mobilidade}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//Cliente*\ meio1\ =\ novoMeioMobilidade(100,"{}Bicicleta"{},50.0,3.4,"{}6"{},"{}ASDAH23"{},\ 0);\ //Inserir\ ID\ 100}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//listaMeios\ =\ adicionarMeioMobilidade(listaMeios,\ meio1);}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//Cliente*\ meio2\ =\ novoMeioMobilidade(101,"{}Lambreta"{},32.0,0.4,"{}7"{},"{}ASDA3232D3"{},\ 0);\ //Inserir\ ID\ 101}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//listaMeios\ =\ adicionarMeioMobilidade(listaMeios,\ meio2);}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Remove\ um\ meio\ de\ mobilidade}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//listaMeios\ =\ removerMeioMobilidade(listaMeios,\ 1);\ //ID\ 1\ a\ remover}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ Altera\ um\ meio\ de\ mobilidade}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//alterarMeioMobilidade(listaMeios,\ 1,\ "{}Triciclo"{},\ 20.0,\ 3.1,\ "{}3"{},\ "{}UEDED2"{},\ 0);\ //Alterar\ ID\ 1}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ Escreve\ os\ dados\ atualizados\ dos\ meios\ de\ mobilidade\ de\ volta\ para\ o\ arquivo\ CSV}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//escreverMeios(listaMeios,\ "{}meiosmobilidade.csv"{});}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//Guardar\ ficheiro\ bin\ nos\ meios\ de\ mobilidade\ para\ backup\ dados}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//guardarBackupMeiosMobilidade(listaMeios);}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//Apresentar\ lista\ de\ meios\ de\ mobilidade\ em\ memória}}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{meios_8h_afcc614f507c4ebaa365b473006da8e47}{listarMeiosMobilidade}}(listaMeios);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//Apresentar\ lista\ de\ meios\ de\ mobilidade\ em\ memória\ ordenados\ pela\ autonomia}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//listarMeiosMobilidadeOrdenadosAutonomia(listaMeios);}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//Apresentar\ lista\ de\ meios\ de\ mobilidade\ apenas\ numa\ determinada\ localização\ com\ geocodigo}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//listarMeiosMobilidadePorLocalizacao(listaMeios);}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//Libertar\ memória\ da\ lista\ de\ meios\ de\ mobilidade}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//libertarMeiosMobilidadeLista(listaMeios);}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#pragma\ region\ Testar\ funções\ grafos\ (localizações) }}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//guardarBackupVertices(grafo,\ "{}backup\_vertices.bin"{});}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//guardarBackupAdjacentes(grafo,\ "{}backup\_adjacentes.bin"{});}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//int\ totalVertices\ =\ lerVerticesBin(\&grafo,\ "{}backup\_vertices.bin"{});}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//lerAdjacentesBin(\&grafo,\ "{}backup\_adjacentes.bin"{});}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{grafos_8h_a84abf022ec534df092d6218efc15ddb7}{imprimirGrafo}}(grafo);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#pragma\ region\ Testar\ funções\ alugueres }}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ Adicionar\ alguns\ alugueres\ manualmente}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//Aluguer\ aluguer1\ =\ novoAluguer(232,\ 1);\ //\ idCliente=232,\ idMeioMobilidade=1}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//adicionarAluguer(listaClientes,\ listaMeios,\ \&listaAlugueres,\ \&aluguer1);\ //\ Testar\ com\ a\ cidade\ termino\ ID\ 24\ (tem\ ligação\ no\ grafo\ à cidade\ do\ cliente)}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//Fazer\ backup\ do\ aluguer\ criado\ acima}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//guardarBackupAlugueres(aluguer1);}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Listar\ alugueres}}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{alugueres_8h_aac218b3d6c49b01aacc8e5403fd95dad}{listarAlugueres}}(listaAlugueres);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//Reescrever\ os\ ficheiros\ .bin\ para\ o\ seguinte:}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/Atualizar\ o\ meio\ de\ mobilidade\ usado\ no\ aluguer\ acima\ para\ ficar\ a\ 1(alugado)\ e\ guardar\ no\ backup\_binario\ o\ novo\ estado\ alugado.}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/Atualizar\ o\ cliente\ usado\ no\ aluguer\ para\ depois\ de\ ser\ feito\ o\ calculo\ do\ custo\ de\ aluguer,\ descontar\ no\ saldo\ e\ guardar\ no\ backup\_binario\ novo\ saldo.}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//guardarBackupMeiosMobilidade(listaMeios);}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//guardarBackupClientes(listaClientes);}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#pragma\ region\ Testar\ funções\ de\ localizações\ com\ grafos }}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ Listar\ meios\ de\ mobilidade\ mais\ proximos\ de\ um\ cliente\ num\ determinado\ raio\ (em\ metros)}}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{meios_8h_a79d1538ef6cfd23d136d3d7c9ed5a2dc}{listarMeiosMobilidadeProximosCliente}}(listaMeios,\ grafo,\ 3,\ 250);\ \textcolor{comment}{//\ Cliente\ no\ ID\ LOCAL\ 3\ e\ raio\ de\ 250m}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//\ Listar\ meios\ abaixo\ dos\ 50\%}}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{meios_8h_a42c33838da8f6aa09063e14de2383803}{listarMeiosMobilidadeComCargaBateriaAbaixo50}}(listaMeios);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//\ Criar\ camião de\ exemplo}}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{struct_camiao}{Camiao}}*\ camiao\ =\ \mbox{\hyperlink{camiao_8h_aac34a7ce57aa6195369dfb26b9645996}{criarCamiao}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ Alterar\ localização\ do\ "{}Carro"{}\ para\ a\ localização\ 6}}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{fmeios_8c_a5b51b15a6fadac9097fa37018d7670a6}{alterarLocalizacaoMeioMobilidade}}(listaMeios,\ 1,\ 6);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ Chamar\ função\ para\ recolher\ meios\ de\ mobilidade\ elétrica\ com\ carga\ abaixo\ de\ 50\%}}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{camiao_8h_a7b2dc5e0475513cf6441233b733277aa}{recolherMobilidadeEletrica}}(grafo,\ listaMeios,\ camiao,\ \textcolor{stringliteral}{"{}Carro"{}});}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00144\ \}}
+
+\end{DoxyCode}

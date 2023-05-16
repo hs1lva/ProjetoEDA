@@ -1,0 +1,260 @@
+\hypertarget{vmeios_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/vmeios.c File Reference}
+\label{vmeios_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/vmeios.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/vmeios.c}}
+
+
+Funções para imprimir menus, listas etc dos meios de mobilidade.  
+
+
+{\ttfamily \#include \char`\"{}meios.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vmeios_8c_afcc614f507c4ebaa365b473006da8e47}{listar\+Meios\+Mobilidade}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade)
+\begin{DoxyCompactList}\small\item\em Lista todos os meios de mobilidade em memória. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vmeios_8c_a42c33838da8f6aa09063e14de2383803}{listar\+Meios\+Mobilidade\+Com\+Carga\+Bateria\+Abaixo50}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade)
+\begin{DoxyCompactList}\small\item\em Lista todos os meios de mobilidade com carga de bateria abaixo de 50\%. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vmeios_8c_a9a86e96179af05afd3d06fdf908a712a}{listar\+Meios\+Mobilidade\+Ordenados\+Autonomia}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade)
+\begin{DoxyCompactList}\small\item\em Lista todos os meios de mobilidade em memória ordenados pela autonomia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vmeios_8c_a98639d80803bb09e2957fbdaf322db5c}{listar\+Meios\+Mobilidade\+Por\+Localizacao}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade)
+\begin{DoxyCompactList}\small\item\em Esta função pede ao utilizador para inserir um geocódigo de localização e lista todos os meios de mobilidade naquela localização. A função percorre a lista de meios de mobilidade e compara o geocódigo da localização de cada meio de mobilidade com o geocódigo inserido pelo utilizador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vmeios_8c_a8a234fea444c53aff48e6fafd173585a}{mostrar\+Meio\+Mobilidade}} (\mbox{\hyperlink{struct_meio_mobilidade}{Meio\+Mobilidade}} meio\+Mobilidade, float distancia)
+\begin{DoxyCompactList}\small\item\em Mostra as informações de um meio de mobilidade. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vmeios_8c_a79d1538ef6cfd23d136d3d7c9ed5a2dc}{listar\+Meios\+Mobilidade\+Proximos\+Cliente}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade, \mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, int local\+Cliente, float raio)
+\begin{DoxyCompactList}\small\item\em Lista os meios de mobilidade mais próximos do local do cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para imprimir menus, listas etc dos meios de mobilidade. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vmeios_8c_afcc614f507c4ebaa365b473006da8e47}\label{vmeios_8c_afcc614f507c4ebaa365b473006da8e47}} 
+\index{vmeios.c@{vmeios.c}!listarMeiosMobilidade@{listarMeiosMobilidade}}
+\index{listarMeiosMobilidade@{listarMeiosMobilidade}!vmeios.c@{vmeios.c}}
+\doxysubsubsection{\texorpdfstring{listarMeiosMobilidade()}{listarMeiosMobilidade()}}
+{\footnotesize\ttfamily void listar\+Meios\+Mobilidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade }\end{DoxyParamCaption})}
+
+
+
+Lista todos os meios de mobilidade em memória. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Meios\+Mobilidade} & apontador para a lista de meios de mobilidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void lista de meios de mobilidade em memória 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ atual\ =\ listaMeiosMobilidade;}
+\DoxyCodeLine{00020\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/\ Lista\ de\ Meios\ de\ Mobilidade\ -\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d\(\backslash\)nTipo:\ \%s\(\backslash\)nAutonomia(\%):\ \%.2f\(\backslash\)nCustop/km(€):\ \%.2f\(\backslash\)nLocalização(ID\ local):\ \%d\(\backslash\)nGeocódigo:\ \%s\(\backslash\)nAlugado:\ \%d\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a515fd60650b736f7a133e230b9e91f52}{id}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af8f42ecd055f388fc4c43ea0875eee23}{autonomia}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af42f4ce742755628ad33d3ae87f87a35}{custo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_adbf42f81333cebe68523b1b0429827b1}{geocodigo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a406773be9d45dec8a0520b902192b0de}{alugado}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vmeios_8c_a42c33838da8f6aa09063e14de2383803}\label{vmeios_8c_a42c33838da8f6aa09063e14de2383803}} 
+\index{vmeios.c@{vmeios.c}!listarMeiosMobilidadeComCargaBateriaAbaixo50@{listarMeiosMobilidadeComCargaBateriaAbaixo50}}
+\index{listarMeiosMobilidadeComCargaBateriaAbaixo50@{listarMeiosMobilidadeComCargaBateriaAbaixo50}!vmeios.c@{vmeios.c}}
+\doxysubsubsection{\texorpdfstring{listarMeiosMobilidadeComCargaBateriaAbaixo50()}{listarMeiosMobilidadeComCargaBateriaAbaixo50()}}
+{\footnotesize\ttfamily void listar\+Meios\+Mobilidade\+Com\+Carga\+Bateria\+Abaixo50 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade }\end{DoxyParamCaption})}
+
+
+
+Lista todos os meios de mobilidade com carga de bateria abaixo de 50\%. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Meios\+Mobilidade} & apontador para a lista de meios de mobilidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ atual\ =\ listaMeiosMobilidade;}
+\DoxyCodeLine{00037\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/\ Lista\ de\ Meios\ de\ Mobilidade\ com\ Carga\ de\ Bateria\ Abaixo\ de\ 50\%\%\ -\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af8f42ecd055f388fc4c43ea0875eee23}{autonomia}}\ <\ 50)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d\(\backslash\)nTipo:\ \%s\(\backslash\)nAutonomia(\%):\ \%.2f\(\backslash\)nCustop/km(€):\ \%.2f\(\backslash\)nLocalização(ID\ local):\ \%d\(\backslash\)nGeocódigo:\ \%s\(\backslash\)nAlugado:\ \%d\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a515fd60650b736f7a133e230b9e91f52}{id}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af8f42ecd055f388fc4c43ea0875eee23}{autonomia}},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af42f4ce742755628ad33d3ae87f87a35}{custo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_adbf42f81333cebe68523b1b0429827b1}{geocodigo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a406773be9d45dec8a0520b902192b0de}{alugado}});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}};}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vmeios_8c_a9a86e96179af05afd3d06fdf908a712a}\label{vmeios_8c_a9a86e96179af05afd3d06fdf908a712a}} 
+\index{vmeios.c@{vmeios.c}!listarMeiosMobilidadeOrdenadosAutonomia@{listarMeiosMobilidadeOrdenadosAutonomia}}
+\index{listarMeiosMobilidadeOrdenadosAutonomia@{listarMeiosMobilidadeOrdenadosAutonomia}!vmeios.c@{vmeios.c}}
+\doxysubsubsection{\texorpdfstring{listarMeiosMobilidadeOrdenadosAutonomia()}{listarMeiosMobilidadeOrdenadosAutonomia()}}
+{\footnotesize\ttfamily void listar\+Meios\+Mobilidade\+Ordenados\+Autonomia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade }\end{DoxyParamCaption})}
+
+
+
+Lista todos os meios de mobilidade em memória ordenados pela autonomia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Meios\+Mobilidade} & apontador para a lista de meios de mobilidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void lista de meios de mobilidade em memória ordenados pela autonomia 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ listaTemp\ =\ NULL;\ \textcolor{comment}{//\ Cria\ uma\ lista\ temporária\ para\ ordenar\ os\ meios\ de\ mobilidade\ por\ ordem\ decrescente\ de\ autonomia}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Percorrer\ a\ lista\ de\ meios\ de\ mobilidade\ original,\ copiando\ cada\ meio\ de\ mobilidade\ para\ uma\ nova\ lista\ temporária,\ chamada\ listaTemp.}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ ptr\ =\ listaMeiosMobilidade;\ ptr\ !=\ NULL;\ ptr\ =\ ptr-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}})\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ listaTemp\ =\ \mbox{\hyperlink{fmeios_8c_a87cd34c4c687fd72d877a1cf6a63777e}{adicionarMeioMobilidade}}(listaTemp,\ \&ptr-\/>meioMobilidade);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Ordena\ a\ lista\ temporária\ por\ ordem\ decrescente\ de\ autonomia}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Se\ o\ meio\ de\ mobilidade\ da\ posição\ ptr1\ tiver\ menos\ autonomia\ que\ o\ meio\ de\ mobilidade\ da\ posição\ ptr2,\ assim\ sucessivamente}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ ptr1\ =\ listaTemp;\ ptr1\ !=\ NULL;\ ptr1\ =\ ptr1-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}})\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ ptr2\ =\ ptr1-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}};\ ptr2\ !=\ NULL;\ ptr2\ =\ ptr2-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}})\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ptr1-\/>meioMobilidade.autonomia\ <\ ptr2-\/>meioMobilidade.autonomia)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_meio_mobilidade}{MeioMobilidade}}\ temp\ =\ ptr1-\/>meioMobilidade;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr1-\/>meioMobilidade\ =\ ptr2-\/>meioMobilidade;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr2-\/>meioMobilidade\ =\ temp;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/\ Lista\ de\ Meios\ de\ Mobilidade\ -\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ ptr\ =\ listaTemp;\ ptr\ !=\ NULL;\ ptr\ =\ ptr-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}})\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d\(\backslash\)nTipo:\ \%s\(\backslash\)nAutonomia:\ \%.2f\ \(\backslash\)nCusto:\ \%.2f\ euros/hora\(\backslash\)nLocalizacao:\ \%d\(\backslash\)nGeocodigo:\ \%s\(\backslash\)nAlugado:\ \%d\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ ptr-\/>meioMobilidade.id,\ ptr-\/>meioMobilidade.tipo,\ ptr-\/>meioMobilidade.autonomia,\ ptr-\/>meioMobilidade.custo,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ ptr-\/>meioMobilidade.localizacao,\ ptr-\/>meioMobilidade.geocodigo,\ ptr-\/>meioMobilidade.alugado);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{fmeios_8c_a546c0f785982c3095a71a215a2e1d542}{libertarMeiosMobilidadeLista}}(listaTemp);\ \textcolor{comment}{//\ Liberta\ a\ memória\ alocada\ para\ a\ lista\ temporária}}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vmeios_8c_a98639d80803bb09e2957fbdaf322db5c}\label{vmeios_8c_a98639d80803bb09e2957fbdaf322db5c}} 
+\index{vmeios.c@{vmeios.c}!listarMeiosMobilidadePorLocalizacao@{listarMeiosMobilidadePorLocalizacao}}
+\index{listarMeiosMobilidadePorLocalizacao@{listarMeiosMobilidadePorLocalizacao}!vmeios.c@{vmeios.c}}
+\doxysubsubsection{\texorpdfstring{listarMeiosMobilidadePorLocalizacao()}{listarMeiosMobilidadePorLocalizacao()}}
+{\footnotesize\ttfamily void listar\+Meios\+Mobilidade\+Por\+Localizacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade }\end{DoxyParamCaption})}
+
+
+
+Esta função pede ao utilizador para inserir um geocódigo de localização e lista todos os meios de mobilidade naquela localização. A função percorre a lista de meios de mobilidade e compara o geocódigo da localização de cada meio de mobilidade com o geocódigo inserido pelo utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Meios\+Mobilidade} & Apontador para a lista de meios de mobilidade. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void lista de meios de mobilidade em memória com uma determinada localização. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{char}\ geocodigo[10];}
+\DoxyCodeLine{00090\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Insira\ o\ geocodigo\ da\ localizacao\ desejada:\ "{}});}
+\DoxyCodeLine{00091\ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%s"{}},\ geocodigo);}
+\DoxyCodeLine{00092\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/-\/-\/-\/\ Lista\ de\ Meios\ de\ Mobilidade\ na\ Localizacao\ \%s\ -\/-\/-\/-\/-\/-\/\(\backslash\)n"{}},\ geocodigo);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;\ \textcolor{comment}{//\ contador\ para\ verificar\ se\ nenhum\ meio\ de\ mobilidade\ foi\ encontrado}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ ptr\ =\ listaMeiosMobilidade;\ ptr\ !=\ NULL;\ ptr\ =\ ptr-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}})\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(ptr-\/>meioMobilidade.geocodigo,\ geocodigo)\ ==\ 0)\ \{\ \textcolor{comment}{//\ se\ o\ geocodigo\ da\ localização\ do\ meio\ de\ mobilidade\ for\ igual\ ao\ geocodigo\ especificado\ pelo\ scanf}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d\(\backslash\)nTipo:\ \%s\(\backslash\)nAutonomia:\ \%.2f\ \(\backslash\)nCusto:\ \%.2f\ euros/hora\(\backslash\)nLocalizacao:\ \%d\(\backslash\)nGeocodigo:\ \%s\(\backslash\)nAlugado:\ \%d\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr-\/>meioMobilidade.id,\ ptr-\/>meioMobilidade.tipo,\ ptr-\/>meioMobilidade.autonomia,\ ptr-\/>meioMobilidade.custo,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr-\/>meioMobilidade.localizacao,\ ptr-\/>meioMobilidade.geocodigo,\ ptr-\/>meioMobilidade.alugado);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ ==\ 0)\ \{\ \textcolor{comment}{//\ se\ nenhum\ meio\ de\ mobilidade\ foi\ encontrado}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nao\ foram\ encontrados\ meios\ de\ mobilidade\ na\ localizacao\ \%s.\(\backslash\)n"{}},\ geocodigo);}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00106\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vmeios_8c_a79d1538ef6cfd23d136d3d7c9ed5a2dc}\label{vmeios_8c_a79d1538ef6cfd23d136d3d7c9ed5a2dc}} 
+\index{vmeios.c@{vmeios.c}!listarMeiosMobilidadeProximosCliente@{listarMeiosMobilidadeProximosCliente}}
+\index{listarMeiosMobilidadeProximosCliente@{listarMeiosMobilidadeProximosCliente}!vmeios.c@{vmeios.c}}
+\doxysubsubsection{\texorpdfstring{listarMeiosMobilidadeProximosCliente()}{listarMeiosMobilidadeProximosCliente()}}
+{\footnotesize\ttfamily void listar\+Meios\+Mobilidade\+Proximos\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade,  }\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$}]{grafo,  }\item[{int}]{local\+Cliente,  }\item[{float}]{raio }\end{DoxyParamCaption})}
+
+
+
+Lista os meios de mobilidade mais próximos do local do cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Meios\+Mobilidade} & A lista de meios de mobilidade disponíveis. \\
+\hline
+{\em grafo} & O grafo de localizações da cidade. \\
+\hline
+{\em local\+Cliente} & O local do cliente a partir do qual será feita a pesquisa. \\
+\hline
+{\em raio} & O raio de pesquisa em metros. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/\ Meios\ de\ mobilidade\ disponíveis\ a\ menos\ de\ \%.0f\ metros:\ -\/-\/-\/-\/-\/-\/\ \(\backslash\)n"{}},\ raio);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ meioMobilidadeMaisProximo\ =\ \mbox{\hyperlink{fmeios_8c_af745104158901af06a83745687426387}{pesquisarMeioMobilidadeMaisProximo}}(listaMeiosMobilidade,\ grafo,\ localCliente);}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{while}\ (meioMobilidadeMaisProximo\ !=\ NULL)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distancia\ =\ \mbox{\hyperlink{fgrafos_8c_a8d8e6918ef0ac66a284f66222ce5379d}{pesquisarEmLargura}}(grafo,\ localCliente,\ meioMobilidadeMaisProximo-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distancia\ <=\ raio)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vmeios_8c_a8a234fea444c53aff48e6fafd173585a}{mostrarMeioMobilidade}}(meioMobilidadeMaisProximo-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}},\ distancia);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ meioMobilidadeMaisProximo\ =\ \mbox{\hyperlink{fmeios_8c_af745104158901af06a83745687426387}{pesquisarMeioMobilidadeMaisProximo}}(meioMobilidadeMaisProximo-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}},\ grafo,\ localCliente);}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vmeios_8c_a8a234fea444c53aff48e6fafd173585a}\label{vmeios_8c_a8a234fea444c53aff48e6fafd173585a}} 
+\index{vmeios.c@{vmeios.c}!mostrarMeioMobilidade@{mostrarMeioMobilidade}}
+\index{mostrarMeioMobilidade@{mostrarMeioMobilidade}!vmeios.c@{vmeios.c}}
+\doxysubsubsection{\texorpdfstring{mostrarMeioMobilidade()}{mostrarMeioMobilidade()}}
+{\footnotesize\ttfamily void mostrar\+Meio\+Mobilidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_meio_mobilidade}{Meio\+Mobilidade}}}]{meio\+Mobilidade,  }\item[{float}]{distancia }\end{DoxyParamCaption})}
+
+
+
+Mostra as informações de um meio de mobilidade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meio\+Mobilidade} & O meio de mobilidade a ser mostrado. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID\ do\ meio:\ \%d\(\backslash\)n"{}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a515fd60650b736f7a133e230b9e91f52}{id}});}
+\DoxyCodeLine{00114\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Tipo:\ \%s\(\backslash\)n"{}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}});}
+\DoxyCodeLine{00115\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Autonomia:\ \%.2f\(\backslash\)n"{}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_af8f42ecd055f388fc4c43ea0875eee23}{autonomia}});}
+\DoxyCodeLine{00116\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Preco\ por\ km:\ \%.2f\(\backslash\)n"{}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_af42f4ce742755628ad33d3ae87f87a35}{custo}});}
+\DoxyCodeLine{00117\ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID\ Localizacao:\ \%d\(\backslash\)n"{}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}});}
+\DoxyCodeLine{00118\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Alugado:\ \%d\(\backslash\)n"{}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a406773be9d45dec8a0520b902192b0de}{alugado}});}
+\DoxyCodeLine{00119\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Distância(m)\ entre\ cliente\ e\ meio:\ \%.2f\(\backslash\)n"{}},\ distancia);}
+\DoxyCodeLine{00120\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00121\ \}}
+
+\end{DoxyCode}

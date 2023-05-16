@@ -1,0 +1,66 @@
+\hypertarget{vgrafos_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/vgrafos.c File Reference}
+\label{vgrafos_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/vgrafos.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/vgrafos.c}}
+
+
+Funções para imprimir grafos.  
+
+
+{\ttfamily \#include \char`\"{}grafos.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vgrafos_8c_a84abf022ec534df092d6218efc15ddb7}{imprimir\+Grafo}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Imprime o grafo representado pela lista de adjacência. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para imprimir grafos. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vgrafos_8c_a84abf022ec534df092d6218efc15ddb7}\label{vgrafos_8c_a84abf022ec534df092d6218efc15ddb7}} 
+\index{vgrafos.c@{vgrafos.c}!imprimirGrafo@{imprimirGrafo}}
+\index{imprimirGrafo@{imprimirGrafo}!vgrafos.c@{vgrafos.c}}
+\doxysubsubsection{\texorpdfstring{imprimirGrafo()}{imprimirGrafo()}}
+{\footnotesize\ttfamily void imprimir\+Grafo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$}]{grafo }\end{DoxyParamCaption})}
+
+
+
+Imprime o grafo representado pela lista de adjacência. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o primeiro vértice do grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertice\ =\ grafo;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (vertice)\ \{\ \textcolor{comment}{//\ Loop\ nos\ vértices}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d\(\backslash\)tCidade:\ \%s\(\backslash\)n"{}},\ vertice-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}},\ vertice-\/>\mbox{\hyperlink{struct_vertice_ac66e0d343ccbf5c604e6dc2dd5a7f7d7}{cidade}});}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjacent\ =\ vertice-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (adjacent)\ \{\ \textcolor{comment}{//\ Loop\ nas\ adjacentes}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ -\/>\ ID:\ \%d\(\backslash\)tDistancia:\ \%.2f\(\backslash\)n"{}},\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}},\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ adjacent\ =\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ vertice\ =\ vertice-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}

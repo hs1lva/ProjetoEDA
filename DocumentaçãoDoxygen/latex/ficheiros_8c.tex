@@ -1,0 +1,770 @@
+\hypertarget{ficheiros_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/ficheiros.c File Reference}
+\label{ficheiros_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/ficheiros.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/ficheiros.c}}
+
+
+Funções para leitura/armazenamento de ficheiros externos.  
+
+
+{\ttfamily \#include \char`\"{}clientes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}meios.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}alugueres.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grafos.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ficheiros_8c_a7646e91093fe92f0de9a4b09d2f563ff}{MAX\+\_\+\+LINHA\+\_\+\+CLIENTES\+\_\+\+CSV}}~200
+\item 
+\#define \mbox{\hyperlink{ficheiros_8c_a72585b38ef111b9e20d328ad3fa12ad3}{MAX\+\_\+\+LINHA\+\_\+\+MEIOS\+\_\+\+CSV}}~200
+\item 
+\#define \mbox{\hyperlink{ficheiros_8c_ad4d501c989cbd0dda0626c44162982da}{MAX\+\_\+\+LINHA\+\_\+\+GRAFO\+\_\+\+CSV}}~200
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} \mbox{\hyperlink{ficheiros_8c_aa141d41b9fd24b40f6b17c6c00b307ae}{ler\+Clientes\+CSV}} (char $\ast$nome\+Arquivo)
+\begin{DoxyCompactList}\small\item\em Lê um arquivo CSV com dados de clientes e cria uma lista de clientes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_ad4d82068fda9b27dd2330c01fe0c0205}{escrever\+Clientes\+CSV}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, char $\ast$nome\+Arquivo)
+\begin{DoxyCompactList}\small\item\em Escreve a lista de clientes em um arquivo CSV. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} \mbox{\hyperlink{ficheiros_8c_aa021dd89efa8221f9a7c818cd1813b42}{ler\+Meios\+Mobilidade\+CSV}} (char $\ast$nome\+Arquivo)
+\begin{DoxyCompactList}\small\item\em Lê os dados dos meios de mobilidade de um arquivo CSV e armazena em uma lista encadeada. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_aa73c28ffd495bfe643a92e21cf935661}{escrever\+Meios}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Mobilidade, char $\ast$nome\+Arquivo)
+\begin{DoxyCompactList}\small\item\em Escreve os dados dos meios de mobilidade em um arquivo CSV. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} \mbox{\hyperlink{ficheiros_8c_a6d6979e7241c02e0c59d74ece5247ec4}{ler\+Clientes\+Bin}} (char $\ast$nome\+Arquivo\+Bin)
+\begin{DoxyCompactList}\small\item\em Lê um arquivo bin com dados de clientes e cria uma lista de clientes. Se o arquivo binário estiver vazio, lê a partir do CSV. Caso contrário, lê a partir do arquivo binário. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_a744d6fbef9efb1267f481c17798b5e05}{guardar\+Backup\+Clientes}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes)
+\begin{DoxyCompactList}\small\item\em Função para guardar o backup dos dados dos clientes em um arquivo binário. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} \mbox{\hyperlink{ficheiros_8c_a56d61213c5c720f67cdcc32a37a0266b}{ler\+Meios\+Mobilidade\+Bin}} (char $\ast$nome\+Arquivo\+Bin)
+\begin{DoxyCompactList}\small\item\em Lê um arquivo bin com dados dos meios de mobilidade e cria uma lista de meios. Se o arquivo binário estiver vazio, lê a partir do CSV. Caso contrário, lê a partir do arquivo binário. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_a8c21001ee7a98749c2f94b9e003ab916}{guardar\+Backup\+Meios\+Mobilidade}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade)
+\begin{DoxyCompactList}\small\item\em Função para criar um backup em formato binário dos meios de mobilidade. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} \mbox{\hyperlink{ficheiros_8c_af24c0708dc665d42ce0febd45683f50d}{ler\+Alugueres\+Bin}} (char $\ast$nome\+Arquivo)
+\begin{DoxyCompactList}\small\item\em Lê um arquivo binário com dados de alugueres e cria uma lista de alugueres. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_a4299673c5457c885d7159eb5d6365757}{guardar\+Backup\+Alugueres}} (\mbox{\hyperlink{struct_aluguer}{Aluguer}} aluguer)
+\item 
+int \mbox{\hyperlink{ficheiros_8c_a39944aca12c8dd6d49bb31d38155bc84}{carregar\+Ficheiro\+Grafo}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$$\ast$grafo, char $\ast$nomeficheiro)
+\item 
+int \mbox{\hyperlink{ficheiros_8c_a50aef92e6cce9f6f28db65686ec854d3}{ler\+Grafo\+CSV}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$$\ast$grafo, FILE $\ast$nomeficheiro)
+\item 
+int \mbox{\hyperlink{ficheiros_8c_a4c8d77d03b14302a43db70466b67d4ed}{ler\+Vertices\+Bin}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$$\ast$grafo, char $\ast$nomeficheiro)
+\begin{DoxyCompactList}\small\item\em Função que lê os vértices de um backup binário e insere num grafo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_a149f55586cdd0931cc934a90fbb5eb09}{ler\+Adjacentes\+Bin}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, char $\ast$nomeficheiro)
+\begin{DoxyCompactList}\small\item\em Função que lê os adjacentes de um backup binário e insere num grafo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_a246be5191c1bd045cbbd510a1d66d314}{guardar\+Backup\+Vertices}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, char $\ast$nomeficheiro)
+\begin{DoxyCompactList}\small\item\em Função que guarda os vértices de um grafo num backup binário. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ficheiros_8c_aad3667639f9eec323d7800c5260d0ed6}{guardar\+Backup\+Adjacentes}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, char $\ast$nomeficheiro)
+\begin{DoxyCompactList}\small\item\em Função que guarda os adjacentes de um grafo num backup binário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para leitura/armazenamento de ficheiros externos. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ficheiros_8c_a7646e91093fe92f0de9a4b09d2f563ff}\label{ficheiros_8c_a7646e91093fe92f0de9a4b09d2f563ff}} 
+\index{ficheiros.c@{ficheiros.c}!MAX\_LINHA\_CLIENTES\_CSV@{MAX\_LINHA\_CLIENTES\_CSV}}
+\index{MAX\_LINHA\_CLIENTES\_CSV@{MAX\_LINHA\_CLIENTES\_CSV}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_LINHA\_CLIENTES\_CSV}{MAX\_LINHA\_CLIENTES\_CSV}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+LINHA\+\_\+\+CLIENTES\+\_\+\+CSV~200}
+
+\mbox{\Hypertarget{ficheiros_8c_ad4d501c989cbd0dda0626c44162982da}\label{ficheiros_8c_ad4d501c989cbd0dda0626c44162982da}} 
+\index{ficheiros.c@{ficheiros.c}!MAX\_LINHA\_GRAFO\_CSV@{MAX\_LINHA\_GRAFO\_CSV}}
+\index{MAX\_LINHA\_GRAFO\_CSV@{MAX\_LINHA\_GRAFO\_CSV}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_LINHA\_GRAFO\_CSV}{MAX\_LINHA\_GRAFO\_CSV}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+LINHA\+\_\+\+GRAFO\+\_\+\+CSV~200}
+
+\mbox{\Hypertarget{ficheiros_8c_a72585b38ef111b9e20d328ad3fa12ad3}\label{ficheiros_8c_a72585b38ef111b9e20d328ad3fa12ad3}} 
+\index{ficheiros.c@{ficheiros.c}!MAX\_LINHA\_MEIOS\_CSV@{MAX\_LINHA\_MEIOS\_CSV}}
+\index{MAX\_LINHA\_MEIOS\_CSV@{MAX\_LINHA\_MEIOS\_CSV}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_LINHA\_MEIOS\_CSV}{MAX\_LINHA\_MEIOS\_CSV}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+LINHA\+\_\+\+MEIOS\+\_\+\+CSV~200}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ficheiros_8c_a39944aca12c8dd6d49bb31d38155bc84}\label{ficheiros_8c_a39944aca12c8dd6d49bb31d38155bc84}} 
+\index{ficheiros.c@{ficheiros.c}!carregarFicheiroGrafo@{carregarFicheiroGrafo}}
+\index{carregarFicheiroGrafo@{carregarFicheiroGrafo}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{carregarFicheiroGrafo()}{carregarFicheiroGrafo()}}
+{\footnotesize\ttfamily int carregar\+Ficheiro\+Grafo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$$\ast$}]{grafo,  }\item[{char $\ast$}]{nomeficheiro }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ FILE*\ ficheiro;}
+\DoxyCodeLine{00338\ \ \ \ \ ficheiro\ =\ fopen(nomeficheiro,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordtype}{int}\ totalVertices\ =\ 0;}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ ficheiro\ grafos"{}});}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00343\ \ \ \ \ \}}
+\DoxyCodeLine{00344\ \ \ \ \ totalVertices\ =\ \mbox{\hyperlink{ficheiros_8c_a50aef92e6cce9f6f28db65686ec854d3}{lerGrafoCSV}}(grafo,\ ficheiro);}
+\DoxyCodeLine{00345\ \ \ \ \ fclose(ficheiro);}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{return}\ totalVertices;}
+\DoxyCodeLine{00347\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_ad4d82068fda9b27dd2330c01fe0c0205}\label{ficheiros_8c_ad4d82068fda9b27dd2330c01fe0c0205}} 
+\index{ficheiros.c@{ficheiros.c}!escreverClientesCSV@{escreverClientesCSV}}
+\index{escreverClientesCSV@{escreverClientesCSV}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{escreverClientesCSV()}{escreverClientesCSV()}}
+{\footnotesize\ttfamily int escrever\+Clientes\+CSV (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+
+
+
+Escreve a lista de clientes em um arquivo CSV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & Apontador para o início da lista de clientes \\
+\hline
+{\em nome\+Arquivo} & Nome do arquivo a ser escrito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 1 em caso de sucesso e 0 em caso de falha ao abrir o arquivo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//Esta\ função\ poderá não ser\ necessária\ para\ escrever\ no\ ficheiro\ csv.}}
+\DoxyCodeLine{00064\ \ \ \ \ FILE*\ arquivo\ =\ fopen(nomeArquivo,\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ falha\ ao\ abrir\ arquivo}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\%d,\%s,\%s,\%.2f,\%d,\%s\(\backslash\)n"{}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a757ddb7e21390848cb858c56b4283834}{nome}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a0399be9fd4882a1bed187f3907776f4f}{endereco}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a2c1637e183f0a1ca7b66d6e6bc7ae06f}{localizacao}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_aeb808fe520ba79efb2a940a2892f58f8}{geocodigo}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_aa73c28ffd495bfe643a92e21cf935661}\label{ficheiros_8c_aa73c28ffd495bfe643a92e21cf935661}} 
+\index{ficheiros.c@{ficheiros.c}!escreverMeios@{escreverMeios}}
+\index{escreverMeios@{escreverMeios}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{escreverMeios()}{escreverMeios()}}
+{\footnotesize\ttfamily int escrever\+Meios (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Mobilidade,  }\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+
+
+
+Escreve os dados dos meios de mobilidade em um arquivo CSV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Mobilidade} & apontador para o inicio da lista de meios de mobilidade \\
+\hline
+{\em nome\+Arquivo} & nome do arquivo CSV onde os dados serão escritos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se os dados foram escritos com sucesso, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//Esta\ função\ poderá não ser\ necessária\ para\ escrever\ no\ ficheiro\ csv.}}
+\DoxyCodeLine{00119\ \ \ \ \ FILE*\ arquivo\ =\ fopen(nomeArquivo,\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ falha\ ao\ abrir\ arquivo}}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ atual\ =\ listaMobilidade;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\%d,\%s,\%.2f,\%.2f,\%d,\%s,\%d\(\backslash\)n"{}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a515fd60650b736f7a133e230b9e91f52}{id}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af8f42ecd055f388fc4c43ea0875eee23}{autonomia}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af42f4ce742755628ad33d3ae87f87a35}{custo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_adbf42f81333cebe68523b1b0429827b1}{geocodigo}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a406773be9d45dec8a0520b902192b0de}{alugado}});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}};}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00130\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_aad3667639f9eec323d7800c5260d0ed6}\label{ficheiros_8c_aad3667639f9eec323d7800c5260d0ed6}} 
+\index{ficheiros.c@{ficheiros.c}!guardarBackupAdjacentes@{guardarBackupAdjacentes}}
+\index{guardarBackupAdjacentes@{guardarBackupAdjacentes}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{guardarBackupAdjacentes()}{guardarBackupAdjacentes()}}
+{\footnotesize\ttfamily int guardar\+Backup\+Adjacentes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$}]{grafo,  }\item[{char $\ast$}]{nomeficheiro }\end{DoxyParamCaption})}
+
+
+
+Função que guarda os adjacentes de um grafo num backup binário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o grafo que será salvo. \\
+\hline
+{\em nomeficheiro} & Nome do arquivo binário onde os adjacentes serão salvos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso na escrita do backup ou 0 em caso contrário. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ FILE*\ ficheiro\ =\ fopen(nomeficheiro,\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ arquivo"{}});}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{00476\ \ \ \ \ \}}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ aux\ =\ grafo;}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ !=\ NULL)\ \{}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (adj\ !=\ NULL)\ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente_file}{AdjacenteFile}}\ adjFile\ =\ \{\ adj-\/>\mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}},\ adj-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}}\ \};}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ fwrite(\&aux-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ ficheiro);}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ fwrite(\&adjFile,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_adjacente_file}{AdjacenteFile}}),\ 1,\ ficheiro);}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ adj\ =\ adj-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}};}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}
+\DoxyCodeLine{00488\ \ \ \ \ \}}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ \ \ fclose(ficheiro);}
+\DoxyCodeLine{00491\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00492\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a4299673c5457c885d7159eb5d6365757}\label{ficheiros_8c_a4299673c5457c885d7159eb5d6365757}} 
+\index{ficheiros.c@{ficheiros.c}!guardarBackupAlugueres@{guardarBackupAlugueres}}
+\index{guardarBackupAlugueres@{guardarBackupAlugueres}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{guardarBackupAlugueres()}{guardarBackupAlugueres()}}
+{\footnotesize\ttfamily int guardar\+Backup\+Alugueres (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_aluguer}{Aluguer}}}]{aluguer }\end{DoxyParamCaption})}
+
+Faz o backup de um aluguer no arquivo \char`\"{}backup\+\_\+alugueres.\+bin\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em aluguer} & um apontador para a estrutura \mbox{\hyperlink{struct_aluguer}{Aluguer}} contendo as informações do aluguer para fazer backup \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se a operação de backup foi bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ FILE*\ ficheiro;}
+\DoxyCodeLine{00317\ \ \ \ \ ficheiro\ =\ fopen(\textcolor{stringliteral}{"{}backup\_alugueres.bin"{}},\ \textcolor{stringliteral}{"{}ab"{}});\ \textcolor{comment}{//\ abre\ o\ arquivo\ em\ modo\ de\ escrita\ binária}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}ERRO:\ Nao\ foi\ possivel\ abrir\ o\ arquivo\ de\ backup\(\backslash\)n"{}});}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ retorna\ 0\ para\ indicar\ que\ a\ operação\ falhou}}
+\DoxyCodeLine{00321\ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ fwrite(\&aluguer,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_aluguer}{Aluguer}}),\ 1,\ ficheiro);\ \textcolor{comment}{//\ escreve\ as\ informações\ do\ aluguer\ no\ arquivo}}
+\DoxyCodeLine{00323\ \ \ \ \ fclose(ficheiro);\ \textcolor{comment}{//\ fecha\ o\ arquivo}}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \textcolor{comment}{//\ retorna\ 1\ para\ indicar\ que\ a\ operação\ foi\ bem\ sucedida}}
+\DoxyCodeLine{00325\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a744d6fbef9efb1267f481c17798b5e05}\label{ficheiros_8c_a744d6fbef9efb1267f481c17798b5e05}} 
+\index{ficheiros.c@{ficheiros.c}!guardarBackupClientes@{guardarBackupClientes}}
+\index{guardarBackupClientes@{guardarBackupClientes}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{guardarBackupClientes()}{guardarBackupClientes()}}
+{\footnotesize\ttfamily int guardar\+Backup\+Clientes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes }\end{DoxyParamCaption})}
+
+
+
+Função para guardar o backup dos dados dos clientes em um arquivo binário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & Apontador para a lista encadeada de clientes a serem salvos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int retorna 1 se a operação for bem-\/sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ FILE*\ arquivo\ =\ fopen(\textcolor{stringliteral}{"{}backup\_clientes.bin"{}},\ \textcolor{stringliteral}{"{}wb+"{}});\ \textcolor{comment}{//\ diferente\ do\ "{}wb"{}\ o\ "{}wb+"{}\ permite\ limpar\ o\ ficheiro\ antes\ de\ começar\ a\ escrever!!}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}ERRO:\ Nao\ foi\ possivel\ criar\ o\ arquivo\ de\ backup\ dos\ clientes\(\backslash\)n"{}});}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cliente}{Cliente}}*\ cliente\ =\ \&(atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}});}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ fwrite(cliente,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cliente}{Cliente}}),\ 1,\ arquivo);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00204\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a8c21001ee7a98749c2f94b9e003ab916}\label{ficheiros_8c_a8c21001ee7a98749c2f94b9e003ab916}} 
+\index{ficheiros.c@{ficheiros.c}!guardarBackupMeiosMobilidade@{guardarBackupMeiosMobilidade}}
+\index{guardarBackupMeiosMobilidade@{guardarBackupMeiosMobilidade}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{guardarBackupMeiosMobilidade()}{guardarBackupMeiosMobilidade()}}
+{\footnotesize\ttfamily int guardar\+Backup\+Meios\+Mobilidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade }\end{DoxyParamCaption})}
+
+
+
+Função para criar um backup em formato binário dos meios de mobilidade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Meios\+Mobilidade} & Apontador para a lista encadeada dos meios de mobilidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso e 0 em caso de falha ao criar o arquivo de backup 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ FILE*\ arquivo\ =\ fopen(\textcolor{stringliteral}{"{}backup\_meiosmobilidade.bin"{}},\ \textcolor{stringliteral}{"{}wb+"{}});\ \textcolor{comment}{//\ diferente\ do\ "{}wb"{}\ o\ "{}wb+"{}\ permite\ limpar\ o\ ficheiro\ antes\ de\ começar\ a\ escrever!!}}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}ERRO:\ Nao\ foi\ possivel\ criar\ o\ arquivo\ de\ backup\ dos\ meios\ de\ mobilidade\(\backslash\)n"{}});}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ atual\ =\ listaMeiosMobilidade;}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_meio_mobilidade}{MeioMobilidade}}*\ meioMobilidade\ =\ \&(atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}});}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ fwrite(meioMobilidade,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_meio_mobilidade}{MeioMobilidade}}),\ 1,\ arquivo);}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}};}
+\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00276\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a246be5191c1bd045cbbd510a1d66d314}\label{ficheiros_8c_a246be5191c1bd045cbbd510a1d66d314}} 
+\index{ficheiros.c@{ficheiros.c}!guardarBackupVertices@{guardarBackupVertices}}
+\index{guardarBackupVertices@{guardarBackupVertices}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{guardarBackupVertices()}{guardarBackupVertices()}}
+{\footnotesize\ttfamily int guardar\+Backup\+Vertices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$}]{grafo,  }\item[{char $\ast$}]{nomeficheiro }\end{DoxyParamCaption})}
+
+
+
+Função que guarda os vértices de um grafo num backup binário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o grafo que será salvo. \\
+\hline
+{\em nomeficheiro} & Nome do ficheiro binário que será gerado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso na escrita do backup ou 0 em caso contrário. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ FILE*\ ficheiro\ =\ fopen(nomeficheiro,\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ arquivo"{}});}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{00451\ \ \ \ \ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ aux\ =\ grafo;\ \textcolor{comment}{//\ Começar\ a\ trabalhar\ no\ inicio\ da\ lista}}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ !=\ NULL)\ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice_file}{VerticeFile}}\ auxfile\ =\ \{\ aux-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}}\ \};\ \textcolor{comment}{//auxfile\ com\ struct\ VerticeFile\ para\ não ter\ lixo}}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ strncpy(auxfile.\mbox{\hyperlink{struct_vertice_file_a9de4d4aefcd89639ca0f966675b0bb2d}{cidade}},\ aux-\/>\mbox{\hyperlink{struct_vertice_ac66e0d343ccbf5c604e6dc2dd5a7f7d7}{cidade}},\ \mbox{\hyperlink{grafos_8h_a6638e43c96076bab62b905a56e626ce8}{TAM\_CIDADE}});}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ fwrite(\&auxfile,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_vertice_file}{VerticeFile}}),\ 1,\ ficheiro);}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}
+\DoxyCodeLine{00459\ \ \ \ \ \}}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ fclose(ficheiro);}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00463\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a149f55586cdd0931cc934a90fbb5eb09}\label{ficheiros_8c_a149f55586cdd0931cc934a90fbb5eb09}} 
+\index{ficheiros.c@{ficheiros.c}!lerAdjacentesBin@{lerAdjacentesBin}}
+\index{lerAdjacentesBin@{lerAdjacentesBin}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerAdjacentesBin()}{lerAdjacentesBin()}}
+{\footnotesize\ttfamily int ler\+Adjacentes\+Bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$}]{grafo,  }\item[{char $\ast$}]{nomeficheiro }\end{DoxyParamCaption})}
+
+
+
+Função que lê os adjacentes de um backup binário e insere num grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o grafo onde os adjacentes serão inseridos. \\
+\hline
+{\em nomeficheiro} & Nome do arquivo de backup. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso na leitura do backup ou 0 em caso contrário. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ FILE*\ ficheiro\ =\ fopen(nomeficheiro,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00425\ \ \ \ \ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{int}\ origem,\ destino;}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordtype}{float}\ distancia;}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&origem,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ ficheiro)\ ==\ 1\ \&\&}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ fread(\&destino,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ ficheiro)\ ==\ 1\ \&\&}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ fread(\&distancia,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ 1,\ ficheiro)\ ==\ 1)\ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novoAdjacente\ =\ \mbox{\hyperlink{fgrafos_8c_afd278e974a6c85362b5329f3b5a52550}{criarAdjacente}}(destino,\ distancia);}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ grafo\ =\ \mbox{\hyperlink{fgrafos_8c_a5b5dd9e2def29affdcfa4839019c186c}{inserirAdjacente}}(grafo,\ origem,\ novoAdjacente);}
+\DoxyCodeLine{00434\ \ \ \ \ \}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ fclose(ficheiro);}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00438\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_af24c0708dc665d42ce0febd45683f50d}\label{ficheiros_8c_af24c0708dc665d42ce0febd45683f50d}} 
+\index{ficheiros.c@{ficheiros.c}!lerAlugueresBin@{lerAlugueresBin}}
+\index{lerAlugueresBin@{lerAlugueresBin}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerAlugueresBin()}{lerAlugueresBin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} ler\+Alugueres\+Bin (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+
+
+
+Lê um arquivo binário com dados de alugueres e cria uma lista de alugueres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Arquivo} & nome do arquivo binário a ser lido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aluguer\+Lista\+Ptr apontador para o início da lista de alugueres criada a partir do arquivo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{int}\ aux;}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ FILE*\ arquivo\ =\ fopen(nomeArquivo,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ arquivo\ \%s\(\backslash\)n"{}},\ nomeArquivo);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{struct_aluguer_lista}{AluguerListaPtr}}\ inicioLista\ =\ NULL;}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{struct_aluguer}{Aluguer}}\ aluguer;}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&aluguer,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_aluguer}{Aluguer}}),\ 1,\ arquivo))\ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utiliza\ a\ função\ inserirAluguerLista\ para\ inserir\ o\ aluguer\ na\ lista}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ aux\ =\ \mbox{\hyperlink{alugueres_8h_ad54307b49da052e9cdd5cb22cc63f669}{inserirAluguerLista}}(\&inicioLista,\ aluguer);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux\ ==\ 0)\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ inserir\ aluguer\ na\ lista\(\backslash\)n"{}});}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{comment}{//inicioLista\ =\ novoNo;}}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioLista;}
+\DoxyCodeLine{00307\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a6d6979e7241c02e0c59d74ece5247ec4}\label{ficheiros_8c_a6d6979e7241c02e0c59d74ece5247ec4}} 
+\index{ficheiros.c@{ficheiros.c}!lerClientesBin@{lerClientesBin}}
+\index{lerClientesBin@{lerClientesBin}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerClientesBin()}{lerClientesBin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} ler\+Clientes\+Bin (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Arquivo\+Bin }\end{DoxyParamCaption})}
+
+
+
+Lê um arquivo bin com dados de clientes e cria uma lista de clientes. Se o arquivo binário estiver vazio, lê a partir do CSV. Caso contrário, lê a partir do arquivo binário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Arquivo\+Bin} & nome do arquivo binário a ser lido ou criado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cliente\+Lista\+Ptr apontador para o início da lista de clientes criada a partir do arquivo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ FILE*\ arquivoBin\ =\ fopen(nomeArquivoBin,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivoBin\ ==\ NULL)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ arquivo\ backup\_clientes.bin\(\backslash\)n"{}});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ inicioLista\ =\ NULL;}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{struct_cliente}{Cliente}}\ cliente;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ arquivo\ binário\ está vazio}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (fread(\&cliente,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cliente}{Cliente}}),\ 1,\ arquivoBin)\ ==\ 0)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ fclose(arquivoBin);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{ficheiros_8c_aa141d41b9fd24b40f6b17c6c00b307ae}{lerClientesCSV}}(\textcolor{stringliteral}{"{}clientes.csv"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aloca\ espaço para\ o\ primeiro\ nó da\ lista}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ inicioLista\ =\ (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{ClienteListaPtr}})malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cliente_lista}{ClienteLista}}));}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inicioLista\ ==\ NULL)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memória\(\backslash\)n"{}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ fclose(arquivoBin);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ inicioLista-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}}\ =\ NULL;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ inicioLista-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}\ =\ cliente;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arquivo\ binário\ não está vazio,\ lê a\ partir\ dele}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&cliente,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cliente}{Cliente}}),\ 1,\ arquivoBin)\ ==\ 1)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utiliza\ a\ função\ adicionarCliente\ para\ adicionar\ um\ novo\ cliente\ na\ lista}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ novoNo\ =\ \mbox{\hyperlink{clientes_8h_a1131bbccbf1bae959f99c933ef730879}{adicionarCliente}}(inicioLista,\ \&cliente);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (novoNo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ adicionar\ cliente\ na\ lista\(\backslash\)n"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ inicioLista\ =\ novoNo;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ fclose(arquivoBin);}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioLista;}
+\DoxyCodeLine{00180\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_aa141d41b9fd24b40f6b17c6c00b307ae}\label{ficheiros_8c_aa141d41b9fd24b40f6b17c6c00b307ae}} 
+\index{ficheiros.c@{ficheiros.c}!lerClientesCSV@{lerClientesCSV}}
+\index{lerClientesCSV@{lerClientesCSV}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerClientesCSV()}{lerClientesCSV()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} ler\+Clientes\+CSV (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+
+
+
+Lê um arquivo CSV com dados de clientes e cria uma lista de clientes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Arquivo} & nome do arquivo CSV a ser lido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cliente\+Lista\+Ptr apontador para o início da lista de clientes criada a partir do arquivo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ FILE*\ arquivo\ =\ fopen(nomeArquivo,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ arquivo\ \%s\(\backslash\)n"{}},\ nomeArquivo);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ inicioLista\ =\ NULL;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{char}\ linha[\mbox{\hyperlink{ficheiros_8c_a7646e91093fe92f0de9a4b09d2f563ff}{MAX\_LINHA\_CLIENTES\_CSV}}];}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(linha,\ \mbox{\hyperlink{ficheiros_8c_a7646e91093fe92f0de9a4b09d2f563ff}{MAX\_LINHA\_CLIENTES\_CSV}},\ arquivo))\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cliente}{Cliente}}\ cliente;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numCampos\ =\ sscanf(linha,\ \textcolor{stringliteral}{"{}\%d,\%[\string^,],\%[\string^,],\%f,\%d,\%[\string^,]"{}},\ \&cliente.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}},\ cliente.\mbox{\hyperlink{struct_cliente_a757ddb7e21390848cb858c56b4283834}{nome}},\ cliente.\mbox{\hyperlink{struct_cliente_a0399be9fd4882a1bed187f3907776f4f}{endereco}},\ \&cliente.\mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}},\ \&cliente.\mbox{\hyperlink{struct_cliente_a2c1637e183f0a1ca7b66d6e6bc7ae06f}{localizacao}},\ cliente.\mbox{\hyperlink{struct_cliente_aeb808fe520ba79efb2a940a2892f58f8}{geocodigo}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numCampos\ !=\ 6)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ ler\ linha\ do\ arquivo\ CSV\(\backslash\)n"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utiliza\ a\ função\ adicionarCliente\ para\ adicionar\ um\ novo\ cliente\ na\ lista}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ novoNo\ =\ \mbox{\hyperlink{clientes_8h_a1131bbccbf1bae959f99c933ef730879}{adicionarCliente}}(inicioLista,\ \&cliente);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (novoNo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ adicionar\ cliente\ na\ lista\(\backslash\)n"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ inicioLista\ =\ novoNo;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioLista;}
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a50aef92e6cce9f6f28db65686ec854d3}\label{ficheiros_8c_a50aef92e6cce9f6f28db65686ec854d3}} 
+\index{ficheiros.c@{ficheiros.c}!lerGrafoCSV@{lerGrafoCSV}}
+\index{lerGrafoCSV@{lerGrafoCSV}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerGrafoCSV()}{lerGrafoCSV()}}
+{\footnotesize\ttfamily int ler\+Grafo\+CSV (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$$\ast$}]{grafo,  }\item[{FILE $\ast$}]{nomeficheiro }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{char}\ linha[\mbox{\hyperlink{ficheiros_8c_ad4d501c989cbd0dda0626c44162982da}{MAX\_LINHA\_GRAFO\_CSV}}];}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{int}\ totalVertices\ =\ 0;}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ fgets(linha,\ \mbox{\hyperlink{ficheiros_8c_ad4d501c989cbd0dda0626c44162982da}{MAX\_LINHA\_GRAFO\_CSV}},\ nomeficheiro);\ \textcolor{comment}{//\ Pular\ a\ primeira\ linha\ (cabeçalho)}}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(linha,\ \mbox{\hyperlink{ficheiros_8c_ad4d501c989cbd0dda0626c44162982da}{MAX\_LINHA\_GRAFO\_CSV}},\ nomeficheiro)\ !=\ NULL)\ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ id,\ adj1,\ dist1,\ adj2,\ dist2,\ adj3,\ dist3;}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ title[256];}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ sscanf(linha,\ \textcolor{stringliteral}{"{}\%d,\%[\string^,],\%d,\%d,\%d,\%d,\%d,\%d"{}},}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \&\textcolor{keywordtype}{id},\ title,}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \&adj1,\ \&dist1,}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \&adj2,\ \&dist2,}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \&adj3,\ \&dist3);}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ novoVertice\ =\ \mbox{\hyperlink{fgrafos_8c_a99cff030926457c528a61289e094d86a}{criarVertice}}(\textcolor{keywordtype}{id},\ title);}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ *grafo\ =\ \mbox{\hyperlink{fgrafos_8c_ad142557ed4fc1b57d6469a681a6ca2d4}{inserirVertice}}(*grafo,\ novoVertice);}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novoAdjacente;}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adj1)\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ novoAdjacente\ =\ \mbox{\hyperlink{fgrafos_8c_afd278e974a6c85362b5329f3b5a52550}{criarAdjacente}}(adj1,\ dist1);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ *grafo\ =\ \mbox{\hyperlink{fgrafos_8c_a5b5dd9e2def29affdcfa4839019c186c}{inserirAdjacente}}(*grafo,\ \textcolor{keywordtype}{id},\ novoAdjacente);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adj2)\ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ novoAdjacente\ =\ \mbox{\hyperlink{fgrafos_8c_afd278e974a6c85362b5329f3b5a52550}{criarAdjacente}}(adj2,\ dist2);}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ *grafo\ =\ \mbox{\hyperlink{fgrafos_8c_a5b5dd9e2def29affdcfa4839019c186c}{inserirAdjacente}}(*grafo,\ \textcolor{keywordtype}{id},\ novoAdjacente);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adj3)\ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ novoAdjacente\ =\ \mbox{\hyperlink{fgrafos_8c_afd278e974a6c85362b5329f3b5a52550}{criarAdjacente}}(adj3,\ dist3);}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ *grafo\ =\ \mbox{\hyperlink{fgrafos_8c_a5b5dd9e2def29affdcfa4839019c186c}{inserirAdjacente}}(*grafo,\ \textcolor{keywordtype}{id},\ novoAdjacente);}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ totalVertices++;}
+\DoxyCodeLine{00388\ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordflow}{return}\ totalVertices;}
+\DoxyCodeLine{00390\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a56d61213c5c720f67cdcc32a37a0266b}\label{ficheiros_8c_a56d61213c5c720f67cdcc32a37a0266b}} 
+\index{ficheiros.c@{ficheiros.c}!lerMeiosMobilidadeBin@{lerMeiosMobilidadeBin}}
+\index{lerMeiosMobilidadeBin@{lerMeiosMobilidadeBin}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerMeiosMobilidadeBin()}{lerMeiosMobilidadeBin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} ler\+Meios\+Mobilidade\+Bin (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Arquivo\+Bin }\end{DoxyParamCaption})}
+
+
+
+Lê um arquivo bin com dados dos meios de mobilidade e cria uma lista de meios. Se o arquivo binário estiver vazio, lê a partir do CSV. Caso contrário, lê a partir do arquivo binário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Arquivo\+Bin} & nome do arquivo binário a ser lido ou criado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Meios\+Mobilidade\+Lista\+Ptr apontador para o início da lista de meios criada a partir do arquivo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ FILE*\ arquivoBin\ =\ fopen(nomeArquivoBin,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivoBin\ ==\ NULL)\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ arquivo\ backup\_meiosmobilidade.bin\(\backslash\)n"{}});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ inicioLista\ =\ NULL;}
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{struct_meio_mobilidade}{MeioMobilidade}}\ meio;}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ arquivo\ binário\ está vazio}}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{if}\ (fread(\&meio,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_meio_mobilidade}{MeioMobilidade}}),\ 1,\ arquivoBin)\ ==\ 0)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ fclose(arquivoBin);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{ficheiros_8c_aa021dd89efa8221f9a7c818cd1813b42}{lerMeiosMobilidadeCSV}}(\textcolor{stringliteral}{"{}meiosmobilidade.csv"{}});}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aloca\ espaço para\ o\ primeiro\ nó da\ lista}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ inicioLista\ =\ (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{MeiosMobilidadeListaPtr}})malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeLista}}));}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inicioLista\ ==\ NULL)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memória\(\backslash\)n"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ fclose(arquivoBin);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ inicioLista-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}}\ =\ NULL;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ inicioLista-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}\ =\ meio;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arquivo\ binário\ não está vazio,\ lê a\ partir\ dele}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&meio,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_meio_mobilidade}{MeioMobilidade}}),\ 1,\ arquivoBin)\ ==\ 1)\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utiliza\ a\ função\ adicionarMeioMobilidade\ para\ adicionar\ um\ novo\ meio\ de\ mobilidade\ na\ lista}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ novoNo\ =\ \mbox{\hyperlink{fmeios_8c_a87cd34c4c687fd72d877a1cf6a63777e}{adicionarMeioMobilidade}}(inicioLista,\ \&meio);}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (novoNo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ adicionar\ meio\ de\ mobilidade\ na\ lista\(\backslash\)n"{}});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ inicioLista\ =\ novoNo;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ fclose(arquivoBin);}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioLista;}
+\DoxyCodeLine{00252\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_aa021dd89efa8221f9a7c818cd1813b42}\label{ficheiros_8c_aa021dd89efa8221f9a7c818cd1813b42}} 
+\index{ficheiros.c@{ficheiros.c}!lerMeiosMobilidadeCSV@{lerMeiosMobilidadeCSV}}
+\index{lerMeiosMobilidadeCSV@{lerMeiosMobilidadeCSV}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerMeiosMobilidadeCSV()}{lerMeiosMobilidadeCSV()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} ler\+Meios\+Mobilidade\+CSV (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+
+
+
+Lê os dados dos meios de mobilidade de um arquivo CSV e armazena em uma lista encadeada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Arquivo} & O nome do arquivo CSV contendo os dados dos meios de mobilidade. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um apontador para a lista encadeada contendo os meios de mobilidade lidos do arquivo. Retorna NULL em caso de falha ao abrir o arquivo. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ FILE*\ arquivo\ =\ fopen(nomeArquivo,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ arquivo\ \%s\(\backslash\)n"{}},\ nomeArquivo);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ inicioLista\ =\ NULL;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{char}\ linha[\mbox{\hyperlink{ficheiros_8c_a72585b38ef111b9e20d328ad3fa12ad3}{MAX\_LINHA\_MEIOS\_CSV}}];}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(linha,\ \mbox{\hyperlink{ficheiros_8c_a72585b38ef111b9e20d328ad3fa12ad3}{MAX\_LINHA\_MEIOS\_CSV}},\ arquivo))\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_meio_mobilidade}{MeioMobilidade}}\ meioMobilidade;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numCampos\ =\ sscanf(linha,\ \textcolor{stringliteral}{"{}\%d,\%[\string^,],\%f,\%f,\%d,\%[\string^,],\ \%d"{}},\ \&meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a515fd60650b736f7a133e230b9e91f52}{id}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ \&meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_af8f42ecd055f388fc4c43ea0875eee23}{autonomia}},\ \&meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_af42f4ce742755628ad33d3ae87f87a35}{custo}},\ \&meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}},\ meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_adbf42f81333cebe68523b1b0429827b1}{geocodigo}},\ \&meioMobilidade.\mbox{\hyperlink{struct_meio_mobilidade_a406773be9d45dec8a0520b902192b0de}{alugado}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numCampos\ !=\ 7)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ ler\ linha\ do\ arquivo\ CSV\(\backslash\)n"{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ novoNo\ =\ \mbox{\hyperlink{fmeios_8c_a87cd34c4c687fd72d877a1cf6a63777e}{adicionarMeioMobilidade}}(inicioLista,\ \&meioMobilidade);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (novoNo\ ==\ inicioLista)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ adicionar\ novo\ meio\ de\ mobilidade\ à lista\(\backslash\)n"{}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ inicioLista\ =\ novoNo;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioLista;}
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ficheiros_8c_a4c8d77d03b14302a43db70466b67d4ed}\label{ficheiros_8c_a4c8d77d03b14302a43db70466b67d4ed}} 
+\index{ficheiros.c@{ficheiros.c}!lerVerticesBin@{lerVerticesBin}}
+\index{lerVerticesBin@{lerVerticesBin}!ficheiros.c@{ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerVerticesBin()}{lerVerticesBin()}}
+{\footnotesize\ttfamily int ler\+Vertices\+Bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$$\ast$}]{grafo,  }\item[{char $\ast$}]{nomeficheiro }\end{DoxyParamCaption})}
+
+
+
+Função que lê os vértices de um backup binário e insere num grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o grafo onde os vértices serão inseridos. \\
+\hline
+{\em nomeficheiro} & Nome do arquivo binário de backup. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso na leitura do backup ou 0 em caso contrário. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ FILE*\ ficheiro\ =\ fopen(nomeficheiro,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00402\ \ \ \ \ \}}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordtype}{char}\ cidade[\mbox{\hyperlink{grafos_8h_a6638e43c96076bab62b905a56e626ce8}{TAM\_CIDADE}}];}
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&\textcolor{keywordtype}{id},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ ficheiro)\ ==\ 1\ \&\&\ fread(cidade,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}),\ \mbox{\hyperlink{grafos_8h_a6638e43c96076bab62b905a56e626ce8}{TAM\_CIDADE}},\ ficheiro)\ ==\ \mbox{\hyperlink{grafos_8h_a6638e43c96076bab62b905a56e626ce8}{TAM\_CIDADE}})\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ novoVertice\ =\ \mbox{\hyperlink{fgrafos_8c_a99cff030926457c528a61289e094d86a}{criarVertice}}(\textcolor{keywordtype}{id},\ cidade);}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ *grafo\ =\ \mbox{\hyperlink{fgrafos_8c_ad142557ed4fc1b57d6469a681a6ca2d4}{inserirVertice}}(*grafo,\ novoVertice);}
+\DoxyCodeLine{00409\ \ \ \ \ \}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ fclose(ficheiro);}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00413\ \}}
+
+\end{DoxyCode}

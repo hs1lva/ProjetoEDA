@@ -1,0 +1,58 @@
+\hypertarget{vclientes_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/vclientes.c File Reference}
+\label{vclientes_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/vclientes.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/vclientes.c}}
+
+
+Funções para imprimir menus, listas etc dos clientes.  
+
+
+{\ttfamily \#include \char`\"{}clientes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vclientes_8c_a1e1a711d74a3b6a4a15f008707f34277}{listar\+Clientes}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes)
+\begin{DoxyCompactList}\small\item\em Lista todos os clientes em memória. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para imprimir menus, listas etc dos clientes. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vclientes_8c_a1e1a711d74a3b6a4a15f008707f34277}\label{vclientes_8c_a1e1a711d74a3b6a4a15f008707f34277}} 
+\index{vclientes.c@{vclientes.c}!listarClientes@{listarClientes}}
+\index{listarClientes@{listarClientes}!vclientes.c@{vclientes.c}}
+\doxysubsubsection{\texorpdfstring{listarClientes()}{listarClientes()}}
+{\footnotesize\ttfamily void listar\+Clientes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes }\end{DoxyParamCaption})}
+
+
+
+Lista todos os clientes em memória. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & Apontador para a lista de clientes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void lista de clientes em memória 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;}
+\DoxyCodeLine{00020\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/\ Lista\ de\ Clientes\ -\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}NIF:\ \%d\(\backslash\)nNome:\ \%s\(\backslash\)nEndereço:\ \%s\(\backslash\)nSaldo:\ \%.2f\(\backslash\)nLocalização:\ \%d\(\backslash\)nGeocódigo:\ \%s\(\backslash\)n\(\backslash\)n"{}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a757ddb7e21390848cb858c56b4283834}{nome}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a0399be9fd4882a1bed187f3907776f4f}{endereco}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a2c1637e183f0a1ca7b66d6e6bc7ae06f}{localizacao}},\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_aeb808fe520ba79efb2a940a2892f58f8}{geocodigo}});}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

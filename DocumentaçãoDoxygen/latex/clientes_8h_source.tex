@@ -1,0 +1,69 @@
+\hypertarget{clientes_8h_source}{}\doxysection{clientes.\+h}
+\label{clientes_8h_source}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/clientes.h@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/clientes.h}}
+\mbox{\hyperlink{clientes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ TAM\_NOME\ 50\ }\textcolor{comment}{//Definir\ tamanho\ char\ para\ nome\ cliente}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ TAM\_END\ 100\ }\textcolor{comment}{//Definir\ tamanho\ char\ para\ endereço do\ cliente}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ TAM\_GEOCLIENTE\ 100\ }\textcolor{comment}{//Definir\ tamanho\ char\ para\ geocódigo\ do\ cliente}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//Estrutura\ para\ clientes}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cliente}{Cliente}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}};\ \textcolor{comment}{//\ número\ de\ identificação\ fiscal}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cliente_a757ddb7e21390848cb858c56b4283834}{nome}}[\mbox{\hyperlink{clientes_8h_ad0e480e07eae04b077948c75deb75422}{TAM\_NOME}}];\ \textcolor{comment}{//\ nome\ completo}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cliente_a0399be9fd4882a1bed187f3907776f4f}{endereco}}[\mbox{\hyperlink{clientes_8h_ae3d972ca950fd3c6e1a5b089fd96f12f}{TAM\_END}}];\ \textcolor{comment}{//\ endereço completo}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}};\ \textcolor{comment}{//\ saldo\ disponível}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_cliente_a2c1637e183f0a1ca7b66d6e6bc7ae06f}{localizacao}};\ \textcolor{comment}{//\ localização\ do\ cliente\ (corresponde\ ao\ ID\ da\ cidade\ do\ grafo)}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cliente_aeb808fe520ba79efb2a940a2892f58f8}{geocodigo}}[\mbox{\hyperlink{clientes_8h_ad5abf2599f28a347693102fabc0419cc}{TAM\_GEOCLIENTE}}];\ \textcolor{comment}{//\ geocódigo\ (what3words.com)}}
+\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{struct_cliente}{Cliente}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//Estrutura\ para\ a\ lista\ de\ clientes}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cliente_lista}{ClienteLista}}\ \{\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct_cliente}{Cliente}}\ \mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cliente_lista}{ClienteLista}}\ *\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ próximo\ cliente\ na\ lista\ ligada}}
+\DoxyCodeLine{00033\ \}\ \mbox{\hyperlink{struct_cliente_lista}{ClienteLista}},\ *\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{ClienteListaPtr}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//Declara\ a\ função\ para\ ler\ os\ clientes\ do\ arquivo\ CSV\ e\ outra\ função\ para\ ler\ do\ arquivo\ BIN}}
+\DoxyCodeLine{00036\ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ \mbox{\hyperlink{clientes_8h_aa141d41b9fd24b40f6b17c6c00b307ae}{lerClientesCSV}}(\textcolor{keywordtype}{char}*\ nomeArquivo);}
+\DoxyCodeLine{00037\ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ \mbox{\hyperlink{clientes_8h_a6d6979e7241c02e0c59d74ece5247ec4}{lerClientesBin}}(\textcolor{keywordtype}{char}*\ nomeArquivoBin);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//Declara\ a\ função\ para\ escrever\ os\ clientes\ no\ arquivo\ CSV}}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{clientes_8h_ad4d82068fda9b27dd2330c01fe0c0205}{escreverClientesCSV}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{char}*\ nomeArquivo);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//Cria\ um\ novo\ cliente\ e\ retorna\ um\ ponteiro\ para\ a\ estrutura\ criada}}
+\DoxyCodeLine{00043\ \mbox{\hyperlink{struct_cliente}{Cliente}}*\ \mbox{\hyperlink{clientes_8h_a667eccbd199e44e5fe91a12a46bf6bb2}{novoCliente}}(\textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{char}\ nome[],\ \textcolor{keywordtype}{char}\ endereco[],\ \textcolor{keywordtype}{float}\ saldo,\ \textcolor{keywordtype}{int}\ localizacao,\ \textcolor{keywordtype}{char}\ geocodigo[]);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//Adiciona\ um\ novo\ cliente\ à lista\ de\ clientes}}
+\DoxyCodeLine{00046\ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ \mbox{\hyperlink{clientes_8h_a1131bbccbf1bae959f99c933ef730879}{adicionarCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \mbox{\hyperlink{struct_cliente}{Cliente}}*\ \mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//Remove\ um\ cliente\ da\ lista\ de\ clientes\ com\ base\ no\ seu\ NIF}}
+\DoxyCodeLine{00049\ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ \mbox{\hyperlink{clientes_8h_adc79e9d9f601dbbd66b5702f24e56794}{removerCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//Altera\ os\ dados\ de\ um\ cliente\ existente\ com\ base\ no\ seu\ NIF}}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{clientes_8h_a8b8d852d506c3c8fa5f2f7047ae1f6f4}{alterarCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{char}\ nome[],\ \textcolor{keywordtype}{char}\ endereco[],\ \textcolor{keywordtype}{float}\ saldo,\ \textcolor{keywordtype}{int}\ localizacao,\ \textcolor{keywordtype}{char}\ geocodigo[]);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{clientes_8h_ac2ec2e2b7ecc9af4bde545d0c5a6fc0a}{alterarNomeCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{char}\ nome[]);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{clientes_8h_aa1e594d10477d45beebabd3c628810b5}{alterarEnderecoCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{char}\ endereco[]);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{clientes_8h_ac714dceaed825bdae2e231130fef0fa4}{alterarSaldoCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{float}\ saldo);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{clientes_8h_a6a738055ec49ab7e73bd3468d955160f}{alterarLocalizacaoCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{int}\ localizacao);}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{clientes_8h_a74c513cf4940a2a16cd44d842d17e75d}{alterarGeocodigoCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{char}\ geocodigo[]);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//Retorna\ um\ ponteiro\ para\ o\ cliente\ com\ o\ NIF\ especificado,\ ou\ NULL\ caso\ não exista}}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{struct_cliente}{Cliente}}*\ \mbox{\hyperlink{clientes_8h_a7ee7e12bf3961fce74c6daa2b72053a3}{pesquisarCliente}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes,\ \textcolor{keywordtype}{int}\ nif);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//Liberta\ a\ memória\ da\ lista\ dos\ clientes}}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{clientes_8h_a47446520a00827171c4728c1f3fd8a3b}{libertarClientesLista}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ lista);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//Guardar\ backup\ dados\ clientes}}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{clientes_8h_a744d6fbef9efb1267f481c17798b5e05}{guardarBackupClientes}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//Lista\ todos\ os\ clientes\ em\ memória}}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{clientes_8h_a1e1a711d74a3b6a4a15f008707f34277}{listarClientes}}(\mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ listaClientes);}
+
+\end{DoxyCode}

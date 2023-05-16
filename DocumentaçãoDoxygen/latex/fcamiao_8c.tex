@@ -1,0 +1,217 @@
+\hypertarget{fcamiao_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/fcamiao.c File Reference}
+\label{fcamiao_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/fcamiao.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/fcamiao.c}}
+
+
+Funções para o camião.  
+
+
+{\ttfamily \#include \char`\"{}meios.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}camiao.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$ \mbox{\hyperlink{fcamiao_8c_aac34a7ce57aa6195369dfb26b9645996}{criar\+Camiao}} ()
+\begin{DoxyCompactList}\small\item\em Cria um novo camião. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fcamiao_8c_a5e8eda5782228ebd3032bf83b7e3a01d}{destruir\+Camiao}} (\mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$camiao)
+\begin{DoxyCompactList}\small\item\em Destrói um camião previamente alocado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fcamiao_8c_ac058a3d3d9ea50d9c29d844e7f80b419}{imprimir\+Camiao}} (\mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$camiao)
+\begin{DoxyCompactList}\small\item\em Imprime os dados de um camião. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fcamiao_8c_acd8183df46cc306b822e86ac241fd834}{contar\+Meios\+Mobilidade}} (\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade, char tipo\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Conta quantos meios de mobilidade de um dado tipo existem na lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fcamiao_8c_a7b2dc5e0475513cf6441233b733277aa}{recolher\+Mobilidade\+Eletrica}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, \mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidade, \mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$camiao, char tipo\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Recolhe meios de mobilidade elétrica do tipo especificado pelo utilizador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para o camião. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fcamiao_8c_acd8183df46cc306b822e86ac241fd834}\label{fcamiao_8c_acd8183df46cc306b822e86ac241fd834}} 
+\index{fcamiao.c@{fcamiao.c}!contarMeiosMobilidade@{contarMeiosMobilidade}}
+\index{contarMeiosMobilidade@{contarMeiosMobilidade}!fcamiao.c@{fcamiao.c}}
+\doxysubsubsection{\texorpdfstring{contarMeiosMobilidade()}{contarMeiosMobilidade()}}
+{\footnotesize\ttfamily int contar\+Meios\+Mobilidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade,  }\item[{char}]{tipo\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Conta quantos meios de mobilidade de um dado tipo existem na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Meios\+Mobilidade} & Apontador para a lista de meios de mobilidade. \\
+\hline
+{\em tipo} & String contendo o tipo de meio de mobilidade a ser contado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de meios de mobilidade do tipo especificado. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ atual\ =\ listaMeiosMobilidade;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ tipo)\ ==\ 0)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fcamiao_8c_aac34a7ce57aa6195369dfb26b9645996}\label{fcamiao_8c_aac34a7ce57aa6195369dfb26b9645996}} 
+\index{fcamiao.c@{fcamiao.c}!criarCamiao@{criarCamiao}}
+\index{criarCamiao@{criarCamiao}!fcamiao.c@{fcamiao.c}}
+\doxysubsubsection{\texorpdfstring{criarCamiao()}{criarCamiao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$ criar\+Camiao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria um novo camião. 
+
+\begin{DoxyReturn}{Returns}
+Apontador para o novo camião. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_camiao}{Camiao}}*\ camiao\ =\ (\mbox{\hyperlink{struct_camiao}{Camiao}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_camiao}{Camiao}}));}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (camiao\ !=\ NULL)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ camiao-\/>\mbox{\hyperlink{struct_camiao_a56bf8ec57ebfd9473ba511d0fb6ca729}{autonomia}}\ =\ 0.0;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ camiao-\/>\mbox{\hyperlink{struct_camiao_a3431037fd9ed5651ece85098840e32bf}{capacidade}}\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ camiao;}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fcamiao_8c_a5e8eda5782228ebd3032bf83b7e3a01d}\label{fcamiao_8c_a5e8eda5782228ebd3032bf83b7e3a01d}} 
+\index{fcamiao.c@{fcamiao.c}!destruirCamiao@{destruirCamiao}}
+\index{destruirCamiao@{destruirCamiao}!fcamiao.c@{fcamiao.c}}
+\doxysubsubsection{\texorpdfstring{destruirCamiao()}{destruirCamiao()}}
+{\footnotesize\ttfamily void destruir\+Camiao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$}]{camiao }\end{DoxyParamCaption})}
+
+
+
+Destrói um camião previamente alocado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camiao} & Apontador para o camião a ser destruído. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ free(camiao);}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fcamiao_8c_ac058a3d3d9ea50d9c29d844e7f80b419}\label{fcamiao_8c_ac058a3d3d9ea50d9c29d844e7f80b419}} 
+\index{fcamiao.c@{fcamiao.c}!imprimirCamiao@{imprimirCamiao}}
+\index{imprimirCamiao@{imprimirCamiao}!fcamiao.c@{fcamiao.c}}
+\doxysubsubsection{\texorpdfstring{imprimirCamiao()}{imprimirCamiao()}}
+{\footnotesize\ttfamily void imprimir\+Camiao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$}]{camiao }\end{DoxyParamCaption})}
+
+
+
+Imprime os dados de um camião. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camiao} & Apontador para o camião a ser impresso. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Autonomia\ do\ camiao:\ \%.2f\ km\(\backslash\)n"{}},\ camiao-\/>\mbox{\hyperlink{struct_camiao_a56bf8ec57ebfd9473ba511d0fb6ca729}{autonomia}});}
+\DoxyCodeLine{00039\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Capacidade\ do\ camiao:\ \%d\ meios\ de\ mobilidade\ eletrica\(\backslash\)n"{}},\ camiao-\/>\mbox{\hyperlink{struct_camiao_a3431037fd9ed5651ece85098840e32bf}{capacidade}});}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fcamiao_8c_a7b2dc5e0475513cf6441233b733277aa}\label{fcamiao_8c_a7b2dc5e0475513cf6441233b733277aa}} 
+\index{fcamiao.c@{fcamiao.c}!recolherMobilidadeEletrica@{recolherMobilidadeEletrica}}
+\index{recolherMobilidadeEletrica@{recolherMobilidadeEletrica}!fcamiao.c@{fcamiao.c}}
+\doxysubsubsection{\texorpdfstring{recolherMobilidadeEletrica()}{recolherMobilidadeEletrica()}}
+{\footnotesize\ttfamily void recolher\+Mobilidade\+Eletrica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$}]{grafo,  }\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidade,  }\item[{\mbox{\hyperlink{struct_camiao}{Camiao}} $\ast$}]{camiao,  }\item[{char}]{tipo\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Recolhe meios de mobilidade elétrica do tipo especificado pelo utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o grafo. \\
+\hline
+{\em lista\+Meios\+Mobilidade} & Apontador para a lista de meios de mobilidade elétrica. \\
+\hline
+{\em camiao} & Apontador para a estrutura que representa o camião de recolha. \\
+\hline
+{\em tipo} & Tipos de meios de mobilidade elétrica a serem recolhidos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ numRecolhidos\ =\ 0;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ posicaoAtualCamiao\ =\ 1;\ \textcolor{comment}{//\ posicao\ inicial\ do\ camiao}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ numMeiosMobilidade\ =\ \mbox{\hyperlink{fcamiao_8c_acd8183df46cc306b822e86ac241fd834}{contarMeiosMobilidade}}(listaMeiosMobilidade,\ tipo);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{struct_meios_mobilidade_lista}{MeiosMobilidadeListaPtr}}\ atual\ =\ listaMeiosMobilidade;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL\ \&\&\ numRecolhidos\ <\ numMeiosMobilidade)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_af8f42ecd055f388fc4c43ea0875eee23}{autonomia}}\ <\ 50\ \&\&\ strcmp(atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ tipo)\ ==\ 0)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distancia\ =\ \mbox{\hyperlink{fgrafos_8c_a8d8e6918ef0ac66a284f66222ce5379d}{pesquisarEmLargura}}(grafo,\ posicaoAtualCamiao,\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pesoMeioMobilidade\ =\ 0;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ \textcolor{stringliteral}{"{}Carro"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pesoMeioMobilidade\ =\ 1000;\ \textcolor{comment}{//1000kg\ por\ carro}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strcmp(atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ \textcolor{stringliteral}{"{}Bicicleta"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pesoMeioMobilidade\ =\ 6.5;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strcmp(atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ \textcolor{stringliteral}{"{}Mota"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pesoMeioMobilidade\ =\ 50;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strcmp(atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8625d65e9e510567132ae6dd9848dc1a}{tipo}},\ \textcolor{stringliteral}{"{}Skate"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pesoMeioMobilidade\ =\ 4;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (camiao-\/>\mbox{\hyperlink{struct_camiao_a3431037fd9ed5651ece85098840e32bf}{capacidade}}\ +\ pesoMeioMobilidade\ >\ 23000)\ \{\ \textcolor{comment}{//camiao\ com\ 23toneladas\ de\ carga\ max.}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Não é possível\ recolher\ meio\ de\ mobilidade\ elétrica\ com\ ID\ \%d,\ o\ camião não tem\ capacidade\ suficiente.\(\backslash\)n"{}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a515fd60650b736f7a133e230b9e91f52}{id}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Recolher\ meio\ de\ mobilidade\ elétrica\ com\ ID\ \%d.\(\backslash\)n"{}},\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a515fd60650b736f7a133e230b9e91f52}{id}});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ posicaoAtualCamiao\ =\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_af3e7f25ac61d36a9c918ee1f3315b149}{meioMobilidade}}.\mbox{\hyperlink{struct_meio_mobilidade_a8766e67c308c39770e50274480a56a7e}{localizacao}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ camiao-\/>\mbox{\hyperlink{struct_camiao_a3431037fd9ed5651ece85098840e32bf}{capacidade}}\ +=\ pesoMeioMobilidade;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ numRecolhidos++;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_meios_mobilidade_lista_a40003758ae22a8f7c668c4472598a405}{proxmeiomobilidadelista}};}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaEstacaoRecolha\ =\ \mbox{\hyperlink{fgrafos_8c_a8d8e6918ef0ac66a284f66222ce5379d}{pesquisarEmLargura}}(grafo,\ posicaoAtualCamiao,\ 1);}
+\DoxyCodeLine{00110\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Retornar\ camião à estação\ de\ recolha.\ Distância\ percorrida:\ \%.2f\ metros.\(\backslash\)n"{}},\ distanciaEstacaoRecolha);}
+\DoxyCodeLine{00111\ \ \ \ \ printf(\textcolor{stringliteral}{"{}O\ camião recolheu\ \%d\ veículos.\(\backslash\)n"{}},\ numRecolhidos);}
+\DoxyCodeLine{00112\ \ \ \ \ posicaoAtualCamiao\ =\ 0;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{fcamiao_8c_a5e8eda5782228ebd3032bf83b7e3a01d}{destruirCamiao}};\ \textcolor{comment}{//limpar\ memoria\ camiao}}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,103 @@
+\hypertarget{fgestores_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/fgestores.c File Reference}
+\label{fgestores_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/fgestores.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/fgestores.c}}
+
+
+Funções para gestores.  
+
+
+{\ttfamily \#include \char`\"{}gestores.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fgestores_8c_a8a0a86d126a809180fd36060eac7c872}{TAM\+\_\+\+NOME\+\_\+\+USER}}~50
+\item 
+\#define \mbox{\hyperlink{fgestores_8c_a8af889424cdbc9ec6caa28cc5442f9f7}{TAM\+\_\+\+NOME\+\_\+\+SENHA}}~50
+\item 
+\#define \mbox{\hyperlink{fgestores_8c_a738da1b507b3f398e3a7dec8d9b81191}{GESTOR\+\_\+\+USER}}~\char`\"{}admin\char`\"{}
+\item 
+\#define \mbox{\hyperlink{fgestores_8c_a6827a0021bf416e5414f3cbdf67db2ba}{GESTOR\+\_\+\+SENHA}}~\char`\"{}1234\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fgestores_8c_a5764588a001a9a4d209593b217a7139a}{login\+Gestor}} ()
+\begin{DoxyCompactList}\small\item\em Função para fazer login como gestor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para gestores. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fgestores_8c_a6827a0021bf416e5414f3cbdf67db2ba}\label{fgestores_8c_a6827a0021bf416e5414f3cbdf67db2ba}} 
+\index{fgestores.c@{fgestores.c}!GESTOR\_SENHA@{GESTOR\_SENHA}}
+\index{GESTOR\_SENHA@{GESTOR\_SENHA}!fgestores.c@{fgestores.c}}
+\doxysubsubsection{\texorpdfstring{GESTOR\_SENHA}{GESTOR\_SENHA}}
+{\footnotesize\ttfamily \#define GESTOR\+\_\+\+SENHA~\char`\"{}1234\char`\"{}}
+
+\mbox{\Hypertarget{fgestores_8c_a738da1b507b3f398e3a7dec8d9b81191}\label{fgestores_8c_a738da1b507b3f398e3a7dec8d9b81191}} 
+\index{fgestores.c@{fgestores.c}!GESTOR\_USER@{GESTOR\_USER}}
+\index{GESTOR\_USER@{GESTOR\_USER}!fgestores.c@{fgestores.c}}
+\doxysubsubsection{\texorpdfstring{GESTOR\_USER}{GESTOR\_USER}}
+{\footnotesize\ttfamily \#define GESTOR\+\_\+\+USER~\char`\"{}admin\char`\"{}}
+
+\mbox{\Hypertarget{fgestores_8c_a8af889424cdbc9ec6caa28cc5442f9f7}\label{fgestores_8c_a8af889424cdbc9ec6caa28cc5442f9f7}} 
+\index{fgestores.c@{fgestores.c}!TAM\_NOME\_SENHA@{TAM\_NOME\_SENHA}}
+\index{TAM\_NOME\_SENHA@{TAM\_NOME\_SENHA}!fgestores.c@{fgestores.c}}
+\doxysubsubsection{\texorpdfstring{TAM\_NOME\_SENHA}{TAM\_NOME\_SENHA}}
+{\footnotesize\ttfamily \#define TAM\+\_\+\+NOME\+\_\+\+SENHA~50}
+
+\mbox{\Hypertarget{fgestores_8c_a8a0a86d126a809180fd36060eac7c872}\label{fgestores_8c_a8a0a86d126a809180fd36060eac7c872}} 
+\index{fgestores.c@{fgestores.c}!TAM\_NOME\_USER@{TAM\_NOME\_USER}}
+\index{TAM\_NOME\_USER@{TAM\_NOME\_USER}!fgestores.c@{fgestores.c}}
+\doxysubsubsection{\texorpdfstring{TAM\_NOME\_USER}{TAM\_NOME\_USER}}
+{\footnotesize\ttfamily \#define TAM\+\_\+\+NOME\+\_\+\+USER~50}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fgestores_8c_a5764588a001a9a4d209593b217a7139a}\label{fgestores_8c_a5764588a001a9a4d209593b217a7139a}} 
+\index{fgestores.c@{fgestores.c}!loginGestor@{loginGestor}}
+\index{loginGestor@{loginGestor}!fgestores.c@{fgestores.c}}
+\doxysubsubsection{\texorpdfstring{loginGestor()}{loginGestor()}}
+{\footnotesize\ttfamily int login\+Gestor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para fazer login como gestor. 
+
+\begin{DoxyReturn}{Returns}
+1 Se o login foi bem sucedido 
+
+0 Se ocorreu um erro no login 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}\ user[\mbox{\hyperlink{fgestores_8c_a8a0a86d126a809180fd36060eac7c872}{TAM\_NOME\_USER}}];}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}\ senha[\mbox{\hyperlink{fgestores_8c_a8af889424cdbc9ec6caa28cc5442f9f7}{TAM\_NOME\_SENHA}}];}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Solicita\ o\ user\ e\ a\ senha\ do\ gestor}}
+\DoxyCodeLine{00028\ \ \ \ \ printf(\textcolor{stringliteral}{"{}User:\ "{}});}
+\DoxyCodeLine{00029\ \ \ \ \ scanf\_s(\textcolor{stringliteral}{"{}\%s"{}},\ \&user,\ \textcolor{keyword}{sizeof}(user));}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Senha:\ "{}});}
+\DoxyCodeLine{00032\ \ \ \ \ scanf\_s(\textcolor{stringliteral}{"{}\%s"{}},\ \&senha,\ \textcolor{keyword}{sizeof}(senha));}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ user\ e\ a\ senha\ estão corretos}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(user,\ \mbox{\hyperlink{fgestores_8c_a738da1b507b3f398e3a7dec8d9b81191}{GESTOR\_USER}})\ ==\ 0\ \&\&\ strcmp(senha,\ \mbox{\hyperlink{fgestores_8c_a6827a0021bf416e5414f3cbdf67db2ba}{GESTOR\_SENHA}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \textcolor{comment}{//sucesso}}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//erro}}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}

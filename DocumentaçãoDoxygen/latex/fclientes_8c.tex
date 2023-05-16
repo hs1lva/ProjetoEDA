@@ -1,0 +1,465 @@
+\hypertarget{fclientes_8c}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/fclientes.c File Reference}
+\label{fclientes_8c}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/fclientes.c@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/fclientes.c}}
+
+
+Funções para clientes.  
+
+
+{\ttfamily \#include \char`\"{}clientes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$ \mbox{\hyperlink{fclientes_8c_a667eccbd199e44e5fe91a12a46bf6bb2}{novo\+Cliente}} (int nif, char nome\mbox{[}$\,$\mbox{]}, char endereco\mbox{[}$\,$\mbox{]}, float saldo, int localizacao, char geocodigo\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Cria um novo cliente e retorna um apontador para a estrutura criada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} \mbox{\hyperlink{fclientes_8c_a1131bbccbf1bae959f99c933ef730879}{adicionar\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, \mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo cliente à lista de clientes. Esta função recebe um apontador para a lista de clientes e um apontador para a estrutura \mbox{\hyperlink{struct_cliente}{Cliente}}, e cria um novo nó na lista com a informação do cliente. Em seguida, retorna um apontador para o novo nó. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} \mbox{\hyperlink{fclientes_8c_adc79e9d9f601dbbd66b5702f24e56794}{remover\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif)
+\begin{DoxyCompactList}\small\item\em Remove um cliente da lista de clientes com base no seu NIF. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fclientes_8c_a8b8d852d506c3c8fa5f2f7047ae1f6f4}{alterar\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif, char nome\mbox{[}$\,$\mbox{]}, char endereco\mbox{[}$\,$\mbox{]}, float saldo, int localizacao, char geocodigo\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Altera os dados de um cliente existente com base no seu NIF. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fclientes_8c_ac2ec2e2b7ecc9af4bde545d0c5a6fc0a}{alterar\+Nome\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif, char nome\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Altera o nome de um cliente existente com base no seu NIF. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fclientes_8c_aa1e594d10477d45beebabd3c628810b5}{alterar\+Endereco\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif, char endereco\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Altera o endereço de um cliente existente com base no seu NIF. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fclientes_8c_ac714dceaed825bdae2e231130fef0fa4}{alterar\+Saldo\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif, float saldo)
+\begin{DoxyCompactList}\small\item\em Altera o saldo de um cliente existente com base no seu NIF. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fclientes_8c_a6a738055ec49ab7e73bd3468d955160f}{alterar\+Localizacao\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif, int localizacao)
+\begin{DoxyCompactList}\small\item\em Altera a localização de um cliente existente com base no seu NIF. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fclientes_8c_a74c513cf4940a2a16cd44d842d17e75d}{alterar\+Geocodigo\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif, char geocodigo\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Altera o geocódigo de um cliente existente com base no seu NIF. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$ \mbox{\hyperlink{fclientes_8c_a7ee7e12bf3961fce74c6daa2b72053a3}{pesquisar\+Cliente}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, int nif)
+\begin{DoxyCompactList}\small\item\em Retorna um apontador para o cliente com o NIF especificado, ou NULL caso não exista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fclientes_8c_a67cde4e6d07d349314ddd56fc0f10695}{libertar\+Clientes\+Lista}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes)
+\begin{DoxyCompactList}\small\item\em Liberta a memória alocada para a lista de clientes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para clientes. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fclientes_8c_a1131bbccbf1bae959f99c933ef730879}\label{fclientes_8c_a1131bbccbf1bae959f99c933ef730879}} 
+\index{fclientes.c@{fclientes.c}!adicionarCliente@{adicionarCliente}}
+\index{adicionarCliente@{adicionarCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{adicionarCliente()}{adicionarCliente()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} adicionar\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{\mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$}]{cliente }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo cliente à lista de clientes. Esta função recebe um apontador para a lista de clientes e um apontador para a estrutura \mbox{\hyperlink{struct_cliente}{Cliente}}, e cria um novo nó na lista com a informação do cliente. Em seguida, retorna um apontador para o novo nó. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & O apontador para a lista de clientes. \\
+\hline
+{\em cliente} & O apontador para a estrutura \mbox{\hyperlink{struct_cliente}{Cliente}} a ser adicionada na lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna um apontador para o novo nó criado na lista. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ já existe\ um\ cliente\ com\ o\ mesmo\ NIF}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{fclientes_8c_a7ee7e12bf3961fce74c6daa2b72053a3}{pesquisarCliente}}(listaClientes,\ cliente-\/>\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}})\ !=\ NULL)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ listaClientes;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ \mbox{\hyperlink{fclientes_8c_a667eccbd199e44e5fe91a12a46bf6bb2}{novoCliente}}\ =\ (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{ClienteListaPtr}})malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cliente_lista}{ClienteLista}}));\ \textcolor{comment}{//\ Aloca\ espaço na\ memória\ para\ o\ novo\ nó na\ lista}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{fclientes_8c_a667eccbd199e44e5fe91a12a46bf6bb2}{novoCliente}}-\/>cliente\ =\ *cliente;\ \textcolor{comment}{//\ Copia\ a\ informação\ do\ cliente\ recebido\ para\ a\ estrutura\ dentro\ do\ novo\ nó}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{fclientes_8c_a667eccbd199e44e5fe91a12a46bf6bb2}{novoCliente}}-\/>proxclientelista\ =\ listaClientes;\ \textcolor{comment}{//\ Faz\ o\ novo\ nó apontar\ para\ o\ início\ da\ lista}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{fclientes_8c_a667eccbd199e44e5fe91a12a46bf6bb2}{novoCliente}};\ \textcolor{comment}{//\ Retorna\ o\ apontador\ para\ o\ novo\ nó criado\ na\ lista}}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_a8b8d852d506c3c8fa5f2f7047ae1f6f4}\label{fclientes_8c_a8b8d852d506c3c8fa5f2f7047ae1f6f4}} 
+\index{fclientes.c@{fclientes.c}!alterarCliente@{alterarCliente}}
+\index{alterarCliente@{alterarCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{alterarCliente()}{alterarCliente()}}
+{\footnotesize\ttfamily bool alterar\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif,  }\item[{char}]{nome\mbox{[}$\,$\mbox{]},  }\item[{char}]{endereco\mbox{[}$\,$\mbox{]},  }\item[{float}]{saldo,  }\item[{int}]{localizacao,  }\item[{char}]{geocodigo\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Altera os dados de um cliente existente com base no seu NIF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para a lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser alterado \\
+\hline
+{\em nome} & novo nome do cliente \\
+\hline
+{\em endereco} & novo endereço do cliente \\
+\hline
+{\em saldo} & novo saldo do cliente \\
+\hline
+{\em localizacao} & Localização do cliente \\
+\hline
+{\em geocodigo} & Geocódigo do cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 1 se a alteração for bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ Percorre\ a\ lista\ até encontrar\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a757ddb7e21390848cb858c56b4283834}{nome}},\ nome);\ \textcolor{comment}{//\ Altera\ os\ dados\ do\ cliente}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a0399be9fd4882a1bed187f3907776f4f}{endereco}},\ endereco);\ \textcolor{comment}{//\ Altera\ os\ dados\ do\ cliente}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}}\ =\ saldo;\ \textcolor{comment}{//\ Altera\ os\ dados\ do\ cliente}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a2c1637e183f0a1ca7b66d6e6bc7ae06f}{localizacao}}\ =\ localizacao;\ \textcolor{comment}{//\ Altera\ os\ dados\ do\ cliente}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_aeb808fe520ba79efb2a940a2892f58f8}{geocodigo}},\ geocodigo);\ \textcolor{comment}{//\ Altera\ os\ dados\ do\ cliente}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ cliente\ não encontrado}}
+\DoxyCodeLine{00107\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_aa1e594d10477d45beebabd3c628810b5}\label{fclientes_8c_aa1e594d10477d45beebabd3c628810b5}} 
+\index{fclientes.c@{fclientes.c}!alterarEnderecoCliente@{alterarEnderecoCliente}}
+\index{alterarEnderecoCliente@{alterarEnderecoCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{alterarEnderecoCliente()}{alterarEnderecoCliente()}}
+{\footnotesize\ttfamily bool alterar\+Endereco\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif,  }\item[{char}]{endereco\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Altera o endereço de um cliente existente com base no seu NIF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para a lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser alterado \\
+\hline
+{\em endereco} & novo endereço do cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 1 se a alteração for bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ Percorre\ a\ lista\ até encontrar\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a0399be9fd4882a1bed187f3907776f4f}{endereco}},\ endereco);\ \textcolor{comment}{//\ Altera\ o\ endereço do\ cliente}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ cliente\ não encontrado}}
+\DoxyCodeLine{00147\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_a74c513cf4940a2a16cd44d842d17e75d}\label{fclientes_8c_a74c513cf4940a2a16cd44d842d17e75d}} 
+\index{fclientes.c@{fclientes.c}!alterarGeocodigoCliente@{alterarGeocodigoCliente}}
+\index{alterarGeocodigoCliente@{alterarGeocodigoCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{alterarGeocodigoCliente()}{alterarGeocodigoCliente()}}
+{\footnotesize\ttfamily bool alterar\+Geocodigo\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif,  }\item[{char}]{geocodigo\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Altera o geocódigo de um cliente existente com base no seu NIF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para a lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser alterado \\
+\hline
+{\em geocodigo} & novo geocódigo do cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 1 se a alteração for bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ Percorre\ a\ lista\ até encontrar\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_aeb808fe520ba79efb2a940a2892f58f8}{geocodigo}},\ geocodigo);\ \textcolor{comment}{//\ Altera\ o\ geocodigo\ do\ cliente}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ cliente\ não encontrado}}
+\DoxyCodeLine{00207\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_a6a738055ec49ab7e73bd3468d955160f}\label{fclientes_8c_a6a738055ec49ab7e73bd3468d955160f}} 
+\index{fclientes.c@{fclientes.c}!alterarLocalizacaoCliente@{alterarLocalizacaoCliente}}
+\index{alterarLocalizacaoCliente@{alterarLocalizacaoCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{alterarLocalizacaoCliente()}{alterarLocalizacaoCliente()}}
+{\footnotesize\ttfamily bool alterar\+Localizacao\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif,  }\item[{int}]{localizacao }\end{DoxyParamCaption})}
+
+
+
+Altera a localização de um cliente existente com base no seu NIF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para a lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser alterado \\
+\hline
+{\em localizacao} & nova localização do cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 1 se a alteração for bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ Percorre\ a\ lista\ até encontrar\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a2c1637e183f0a1ca7b66d6e6bc7ae06f}{localizacao}}\ =\ localizacao;\ \textcolor{comment}{//\ Altera\ a\ localização\ do\ cliente}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ cliente\ não encontrado}}
+\DoxyCodeLine{00187\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_ac2ec2e2b7ecc9af4bde545d0c5a6fc0a}\label{fclientes_8c_ac2ec2e2b7ecc9af4bde545d0c5a6fc0a}} 
+\index{fclientes.c@{fclientes.c}!alterarNomeCliente@{alterarNomeCliente}}
+\index{alterarNomeCliente@{alterarNomeCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{alterarNomeCliente()}{alterarNomeCliente()}}
+{\footnotesize\ttfamily bool alterar\+Nome\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif,  }\item[{char}]{nome\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Altera o nome de um cliente existente com base no seu NIF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para a lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser alterado \\
+\hline
+{\em nome} & novo nome do cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 1 se a alteração for bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ Percorre\ a\ lista\ até encontrar\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a757ddb7e21390848cb858c56b4283834}{nome}},\ nome);\ \textcolor{comment}{//\ Altera\ o\ nome\ do\ cliente}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ cliente\ não encontrado}}
+\DoxyCodeLine{00127\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_ac714dceaed825bdae2e231130fef0fa4}\label{fclientes_8c_ac714dceaed825bdae2e231130fef0fa4}} 
+\index{fclientes.c@{fclientes.c}!alterarSaldoCliente@{alterarSaldoCliente}}
+\index{alterarSaldoCliente@{alterarSaldoCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{alterarSaldoCliente()}{alterarSaldoCliente()}}
+{\footnotesize\ttfamily bool alterar\+Saldo\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif,  }\item[{float}]{saldo }\end{DoxyParamCaption})}
+
+
+
+Altera o saldo de um cliente existente com base no seu NIF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para a lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser alterado \\
+\hline
+{\em saldo} & novo saldo do cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 1 se a alteração for bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ Percorre\ a\ lista\ até encontrar\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}}\ =\ saldo;\ \textcolor{comment}{//\ Altera\ o\ saldo\ do\ cliente}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ sucesso}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ cliente\ não encontrado}}
+\DoxyCodeLine{00167\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_a67cde4e6d07d349314ddd56fc0f10695}\label{fclientes_8c_a67cde4e6d07d349314ddd56fc0f10695}} 
+\index{fclientes.c@{fclientes.c}!libertarClientesLista@{libertarClientesLista}}
+\index{libertarClientesLista@{libertarClientesLista}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{libertarClientesLista()}{libertarClientesLista()}}
+{\footnotesize\ttfamily bool libertar\+Clientes\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes }\end{DoxyParamCaption})}
+
+
+
+Liberta a memória alocada para a lista de clientes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & A lista de clientes a ser libertada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Retorna 1 se a libertação foi bem sucedida, 0 caso contrário. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ prox\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ guarda\ o\ apontador\ para\ o\ próximo\ elemento}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ free(atual);\ \textcolor{comment}{//\ liberta\ a\ memória\ do\ elemento\ atual}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ atual\ =\ prox;\ \textcolor{comment}{//\ avança para\ o\ próximo\ elemento}}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ true\ -\/\ bem\ sucedido}}
+\DoxyCodeLine{00241\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_a667eccbd199e44e5fe91a12a46bf6bb2}\label{fclientes_8c_a667eccbd199e44e5fe91a12a46bf6bb2}} 
+\index{fclientes.c@{fclientes.c}!novoCliente@{novoCliente}}
+\index{novoCliente@{novoCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{novoCliente()}{novoCliente()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$ novo\+Cliente (\begin{DoxyParamCaption}\item[{int}]{nif,  }\item[{char}]{nome\mbox{[}$\,$\mbox{]},  }\item[{char}]{endereco\mbox{[}$\,$\mbox{]},  }\item[{float}]{saldo,  }\item[{int}]{localizacao,  }\item[{char}]{geocodigo\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Cria um novo cliente e retorna um apontador para a estrutura criada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nif} & Número de Identificação Fiscal do cliente \\
+\hline
+{\em nome} & Nome do cliente \\
+\hline
+{\em endereco} & Endereço do cliente \\
+\hline
+{\em saldo} & Saldo do cliente \\
+\hline
+{\em localizacao} & Localização do cliente \\
+\hline
+{\em geocodigo} & Geocódigo do cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+apontador para a estrutura \mbox{\hyperlink{struct_cliente}{Cliente}} criada 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_cliente}{Cliente}}*\ cliente\ =\ (\mbox{\hyperlink{struct_cliente}{Cliente}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cliente}{Cliente}}));\ \textcolor{comment}{//\ Aloca\ espaço na\ memória\ para\ uma\ nova\ estrutura\ Cliente}}
+\DoxyCodeLine{00025\ \ \ \ \ cliente-\/>\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ =\ nif;\ \textcolor{comment}{//\ Atribui\ o\ número\ de\ identificação\ fiscal\ ao\ novo\ cliente}}
+\DoxyCodeLine{00026\ \ \ \ \ strcpy(cliente-\/>\mbox{\hyperlink{struct_cliente_a757ddb7e21390848cb858c56b4283834}{nome}},\ nome);\ \textcolor{comment}{//\ Copia\ o\ nome\ do\ cliente\ para\ a\ nova\ estrutura}}
+\DoxyCodeLine{00027\ \ \ \ \ strcpy(cliente-\/>\mbox{\hyperlink{struct_cliente_a0399be9fd4882a1bed187f3907776f4f}{endereco}},\ endereco);\ \textcolor{comment}{//\ Copia\ o\ endereço do\ cliente\ para\ a\ nova\ estrutura}}
+\DoxyCodeLine{00028\ \ \ \ \ cliente-\/>\mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}}\ =\ saldo;\ \textcolor{comment}{//\ Atribui\ o\ saldo\ ao\ novo\ cliente}}
+\DoxyCodeLine{00029\ \ \ \ \ cliente-\/>\mbox{\hyperlink{struct_cliente_a2c1637e183f0a1ca7b66d6e6bc7ae06f}{localizacao}}\ =\ localizacao;\ \textcolor{comment}{//\ Copia\ a\ localização\ do\ cliente\ para\ a\ nova\ estrutura}}
+\DoxyCodeLine{00030\ \ \ \ \ strcpy(cliente-\/>\mbox{\hyperlink{struct_cliente_aeb808fe520ba79efb2a940a2892f58f8}{geocodigo}},\ geocodigo);\ \textcolor{comment}{//\ Copia\ o\ geocodigo\ do\ cliente\ para\ a\ nova\ estrutura}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ cliente;\ \textcolor{comment}{//\ Retorna\ um\ apontador\ para\ a\ nova\ estrutura\ Cliente\ criada}}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_a7ee7e12bf3961fce74c6daa2b72053a3}\label{fclientes_8c_a7ee7e12bf3961fce74c6daa2b72053a3}} 
+\index{fclientes.c@{fclientes.c}!pesquisarCliente@{pesquisarCliente}}
+\index{pesquisarCliente@{pesquisarCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{pesquisarCliente()}{pesquisarCliente()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$ pesquisar\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif }\end{DoxyParamCaption})}
+
+
+
+Retorna um apontador para o cliente com o NIF especificado, ou NULL caso não exista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para a lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser pesquisado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cliente$\ast$ apontador para o cliente encontrado, ou NULL caso não exista 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ Inicializa\ o\ apontador\ atual\ para\ o\ primeiro\ elemento\ da\ lista}}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ Percorre\ a\ lista\ até encontrar\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}};\ \textcolor{comment}{//\ Retorna\ um\ apontador\ para\ o\ cliente\ com\ o\ NIF\ especificado}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;\ \textcolor{comment}{//\ cliente\ não encontrado}}
+\DoxyCodeLine{00225\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fclientes_8c_adc79e9d9f601dbbd66b5702f24e56794}\label{fclientes_8c_adc79e9d9f601dbbd66b5702f24e56794}} 
+\index{fclientes.c@{fclientes.c}!removerCliente@{removerCliente}}
+\index{removerCliente@{removerCliente}!fclientes.c@{fclientes.c}}
+\doxysubsubsection{\texorpdfstring{removerCliente()}{removerCliente()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} remover\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{int}]{nif }\end{DoxyParamCaption})}
+
+
+
+Remove um cliente da lista de clientes com base no seu NIF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Clientes} & apontador para o início da lista de clientes \\
+\hline
+{\em nif} & NIF do cliente a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cliente\+Lista\+Ptr apontador para o início da lista de clientes após a remoção 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ atual\ =\ listaClientes;\ \textcolor{comment}{//\ inicializa\ o\ apontador\ atual\ para\ apontar\ para\ o\ início\ da\ lista}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{struct_cliente_lista}{ClienteListaPtr}}\ anterior\ =\ NULL;\ \textcolor{comment}{//\ inicializa\ o\ apontador\ anterior\ como\ nulo}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{\ \textcolor{comment}{//\ enquanto\ a\ lista\ não for\ percorrida\ por\ completo}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae217c489d84ad1ce512e09810ef4b0af}{cliente}}.\mbox{\hyperlink{struct_cliente_a6ca09f247e4f13ef51251bba0bc6654c}{nif}}\ ==\ nif)\ \{\ \textcolor{comment}{//\ se\ encontrar\ o\ cliente\ com\ o\ NIF\ desejado}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (anterior\ ==\ NULL)\ \{\ \textcolor{comment}{//\ caso\ especial:\ primeiro\ elemento}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listaClientes\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ início\ da\ lista}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anterior-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}}\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ do\ elemento\ anterior}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ free(atual);\ \textcolor{comment}{//\ libera\ a\ memória\ alocada\ para\ o\ elemento}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ listaClientes;\ \textcolor{comment}{//\ retorna\ a\ lista\ atualizada}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ anterior\ =\ atual;\ \textcolor{comment}{//\ atualiza\ o\ apontador\ anterior\ para\ apontar\ para\ o\ atual}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_cliente_lista_ae0dc3c59ea6ff9f1aa9bd0b9f18cbeaf}{proxclientelista}};\ \textcolor{comment}{//\ atualiza\ o\ apontador\ atual\ para\ apontar\ para\ o\ próximo\ elemento\ da\ lista}}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ listaClientes;\ \textcolor{comment}{//\ retorna\ a\ lista\ original\ caso\ o\ cliente\ não tenha\ sido\ encontrado}}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}

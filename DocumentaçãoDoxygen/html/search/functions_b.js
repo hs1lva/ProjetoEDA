@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['timetostring_0',['timeToString',['../alugueres_8h.html#a0d82fad84eda38bd70879f6a62a35add',1,'timeToString(time_t t):&#160;falugueres.c'],['../falugueres_8c.html#a0d82fad84eda38bd70879f6a62a35add',1,'timeToString(time_t t):&#160;falugueres.c']]]
+  ['recolhermobilidadeeletrica_0',['recolherMobilidadeEletrica',['../camiao_8h.html#a7b2dc5e0475513cf6441233b733277aa',1,'recolherMobilidadeEletrica(Vertice *grafo, MeiosMobilidadeListaPtr listaMeiosMobilidade, Camiao *camiao, char tipo[]):&#160;fcamiao.c'],['../fcamiao_8c.html#a7b2dc5e0475513cf6441233b733277aa',1,'recolherMobilidadeEletrica(Vertice *grafo, MeiosMobilidadeListaPtr listaMeiosMobilidade, Camiao *camiao, char tipo[]):&#160;fcamiao.c']]],
+  ['removercliente_1',['removerCliente',['../clientes_8h.html#adc79e9d9f601dbbd66b5702f24e56794',1,'removerCliente(ClienteListaPtr listaClientes, int nif):&#160;fclientes.c'],['../fclientes_8c.html#adc79e9d9f601dbbd66b5702f24e56794',1,'removerCliente(ClienteListaPtr listaClientes, int nif):&#160;fclientes.c']]],
+  ['removerelemfila_2',['removerElemFila',['../fgrafos_8c.html#a956bd684483de8745fd28d687afdb62e',1,'removerElemFila(Fila *fila):&#160;fgrafos.c'],['../grafos_8h.html#a956bd684483de8745fd28d687afdb62e',1,'removerElemFila(Fila *fila):&#160;fgrafos.c']]],
+  ['removermeiomobilidade_3',['removerMeioMobilidade',['../fmeios_8c.html#a9bffc8357bcf9ebbdbd4104ad207011f',1,'removerMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id):&#160;fmeios.c'],['../meios_8h.html#a9bffc8357bcf9ebbdbd4104ad207011f',1,'removerMeioMobilidade(MeiosMobilidadeListaPtr listaMeiosMobilidade, int id):&#160;fmeios.c']]]
 ];

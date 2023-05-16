@@ -1,0 +1,376 @@
+\hypertarget{alugueres_8h}{}\doxysection{C\+:/\+Users/hugo2/\+One\+Drive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/\+IPCA/1Âº ANO LESI/2Âº Semestre/\+Estruturas Dados AvanÃ§adas/\+Projeto\+EDA/\+Projeto\+EDA/alugueres.h File Reference}
+\label{alugueres_8h}\index{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/alugueres.h@{C:/Users/hugo2/OneDrive -\/ Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/alugueres.h}}
+
+
+Header para alugueres.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_aluguer}{Aluguer}}
+\item 
+struct \mbox{\hyperlink{struct_aluguer_lista}{Aluguer\+Lista}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_aluguer}{Aluguer}} \mbox{\hyperlink{alugueres_8h_afb37cef674625047ed413fd6713ce3c6}{Aluguer}}
+\item 
+typedef struct \mbox{\hyperlink{struct_aluguer_lista}{Aluguer\+Lista}} \mbox{\hyperlink{alugueres_8h_aea041d1430239b429d80dcc2540a1ec7}{Aluguer\+Lista}}
+\item 
+typedef struct \mbox{\hyperlink{struct_aluguer_lista}{Aluguer\+Lista}} $\ast$ \mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_aluguer}{Aluguer}} \mbox{\hyperlink{alugueres_8h_a27398a0e599faf43b818a3a2b08b4c44}{novo\+Aluguer}} (int nifcliente, int idmeiomobilidade)
+\item 
+int \mbox{\hyperlink{alugueres_8h_ad54307b49da052e9cdd5cb22cc63f669}{inserir\+Aluguer\+Lista}} (\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} $\ast$lista\+Alugueres, \mbox{\hyperlink{struct_aluguer}{Aluguer}} aluguer)
+\begin{DoxyCompactList}\small\item\em Insere um novo aluguer na lista de alugueres. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{alugueres_8h_a0e6a019c91472f4c9f3bb8f48d630b96}{verificar\+Saldo\+Cliente}} (\mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$cliente, float custofinal)
+\begin{DoxyCompactList}\small\item\em Verifica se o cliente tem saldo suficiente para realizar um aluguer. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{alugueres_8h_aaff4571aad76d0e6498459a16f104c9d}{calcular\+Custo\+Aluguer}} (\mbox{\hyperlink{struct_meio_mobilidade}{Meio\+Mobilidade}} $\ast$meiomobilidade, float custoporkm, float distancia)
+\begin{DoxyCompactList}\small\item\em Realiza o cálculo do custo do aluguer com base na distância percorrida e no custo por kilómetro do aluguer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{alugueres_8h_ae9e52fc25960518fe57f7cc73ccf506b}{verificar\+Estado\+Meio\+Mobilidade}} (\mbox{\hyperlink{struct_meio_mobilidade}{Meio\+Mobilidade}} $\ast$meiomobilidade)
+\begin{DoxyCompactList}\small\item\em Verifica se o meio de mobilidade está disponível para alugar e chama a função alterar o valor para 1 (alugado) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{alugueres_8h_a6d7e4e66306858c1d267fff40693fef9}{adicionar\+Aluguer}} (\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}} lista\+Clientes, \mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}} lista\+Meios\+Mobilidad, \mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} lista\+Alugueres, \mbox{\hyperlink{struct_aluguer}{Aluguer}} $\ast$aluguer)
+\item 
+int \mbox{\hyperlink{alugueres_8h_a4299673c5457c885d7159eb5d6365757}{guardar\+Backup\+Alugueres}} (\mbox{\hyperlink{struct_aluguer}{Aluguer}} aluguer)
+\item 
+\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} \mbox{\hyperlink{alugueres_8h_af24c0708dc665d42ce0febd45683f50d}{ler\+Alugueres\+Bin}} (char $\ast$nome\+Arquivo)
+\begin{DoxyCompactList}\small\item\em Lê um arquivo binário com dados de alugueres e cria uma lista de alugueres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{alugueres_8h_aac218b3d6c49b01aacc8e5403fd95dad}{listar\+Alugueres}} (\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} lista\+\_\+alugueres)
+\begin{DoxyCompactList}\small\item\em Lista os alugueres da lista de alugueres. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{alugueres_8h_a0d82fad84eda38bd70879f6a62a35add}{time\+To\+String}} (time\+\_\+t t)
+\begin{DoxyCompactList}\small\item\em Converte uma data em formato time\+\_\+t para uma string formatada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header para alugueres. 
+
+\begin{DoxyAuthor}{Author}
+hugo2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{alugueres_8h_afb37cef674625047ed413fd6713ce3c6}\label{alugueres_8h_afb37cef674625047ed413fd6713ce3c6}} 
+\index{alugueres.h@{alugueres.h}!Aluguer@{Aluguer}}
+\index{Aluguer@{Aluguer}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{Aluguer}{Aluguer}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_aluguer}{Aluguer}} \mbox{\hyperlink{struct_aluguer}{Aluguer}}}
+
+\mbox{\Hypertarget{alugueres_8h_aea041d1430239b429d80dcc2540a1ec7}\label{alugueres_8h_aea041d1430239b429d80dcc2540a1ec7}} 
+\index{alugueres.h@{alugueres.h}!AluguerLista@{AluguerLista}}
+\index{AluguerLista@{AluguerLista}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{AluguerLista}{AluguerLista}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_aluguer_lista}{Aluguer\+Lista}} \mbox{\hyperlink{struct_aluguer_lista}{Aluguer\+Lista}}}
+
+\mbox{\Hypertarget{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}\label{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}} 
+\index{alugueres.h@{alugueres.h}!AluguerListaPtr@{AluguerListaPtr}}
+\index{AluguerListaPtr@{AluguerListaPtr}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{AluguerListaPtr}{AluguerListaPtr}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_aluguer_lista}{Aluguer\+Lista}} $\ast$ \mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{alugueres_8h_a6d7e4e66306858c1d267fff40693fef9}\label{alugueres_8h_a6d7e4e66306858c1d267fff40693fef9}} 
+\index{alugueres.h@{alugueres.h}!adicionarAluguer@{adicionarAluguer}}
+\index{adicionarAluguer@{adicionarAluguer}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{adicionarAluguer()}{adicionarAluguer()}}
+{\footnotesize\ttfamily int adicionar\+Aluguer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clientes_8h_a3d384a0070d1b42aa977af009dfda514}{Cliente\+Lista\+Ptr}}}]{lista\+Clientes,  }\item[{\mbox{\hyperlink{meios_8h_a7567b277a3c16cab84c4ce6bd423e99b}{Meios\+Mobilidade\+Lista\+Ptr}}}]{lista\+Meios\+Mobilidad,  }\item[{\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}}}]{lista\+Alugueres,  }\item[{\mbox{\hyperlink{struct_aluguer}{Aluguer}} $\ast$}]{aluguer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alugueres_8h_aaff4571aad76d0e6498459a16f104c9d}\label{alugueres_8h_aaff4571aad76d0e6498459a16f104c9d}} 
+\index{alugueres.h@{alugueres.h}!calcularCustoAluguer@{calcularCustoAluguer}}
+\index{calcularCustoAluguer@{calcularCustoAluguer}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{calcularCustoAluguer()}{calcularCustoAluguer()}}
+{\footnotesize\ttfamily float calcular\+Custo\+Aluguer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_meio_mobilidade}{Meio\+Mobilidade}} $\ast$}]{meiomobilidade,  }\item[{float}]{custoporkm,  }\item[{float}]{distancia }\end{DoxyParamCaption})}
+
+
+
+Realiza o cálculo do custo do aluguer com base na distância percorrida e no custo por kilómetro do aluguer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meiomobilidade} & apontador para o meio de mobilidade \\
+\hline
+{\em custoporkm} & custo do aluguer por km \\
+\hline
+{\em distancia} & distancia percorrida em metros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+custo do aluguer 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ custoporkm\ =\ meiomobilidade-\/>\mbox{\hyperlink{struct_meio_mobilidade_af42f4ce742755628ad33d3ae87f87a35}{custo}};}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//\ Converter\ a\ distancia\ de\ metros\ para\ km}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{float}\ distanciakm\ =\ distancia\ /\ 1000.0;}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ Calcular\ o\ custo\ total\ do\ aluguer}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{float}\ custo\_total\ =\ custoporkm\ *\ distanciakm;}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ custo\_total;}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{alugueres_8h_a4299673c5457c885d7159eb5d6365757}\label{alugueres_8h_a4299673c5457c885d7159eb5d6365757}} 
+\index{alugueres.h@{alugueres.h}!guardarBackupAlugueres@{guardarBackupAlugueres}}
+\index{guardarBackupAlugueres@{guardarBackupAlugueres}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{guardarBackupAlugueres()}{guardarBackupAlugueres()}}
+{\footnotesize\ttfamily int guardar\+Backup\+Alugueres (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_aluguer}{Aluguer}}}]{aluguer }\end{DoxyParamCaption})}
+
+Faz o backup de um aluguer no arquivo \char`\"{}backup\+\_\+alugueres.\+bin\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em aluguer} & um apontador para a estrutura \mbox{\hyperlink{struct_aluguer}{Aluguer}} contendo as informações do aluguer para fazer backup \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se a operação de backup foi bem sucedida, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ FILE*\ ficheiro;}
+\DoxyCodeLine{00317\ \ \ \ \ ficheiro\ =\ fopen(\textcolor{stringliteral}{"{}backup\_alugueres.bin"{}},\ \textcolor{stringliteral}{"{}ab"{}});\ \textcolor{comment}{//\ abre\ o\ arquivo\ em\ modo\ de\ escrita\ binária}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}ERRO:\ Nao\ foi\ possivel\ abrir\ o\ arquivo\ de\ backup\(\backslash\)n"{}});}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ retorna\ 0\ para\ indicar\ que\ a\ operação\ falhou}}
+\DoxyCodeLine{00321\ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ fwrite(\&aluguer,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_aluguer}{Aluguer}}),\ 1,\ ficheiro);\ \textcolor{comment}{//\ escreve\ as\ informações\ do\ aluguer\ no\ arquivo}}
+\DoxyCodeLine{00323\ \ \ \ \ fclose(ficheiro);\ \textcolor{comment}{//\ fecha\ o\ arquivo}}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \textcolor{comment}{//\ retorna\ 1\ para\ indicar\ que\ a\ operação\ foi\ bem\ sucedida}}
+\DoxyCodeLine{00325\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{alugueres_8h_ad54307b49da052e9cdd5cb22cc63f669}\label{alugueres_8h_ad54307b49da052e9cdd5cb22cc63f669}} 
+\index{alugueres.h@{alugueres.h}!inserirAluguerLista@{inserirAluguerLista}}
+\index{inserirAluguerLista@{inserirAluguerLista}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{inserirAluguerLista()}{inserirAluguerLista()}}
+{\footnotesize\ttfamily int inserir\+Aluguer\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} $\ast$}]{lista\+Alugueres,  }\item[{\mbox{\hyperlink{struct_aluguer}{Aluguer}}}]{aluguer }\end{DoxyParamCaption})}
+
+
+
+Insere um novo aluguer na lista de alugueres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Alugueres} & Apontador para o ponteiro da lista de alugueres. \\
+\hline
+{\em aluguer} & O aluguer a ser inserido na lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 1 se a operação foi bem sucedida e 0 caso contrário. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ Cria\ um\ novo\ nó da\ lista\ de\ alugueres}}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{struct_aluguer_lista}{AluguerListaPtr}}\ novo\_aluguer\ =\ (\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{AluguerListaPtr}})malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_aluguer_lista}{AluguerLista}}));}
+\DoxyCodeLine{00095\ \ \ \ \ novo\_aluguer-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}\ =\ aluguer;}
+\DoxyCodeLine{00096\ \ \ \ \ novo\_aluguer-\/>\mbox{\hyperlink{struct_aluguer_lista_a5872027592fc5d5e8abeeec29185e0e8}{proxaluguer}}\ =\ NULL;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ Se\ a\ lista\ estiver\ vazia,\ insere\ o\ novo\ aluguer\ como\ primeiro\ elemento}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{if}\ (*listaAlugueres\ ==\ NULL)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ *listaAlugueres\ =\ novo\_aluguer;}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Caso\ contrário,\ insere\ o\ novo\ aluguer\ no\ final\ da\ lista}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_aluguer_lista}{AluguerListaPtr}}\ ultimo\_aluguer\ =\ *listaAlugueres;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ultimo\_aluguer-\/>\mbox{\hyperlink{struct_aluguer_lista_a5872027592fc5d5e8abeeec29185e0e8}{proxaluguer}}\ !=\ NULL)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ ultimo\_aluguer\ =\ ultimo\_aluguer-\/>\mbox{\hyperlink{struct_aluguer_lista_a5872027592fc5d5e8abeeec29185e0e8}{proxaluguer}};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ ultimo\_aluguer-\/>\mbox{\hyperlink{struct_aluguer_lista_a5872027592fc5d5e8abeeec29185e0e8}{proxaluguer}}\ =\ novo\_aluguer;}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00110\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{alugueres_8h_af24c0708dc665d42ce0febd45683f50d}\label{alugueres_8h_af24c0708dc665d42ce0febd45683f50d}} 
+\index{alugueres.h@{alugueres.h}!lerAlugueresBin@{lerAlugueresBin}}
+\index{lerAlugueresBin@{lerAlugueresBin}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{lerAlugueresBin()}{lerAlugueresBin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}} ler\+Alugueres\+Bin (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+
+
+
+Lê um arquivo binário com dados de alugueres e cria uma lista de alugueres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Arquivo} & nome do arquivo binário a ser lido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aluguer\+Lista\+Ptr apontador para o início da lista de alugueres criada a partir do arquivo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{int}\ aux;}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ FILE*\ arquivo\ =\ fopen(nomeArquivo,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ arquivo\ \%s\(\backslash\)n"{}},\ nomeArquivo);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{struct_aluguer_lista}{AluguerListaPtr}}\ inicioLista\ =\ NULL;}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{struct_aluguer}{Aluguer}}\ aluguer;}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&aluguer,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_aluguer}{Aluguer}}),\ 1,\ arquivo))\ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utiliza\ a\ função\ inserirAluguerLista\ para\ inserir\ o\ aluguer\ na\ lista}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ aux\ =\ \mbox{\hyperlink{alugueres_8h_ad54307b49da052e9cdd5cb22cc63f669}{inserirAluguerLista}}(\&inicioLista,\ aluguer);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux\ ==\ 0)\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ inserir\ aluguer\ na\ lista\(\backslash\)n"{}});}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{comment}{//inicioLista\ =\ novoNo;}}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioLista;}
+\DoxyCodeLine{00307\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{alugueres_8h_aac218b3d6c49b01aacc8e5403fd95dad}\label{alugueres_8h_aac218b3d6c49b01aacc8e5403fd95dad}} 
+\index{alugueres.h@{alugueres.h}!listarAlugueres@{listarAlugueres}}
+\index{listarAlugueres@{listarAlugueres}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{listarAlugueres()}{listarAlugueres()}}
+{\footnotesize\ttfamily void listar\+Alugueres (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{alugueres_8h_a0acbd9701012ac3d105b76c74d6f263c}{Aluguer\+Lista\+Ptr}}}]{lista\+\_\+alugueres }\end{DoxyParamCaption})}
+
+
+
+Lista os alugueres da lista de alugueres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+\_\+alugueres} & apontador para a lista de alugueres \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{if}\ (lista\_alugueres\ ==\ NULL)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}A\ lista\ de\ alugueres\ está vazia.\(\backslash\)n"{}});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/\ Lista\ de\ alugueres:\ -\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{struct_aluguer_lista}{AluguerListaPtr}}\ p\ =\ lista\_alugueres;}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{while}\ (p\ !=\ NULL)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID\ do\ aluguer:\ \%d\(\backslash\)n"{}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_af1906e4b06a9a0138a1aa7ccd702ea06}{id}});}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}NIF\ do\ cliente:\ \%d\(\backslash\)n"{}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_a7d1ab5c96d3a8c5a21774c721953d778}{nifcliente}});}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID\ do\ meio\ de\ mobilidade:\ \%d\(\backslash\)n"{}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_a9aedeb02fff8ee02ae7424da2181f10e}{idmeio}});}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Preço do\ aluguer:\ \%.2f\(\backslash\)n"{}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_a244ea2911ca08a98d609442bd751c81c}{preco}});}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Distancia\ percorrida\ (metros):\ \%f\(\backslash\)n"{}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_afa36b8daa376f87b39b28a846a102f37}{distancia}});}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Data\ do\ aluguer:\ \%s\(\backslash\)n"{}},\ \mbox{\hyperlink{falugueres_8c_a0d82fad84eda38bd70879f6a62a35add}{timeToString}}(p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_a2c02d99db877b0981879cff5a1e06c36}{data}}));}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}O\ cliente\ \%d\ viajou\ do\ ID\ local\ \%d\ para\ o\ ID\ local\ \%d\(\backslash\)n"{}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_a7d1ab5c96d3a8c5a21774c721953d778}{nifcliente}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_a5ab0765e5aaeb9dfe0ba977a093d2f53}{origem}},\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_acc7f41a44a39697ca596609c1fa54cc3}{aluguer}}.\mbox{\hyperlink{struct_aluguer_a7fbb59d3875317c88d962bf226ef69cd}{destino}});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ p\ =\ p-\/>\mbox{\hyperlink{struct_aluguer_lista_a5872027592fc5d5e8abeeec29185e0e8}{proxaluguer}};}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{alugueres_8h_a27398a0e599faf43b818a3a2b08b4c44}\label{alugueres_8h_a27398a0e599faf43b818a3a2b08b4c44}} 
+\index{alugueres.h@{alugueres.h}!novoAluguer@{novoAluguer}}
+\index{novoAluguer@{novoAluguer}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{novoAluguer()}{novoAluguer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_aluguer}{Aluguer}} novo\+Aluguer (\begin{DoxyParamCaption}\item[{int}]{nifcliente,  }\item[{int}]{idmeiomobilidade }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alugueres_8h_a0d82fad84eda38bd70879f6a62a35add}\label{alugueres_8h_a0d82fad84eda38bd70879f6a62a35add}} 
+\index{alugueres.h@{alugueres.h}!timeToString@{timeToString}}
+\index{timeToString@{timeToString}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{timeToString()}{timeToString()}}
+{\footnotesize\ttfamily char $\ast$ time\+To\+String (\begin{DoxyParamCaption}\item[{time\+\_\+t}]{t }\end{DoxyParamCaption})}
+
+
+
+Converte uma data em formato time\+\_\+t para uma string formatada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & A data a ser convertida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A data formatada como uma string. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ str[20];}
+\DoxyCodeLine{00169\ \ \ \ \ strftime(str,\ \textcolor{keyword}{sizeof}(str),\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}},\ localtime(\&t));}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{alugueres_8h_ae9e52fc25960518fe57f7cc73ccf506b}\label{alugueres_8h_ae9e52fc25960518fe57f7cc73ccf506b}} 
+\index{alugueres.h@{alugueres.h}!verificarEstadoMeioMobilidade@{verificarEstadoMeioMobilidade}}
+\index{verificarEstadoMeioMobilidade@{verificarEstadoMeioMobilidade}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{verificarEstadoMeioMobilidade()}{verificarEstadoMeioMobilidade()}}
+{\footnotesize\ttfamily int verificar\+Estado\+Meio\+Mobilidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_meio_mobilidade}{Meio\+Mobilidade}} $\ast$}]{meiomobilidade }\end{DoxyParamCaption})}
+
+
+
+Verifica se o meio de mobilidade está disponível para alugar e chama a função alterar o valor para 1 (alugado) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meiomobilidade} & apontador para o meio de mobilidade a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int retorna 1 se o meio de mobilidade estiver disponível para alugar, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{if}\ (meiomobilidade-\/>\mbox{\hyperlink{struct_meio_mobilidade_a406773be9d45dec8a0520b902192b0de}{alugado}}\ ==\ 0)\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fmeios_8c_a91a2416ef96bab1d88a1cb86314fad1c}{alterarAlugadoMeioMobilidade}}(meiomobilidade);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00159\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{alugueres_8h_a0e6a019c91472f4c9f3bb8f48d630b96}\label{alugueres_8h_a0e6a019c91472f4c9f3bb8f48d630b96}} 
+\index{alugueres.h@{alugueres.h}!verificarSaldoCliente@{verificarSaldoCliente}}
+\index{verificarSaldoCliente@{verificarSaldoCliente}!alugueres.h@{alugueres.h}}
+\doxysubsubsection{\texorpdfstring{verificarSaldoCliente()}{verificarSaldoCliente()}}
+{\footnotesize\ttfamily int verificar\+Saldo\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cliente}{Cliente}} $\ast$}]{cliente,  }\item[{float}]{custofinal }\end{DoxyParamCaption})}
+
+
+
+Verifica se o cliente tem saldo suficiente para realizar um aluguer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cliente} & apontador para o cliente \\
+\hline
+{\em custofinal} & custo total do aluguer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int retorna 1 se o cliente tem saldo suficiente, 0 caso contrário 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{float}\ saldocliente\ =\ cliente-\/>\mbox{\hyperlink{struct_cliente_a8a902a9752024491766a67c0e714e1b9}{saldo}};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{float}\ clientetemsaldo\ =\ saldocliente\ -\/\ custofinal;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (clientetemsaldo\ >=\ 1.0)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \}}
+
+\end{DoxyCode}

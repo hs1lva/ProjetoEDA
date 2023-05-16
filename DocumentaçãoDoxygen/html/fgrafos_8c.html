@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProjetoEDA: fgrafos.c File Reference</title>
+<title>ProjetoEDA: C:/Users/hugo2/OneDrive - Instituto PolitÃ©cnico do CÃ¡vado e do Ave/IPCA/1Âº ANO LESI/2Âº Semestre/Estruturas Dados AvanÃ§adas/ProjetoEDA/ProjetoEDA/fgrafos.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,6 +67,10 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f1dee9464ba60067d2dd872a7f3d3ae9.html">ProjetoEDA</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -611,13 +615,13 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>distancia Apontador para distancia mais curta entre a origem e o destino. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  270</span>                                                                { <span class="comment">// Grafo não ponderado, todas as arestas têm o mesmo peso...</span></div>
+<div class="fragment"><div class="line"><span class="lineno">  270</span>                                                                { <span class="comment">// Grafo não ponderado.. bruteforce, ve qual caminho mais perto, encontra, posiciona-se nele e faz nova pesquisa etc etc...</span></div>
 <div class="line"><span class="lineno">  271</span> </div>
 <div class="line"><span class="lineno">  272</span>    <span class="keywordflow">if</span> (grafo == NULL) { <span class="comment">// Grafo vazio então NULL</span></div>
 <div class="line"><span class="lineno">  273</span>        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><span class="lineno">  274</span>    }</div>
 <div class="line"><span class="lineno">  275</span> </div>
-<div class="line"><span class="lineno">  276</span>    <a class="code hl_function" href="fgrafos_8c.html#ad7c59cd37e9377975b4f4e89d54e03cb">limparCamposGrafo</a>(grafo);</div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_function" href="fgrafos_8c.html#ad7c59cd37e9377975b4f4e89d54e03cb">limparCamposGrafo</a>(grafo); <span class="comment">// limpar vertices visitados, predecessor etc..</span></div>
 <div class="line"><span class="lineno">  277</span> </div>
 <div class="line"><span class="lineno">  278</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* verticeOrigem = <a class="code hl_function" href="fgrafos_8c.html#a68056d856f08c721b291e3019e740ad6">pesquisarVerticePorID</a>(grafo, origem); <span class="comment">// Pesquisar vértices de origem</span></div>
 <div class="line"><span class="lineno">  279</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* verticeDestino = <a class="code hl_function" href="fgrafos_8c.html#a68056d856f08c721b291e3019e740ad6">pesquisarVerticePorID</a>(grafo, destino); <span class="comment">// Pesquisar vértices de destino</span></div>
