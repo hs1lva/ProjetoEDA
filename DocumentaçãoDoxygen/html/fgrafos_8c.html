@@ -654,9 +654,9 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  306</span>                adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#a9b32aa16d6863b77d42f3e3316b7d629">predecessor</a> = verticeAtual-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a>;</div>
 <div class="line"><span class="lineno">  307</span>                adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#ab7e9094e7fa6b17c3fde2a29279abf58">distancia</a> = verticeAtual-&gt;<a class="code hl_variable" href="struct_vertice.html#ab7e9094e7fa6b17c3fde2a29279abf58">distancia</a> + adjacenteAtual-&gt;<a class="code hl_variable" href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">distancia</a>;</div>
 <div class="line"><span class="lineno">  308</span> </div>
-<div class="line"><span class="lineno">  309</span>                <span class="keywordflow">if</span> (adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a> == destino) { <span class="comment">// Parar se vértice destino encontrado</span></div>
+<div class="line"><span class="lineno">  309</span>                <span class="keywordflow">if</span> (adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a> == destino) { <span class="comment">// Se vértice destino encontrado</span></div>
 <div class="line"><span class="lineno">  310</span>                    encontrouDestino = 1;</div>
-<div class="line"><span class="lineno">  311</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  311</span>                    <span class="comment">//break; // Retirar paragem de destino encontrado para continuar a procurar</span></div>
 <div class="line"><span class="lineno">  312</span>                }</div>
 <div class="line"><span class="lineno">  313</span>            }</div>
 <div class="line"><span class="lineno">  314</span>            adjacenteAtual = adjacenteAtual-&gt;<a class="code hl_variable" href="struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7">proximo</a>;</div>

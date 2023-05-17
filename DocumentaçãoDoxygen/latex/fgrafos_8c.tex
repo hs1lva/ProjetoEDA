@@ -431,9 +431,9 @@ distancia Apontador para distancia mais curta entre a origem e o destino.
 \DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_vertice_a9b32aa16d6863b77d42f3e3316b7d629}{predecessor}}\ =\ verticeAtual-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}};}
 \DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_vertice_ab7e9094e7fa6b17c3fde2a29279abf58}{distancia}}\ =\ verticeAtual-\/>\mbox{\hyperlink{struct_vertice_ab7e9094e7fa6b17c3fde2a29279abf58}{distancia}}\ +\ adjacenteAtual-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}};}
 \DoxyCodeLine{00308\ }
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjacente-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ ==\ destino)\ \{\ \textcolor{comment}{//\ Parar\ se\ vértice\ destino\ encontrado}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjacente-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ ==\ destino)\ \{\ \textcolor{comment}{//\ Se\ vértice\ destino\ encontrado}}
 \DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encontrouDestino\ =\ 1;}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//break;\ //\ Retirar\ paragem\ de\ destino\ encontrado\ para\ continuar\ a\ procurar}}
 \DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ adjacenteAtual\ =\ adjacenteAtual-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}};}
