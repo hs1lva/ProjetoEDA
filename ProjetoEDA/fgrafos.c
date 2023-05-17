@@ -306,9 +306,9 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não p
                 adjacente->predecessor = verticeAtual->idvertice;
                 adjacente->distancia = verticeAtual->distancia + adjacenteAtual->distancia;
 
-                if (adjacente->idvertice == destino) { // Parar se vértice destino encontrado
+                if (adjacente->idvertice == destino) { // Se vértice destino encontrado
                     encontrouDestino = 1;
-                    break;
+                    //break; // Retirar paragem de destino encontrado para continuar a procurar
                 }
             }
             adjacenteAtual = adjacenteAtual->proximo;
