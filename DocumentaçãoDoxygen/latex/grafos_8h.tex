@@ -67,7 +67,7 @@ int \mbox{\hyperlink{grafos_8h_aad3667639f9eec323d7800c5260d0ed6}{guardar\+Backu
 \begin{DoxyCompactList}\small\item\em Cria uma nova fila vazia. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$ \mbox{\hyperlink{grafos_8h_ad142557ed4fc1b57d6469a681a6ca2d4}{inserir\+Vertice}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, \mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$novo)
 \begin{DoxyCompactList}\small\item\em Insere um novo vértice em ordem crescente no grafo. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$ \mbox{\hyperlink{grafos_8h_af177438fd111283596e64b5b8ca41a29}{inserir\+Adjacente}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, int origem, \mbox{\hyperlink{struct_adjacente}{Adjacente}} $\ast$novo\+Adjacente)
+\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$ \mbox{\hyperlink{grafos_8h_a5b5dd9e2def29affdcfa4839019c186c}{inserir\+Adjacente}} (\mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$grafo, int origem, \mbox{\hyperlink{struct_adjacente}{Adjacente}} $\ast$novoadjacente)
 \begin{DoxyCompactList}\small\item\em Insere um vértice adjacente numa lista de adjacentes de um vértice no grafo. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{grafos_8h_a0a886feccf7f1700bcc7191c5a371f2b}{inserir\+Elem\+Final\+Fila}} (\mbox{\hyperlink{struct_fila}{Fila}} $\ast$fila, \mbox{\hyperlink{struct_vertice}{Vertice}} $\ast$vertice)
 \begin{DoxyCompactList}\small\item\em Insere um elemento no final da fila. \end{DoxyCompactList}\item 
@@ -176,7 +176,7 @@ float distância entre os vértices
 \DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00333\ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjacente\ =\ origem-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};}
 \DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordflow}{while}\ (adjacente\ !=\ NULL)\ \{}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjacente-\/>\mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}}\ ==\ destino-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}})\ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjacente-\/>\mbox{\hyperlink{struct_adjacente_a62f640289e0a57bcf0bffb4830cf15c9}{idvertice}}\ ==\ destino-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}})\ \{}
 \DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ adjacente-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}};}
 \DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ adjacente\ =\ adjacente-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}};}
@@ -223,7 +223,7 @@ float distância entre os vértices
 \DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
 \DoxyCodeLine{00071\ \ \ \ \ \}}
 \DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}}\ =\ idvertice;}
+\DoxyCodeLine{00073\ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_adjacente_a62f640289e0a57bcf0bffb4830cf15c9}{idvertice}}\ =\ idvertice;}
 \DoxyCodeLine{00074\ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}}\ =\ distancia;}
 \DoxyCodeLine{00075\ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}}\ =\ NULL;}
 \DoxyCodeLine{00076\ }
@@ -285,7 +285,7 @@ Apontador para o novo vértice criado, ou NULL se não for possível alocar memória
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
 \DoxyCodeLine{00024\ \ \ \ \ \}}
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ vertice-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}}\ =\ idvertice;}
+\DoxyCodeLine{00026\ \ \ \ \ vertice-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ =\ idvertice;}
 \DoxyCodeLine{00027\ \ \ \ \ strcpy(vertice-\/>\mbox{\hyperlink{struct_vertice_ac66e0d343ccbf5c604e6dc2dd5a7f7d7}{cidade}},\ cidade);}
 \DoxyCodeLine{00028\ \ \ \ \ vertice-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}}\ =\ NULL;}
 \DoxyCodeLine{00029\ }
@@ -354,8 +354,8 @@ int Retorna 1 em caso de sucesso na escrita do backup ou 0 em caso contrário.
 \DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ !=\ NULL)\ \{}
 \DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};}
 \DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (adj\ !=\ NULL)\ \{}
-\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente_file}{AdjacenteFile}}\ adjFile\ =\ \{\ adj-\/>\mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}},\ adj-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}}\ \};}
-\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ fwrite(\&aux-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ ficheiro);}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente_file}{AdjacenteFile}}\ adjFile\ =\ \{\ adj-\/>\mbox{\hyperlink{struct_adjacente_a62f640289e0a57bcf0bffb4830cf15c9}{idvertice}},\ adj-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}}\ \};}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ fwrite(\&aux-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ ficheiro);}
 \DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ fwrite(\&adjFile,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_adjacente_file}{AdjacenteFile}}),\ 1,\ ficheiro);}
 \DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ adj\ =\ adj-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}};}
 \DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \}}
@@ -398,7 +398,7 @@ int Retorna 1 em caso de sucesso na escrita do backup ou 0 em caso contrário.
 \DoxyCodeLine{00452\ }
 \DoxyCodeLine{00453\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ aux\ =\ grafo;\ \textcolor{comment}{//\ Começar\ a\ trabalhar\ no\ inicio\ da\ lista}}
 \DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ !=\ NULL)\ \{}
-\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice_file}{VerticeFile}}\ auxfile\ =\ \{\ aux-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}}\ \};\ \textcolor{comment}{//auxfile\ com\ struct\ VerticeFile\ para\ não ter\ lixo}}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice_file}{VerticeFile}}\ auxfile\ =\ \{\ aux-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ \};\ \textcolor{comment}{//auxfile\ com\ struct\ VerticeFile\ para\ não ter\ lixo}}
 \DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ strncpy(auxfile.\mbox{\hyperlink{struct_vertice_file_a9de4d4aefcd89639ca0f966675b0bb2d}{cidade}},\ aux-\/>\mbox{\hyperlink{struct_vertice_ac66e0d343ccbf5c604e6dc2dd5a7f7d7}{cidade}},\ \mbox{\hyperlink{grafos_8h_a6638e43c96076bab62b905a56e626ce8}{TAM\_CIDADE}});}
 \DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ fwrite(\&auxfile,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_vertice_file}{VerticeFile}}),\ 1,\ ficheiro);}
 \DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}
@@ -433,12 +433,12 @@ void.
 \DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertice\ =\ grafo;}
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (vertice)\ \{\ \textcolor{comment}{//\ Loop\ nos\ vértices}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d\(\backslash\)tCidade:\ \%s\(\backslash\)n"{}},\ vertice-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}},\ vertice-\/>\mbox{\hyperlink{struct_vertice_ac66e0d343ccbf5c604e6dc2dd5a7f7d7}{cidade}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d\(\backslash\)tCidade:\ \%s\(\backslash\)n"{}},\ vertice-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}},\ vertice-\/>\mbox{\hyperlink{struct_vertice_ac66e0d343ccbf5c604e6dc2dd5a7f7d7}{cidade}});}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjacent\ =\ vertice-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};}
 \DoxyCodeLine{00025\ }
 \DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (adjacent)\ \{\ \textcolor{comment}{//\ Loop\ nas\ adjacentes}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ -\/>\ ID:\ \%d\(\backslash\)tDistancia:\ \%.2f\(\backslash\)n"{}},\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}},\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ -\/>\ ID:\ \%d\(\backslash\)tDistancia:\ \%.2f\(\backslash\)n"{}},\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_a62f640289e0a57bcf0bffb4830cf15c9}{idvertice}},\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}});}
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ adjacent\ =\ adjacent-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}};}
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00030\ }
@@ -448,7 +448,7 @@ void.
 \DoxyCodeLine{00034\ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{grafos_8h_af177438fd111283596e64b5b8ca41a29}\label{grafos_8h_af177438fd111283596e64b5b8ca41a29}} 
+\mbox{\Hypertarget{grafos_8h_a5b5dd9e2def29affdcfa4839019c186c}\label{grafos_8h_a5b5dd9e2def29affdcfa4839019c186c}} 
 \index{grafos.h@{grafos.h}!inserirAdjacente@{inserirAdjacente}}
 \index{inserirAdjacente@{inserirAdjacente}!grafos.h@{grafos.h}}
 \doxysubsubsection{\texorpdfstring{inserirAdjacente()}{inserirAdjacente()}}
@@ -475,7 +475,7 @@ Apontador para o grafo atualizado com o novo vértice adjacente inserido na lista
 \DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00088\ }
 \DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ aux\ =\ grafo;}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ \&\&\ aux-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}}\ !=\ origem)\ \{\ \textcolor{comment}{//\ Loop\ para\ encontrar\ origem\ no\ grafo}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ \&\&\ aux-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ !=\ origem)\ \{\ \textcolor{comment}{//\ Loop\ para\ encontrar\ origem\ no\ grafo}}
 \DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}
 \DoxyCodeLine{00092\ \ \ \ \ \}}
 \DoxyCodeLine{00093\ }
@@ -486,7 +486,7 @@ Apontador para o grafo atualizado com o novo vértice adjacente inserido na lista
 \DoxyCodeLine{00098\ \ \ \ \ novoadjacente-\/>\mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}}\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};\ \textcolor{comment}{//\ Inserir\ o\ novo\ vértice\ adjacente\ na\ lista\ de\ adjacentes\ da\ origem}}
 \DoxyCodeLine{00099\ \ \ \ \ aux-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}}\ =\ novoadjacente;}
 \DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ aux-\/>\mbox{\hyperlink{struct_vertice_a79eea2343225f7d2919f3d01e5562af2}{numAdjacentes}}++;\ \textcolor{comment}{//\ Contador\ de\ vértices\ adjacentes\ da\ origem}}
+\DoxyCodeLine{00101\ \ \ \ \ aux-\/>\mbox{\hyperlink{struct_vertice_a82d01db05b5a72e734cead95c232bb31}{numadjacentes}}++;\ \textcolor{comment}{//\ Contador\ de\ vértices\ adjacentes\ da\ origem}}
 \DoxyCodeLine{00102\ }
 \DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ grafo;}
 \DoxyCodeLine{00104\ \}}
@@ -561,7 +561,7 @@ O apontador para o grafo atualizado.
 \DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ anterior\ =\ NULL;}
 \DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo;}
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL\ \&\&\ atual-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}}\ <\ novo-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}})\ \{\ \textcolor{comment}{//\ Posição\ para\ inserir\ o\ novo\ vértice}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL\ \&\&\ atual-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ <\ novo-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}})\ \{\ \textcolor{comment}{//\ Posição\ para\ inserir\ o\ novo\ vértice}}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ anterior\ =\ atual;}
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}
 \DoxyCodeLine{00046\ \ \ \ \ \}}
@@ -796,7 +796,7 @@ distancia Apontador para distancia mais curta entre a origem e o destino.
 \DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjacenteAtual\ =\ verticeAtual-\/>\mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};}
 \DoxyCodeLine{00296\ }
 \DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (adjacenteAtual)\ \{\ \textcolor{comment}{//\ Loop\ para\ todos\ os\ vértices\ adjacentes\ do\ vértice\ atual}}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ adjacente\ =\ \mbox{\hyperlink{fgrafos_8c_a68056d856f08c721b291e3019e740ad6}{pesquisarVerticePorID}}(grafo,\ adjacenteAtual-\/>\mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}});}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ adjacente\ =\ \mbox{\hyperlink{fgrafos_8c_a68056d856f08c721b291e3019e740ad6}{pesquisarVerticePorID}}(grafo,\ adjacenteAtual-\/>\mbox{\hyperlink{struct_adjacente_a62f640289e0a57bcf0bffb4830cf15c9}{idvertice}});}
 \DoxyCodeLine{00299\ }
 \DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!adjacente-\/>\mbox{\hyperlink{struct_vertice_ae8ebf04016dcaf2bbb4d6c68a1792f42}{visitado}})\ \{}
 \DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
@@ -804,10 +804,10 @@ distancia Apontador para distancia mais curta entre a origem e o destino.
 \DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fgrafos_8c_a0a886feccf7f1700bcc7191c5a371f2b}{inserirElemFinalFila}}(fila,\ adjacente);\ \textcolor{comment}{//\ Inserir\ vértice\ adjacente\ na\ fila}}
 \DoxyCodeLine{00304\ }
 \DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Armazenar\ dados\ no\ predecessor}}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_vertice_a9b32aa16d6863b77d42f3e3316b7d629}{predecessor}}\ =\ verticeAtual-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}};}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_vertice_a9b32aa16d6863b77d42f3e3316b7d629}{predecessor}}\ =\ verticeAtual-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}};}
 \DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacente-\/>\mbox{\hyperlink{struct_vertice_ab7e9094e7fa6b17c3fde2a29279abf58}{distancia}}\ =\ verticeAtual-\/>\mbox{\hyperlink{struct_vertice_ab7e9094e7fa6b17c3fde2a29279abf58}{distancia}}\ +\ adjacenteAtual-\/>\mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}};}
 \DoxyCodeLine{00308\ }
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjacente-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}}\ ==\ destino)\ \{\ \textcolor{comment}{//\ Parar\ se\ vértice\ destino\ encontrado}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjacente-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ ==\ destino)\ \{\ \textcolor{comment}{//\ Parar\ se\ vértice\ destino\ encontrado}}
 \DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encontrouDestino\ =\ 1;}
 \DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -852,7 +852,7 @@ Apontador para o vértice encontrado, ou NULL se não encontrado.
 \DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ aux\ =\ grafo;}
 \DoxyCodeLine{00192\ }
 \DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux)\ \{}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux-\/>\mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}}\ ==\ idvertice)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux-\/>\mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}}\ ==\ idvertice)\ \{}
 \DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ aux;}
 \DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>\mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}

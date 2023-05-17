@@ -170,7 +170,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  332</span>                                                                        {</div>
 <div class="line"><span class="lineno">  333</span>    <a class="code hl_struct" href="struct_adjacente.html">Adjacente</a>* adjacente = origem-&gt;<a class="code hl_variable" href="struct_vertice.html#a945d7afa4a007ba6ed080c1d24ac3e20">adjacentes</a>;</div>
 <div class="line"><span class="lineno">  334</span>    <span class="keywordflow">while</span> (adjacente != NULL) {</div>
-<div class="line"><span class="lineno">  335</span>        <span class="keywordflow">if</span> (adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#a5eb673426a6728fe28dae9e382928343">idVertice</a> == destino-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a>) {</div>
+<div class="line"><span class="lineno">  335</span>        <span class="keywordflow">if</span> (adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#a62f640289e0a57bcf0bffb4830cf15c9">idvertice</a> == destino-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a>) {</div>
 <div class="line"><span class="lineno">  336</span>            <span class="keywordflow">return</span> adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">distancia</a>;</div>
 <div class="line"><span class="lineno">  337</span>        }</div>
 <div class="line"><span class="lineno">  338</span>        adjacente = adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7">proximo</a>;</div>
@@ -179,11 +179,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  341</span>    <span class="keywordflow">return</span> INFINITY;</div>
 <div class="line"><span class="lineno">  342</span>}</div>
 <div class="ttc" id="astruct_adjacente_html"><div class="ttname"><a href="struct_adjacente.html">Adjacente</a></div><div class="ttdef"><b>Definition:</b> grafos.h:18</div></div>
-<div class="ttc" id="astruct_adjacente_html_a5eb673426a6728fe28dae9e382928343"><div class="ttname"><a href="struct_adjacente.html#a5eb673426a6728fe28dae9e382928343">Adjacente::idVertice</a></div><div class="ttdeci">int idVertice</div><div class="ttdef"><b>Definition:</b> grafos.h:19</div></div>
 <div class="ttc" id="astruct_adjacente_html_a60a62b2d0b2c843df830d7447ebd1bb7"><div class="ttname"><a href="struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7">Adjacente::proximo</a></div><div class="ttdeci">struct Adjacente * proximo</div><div class="ttdef"><b>Definition:</b> grafos.h:21</div></div>
+<div class="ttc" id="astruct_adjacente_html_a62f640289e0a57bcf0bffb4830cf15c9"><div class="ttname"><a href="struct_adjacente.html#a62f640289e0a57bcf0bffb4830cf15c9">Adjacente::idvertice</a></div><div class="ttdeci">int idvertice</div><div class="ttdef"><b>Definition:</b> grafos.h:19</div></div>
 <div class="ttc" id="astruct_adjacente_html_ac95b36a42b0c95d9d599ef02b0c60c43"><div class="ttname"><a href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">Adjacente::distancia</a></div><div class="ttdeci">float distancia</div><div class="ttdef"><b>Definition:</b> grafos.h:20</div></div>
-<div class="ttc" id="astruct_vertice_html_a05209b5253168eedd2800fd46c3c2d1a"><div class="ttname"><a href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">Vertice::idVertice</a></div><div class="ttdeci">int idVertice</div><div class="ttdef"><b>Definition:</b> grafos.h:31</div></div>
 <div class="ttc" id="astruct_vertice_html_a945d7afa4a007ba6ed080c1d24ac3e20"><div class="ttname"><a href="struct_vertice.html#a945d7afa4a007ba6ed080c1d24ac3e20">Vertice::adjacentes</a></div><div class="ttdeci">struct Adjacente * adjacentes</div><div class="ttdef"><b>Definition:</b> grafos.h:34</div></div>
+<div class="ttc" id="astruct_vertice_html_ac338ce57369331cc1be824718a7d5de9"><div class="ttname"><a href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">Vertice::idvertice</a></div><div class="ttdeci">int idvertice</div><div class="ttdef"><b>Definition:</b> grafos.h:31</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -219,7 +219,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><span class="lineno">   71</span>    }</div>
 <div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>    adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#a5eb673426a6728fe28dae9e382928343">idVertice</a> = idvertice;</div>
+<div class="line"><span class="lineno">   73</span>    adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#a62f640289e0a57bcf0bffb4830cf15c9">idvertice</a> = idvertice;</div>
 <div class="line"><span class="lineno">   74</span>    adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">distancia</a> = distancia;</div>
 <div class="line"><span class="lineno">   75</span>    adjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7">proximo</a> = NULL;</div>
 <div class="line"><span class="lineno">   76</span> </div>
@@ -301,7 +301,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><span class="lineno">   24</span>    }</div>
 <div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a> = idvertice;</div>
+<div class="line"><span class="lineno">   26</span>    vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a> = idvertice;</div>
 <div class="line"><span class="lineno">   27</span>    strcpy(vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#ac66e0d343ccbf5c604e6dc2dd5a7f7d7">cidade</a>, cidade);</div>
 <div class="line"><span class="lineno">   28</span>    vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#a40b6b8cc9000b134f9eb0609446a2ed5">proximo</a> = NULL;</div>
 <div class="line"><span class="lineno">   29</span> </div>
@@ -391,7 +391,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   87</span>                                                                                {</div>
 <div class="line"><span class="lineno">   88</span> </div>
 <div class="line"><span class="lineno">   89</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* aux = grafo;</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">while</span> (aux &amp;&amp; aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a> != origem) { <span class="comment">// Loop para encontrar origem no grafo</span></div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">while</span> (aux &amp;&amp; aux-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a> != origem) { <span class="comment">// Loop para encontrar origem no grafo</span></div>
 <div class="line"><span class="lineno">   91</span>        aux = aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a40b6b8cc9000b134f9eb0609446a2ed5">proximo</a>;</div>
 <div class="line"><span class="lineno">   92</span>    }</div>
 <div class="line"><span class="lineno">   93</span> </div>
@@ -402,11 +402,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   98</span>    novoadjacente-&gt;<a class="code hl_variable" href="struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7">proximo</a> = aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a945d7afa4a007ba6ed080c1d24ac3e20">adjacentes</a>; <span class="comment">// Inserir o novo vértice adjacente na lista de adjacentes da origem</span></div>
 <div class="line"><span class="lineno">   99</span>    aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a945d7afa4a007ba6ed080c1d24ac3e20">adjacentes</a> = novoadjacente;</div>
 <div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a79eea2343225f7d2919f3d01e5562af2">numAdjacentes</a>++; <span class="comment">// Contador de vértices adjacentes da origem</span></div>
+<div class="line"><span class="lineno">  101</span>    aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a82d01db05b5a72e734cead95c232bb31">numadjacentes</a>++; <span class="comment">// Contador de vértices adjacentes da origem</span></div>
 <div class="line"><span class="lineno">  102</span> </div>
 <div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> grafo;</div>
 <div class="line"><span class="lineno">  104</span>}</div>
-<div class="ttc" id="astruct_vertice_html_a79eea2343225f7d2919f3d01e5562af2"><div class="ttname"><a href="struct_vertice.html#a79eea2343225f7d2919f3d01e5562af2">Vertice::numAdjacentes</a></div><div class="ttdeci">int numAdjacentes</div><div class="ttdef"><b>Definition:</b> grafos.h:38</div></div>
+<div class="ttc" id="astruct_vertice_html_a82d01db05b5a72e734cead95c232bb31"><div class="ttname"><a href="struct_vertice.html#a82d01db05b5a72e734cead95c232bb31">Vertice::numadjacentes</a></div><div class="ttdeci">int numadjacentes</div><div class="ttdef"><b>Definition:</b> grafos.h:38</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -509,7 +509,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   40</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* anterior = NULL;</div>
 <div class="line"><span class="lineno">   41</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* atual = grafo;</div>
 <div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">while</span> (atual != NULL &amp;&amp; atual-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a> &lt; novo-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a>) { <span class="comment">// Posição para inserir o novo vértice</span></div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">while</span> (atual != NULL &amp;&amp; atual-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a> &lt; novo-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a>) { <span class="comment">// Posição para inserir o novo vértice</span></div>
 <div class="line"><span class="lineno">   44</span>        anterior = atual;</div>
 <div class="line"><span class="lineno">   45</span>        atual = atual-&gt;<a class="code hl_variable" href="struct_vertice.html#a40b6b8cc9000b134f9eb0609446a2ed5">proximo</a>;</div>
 <div class="line"><span class="lineno">   46</span>    }</div>
@@ -643,7 +643,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  295</span>        <a class="code hl_struct" href="struct_adjacente.html">Adjacente</a>* adjacenteAtual = verticeAtual-&gt;<a class="code hl_variable" href="struct_vertice.html#a945d7afa4a007ba6ed080c1d24ac3e20">adjacentes</a>;</div>
 <div class="line"><span class="lineno">  296</span> </div>
 <div class="line"><span class="lineno">  297</span>        <span class="keywordflow">while</span> (adjacenteAtual) { <span class="comment">// Loop para todos os vértices adjacentes do vértice atual</span></div>
-<div class="line"><span class="lineno">  298</span>            <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* adjacente = <a class="code hl_function" href="fgrafos_8c.html#a68056d856f08c721b291e3019e740ad6">pesquisarVerticePorID</a>(grafo, adjacenteAtual-&gt;<a class="code hl_variable" href="struct_adjacente.html#a5eb673426a6728fe28dae9e382928343">idVertice</a>);</div>
+<div class="line"><span class="lineno">  298</span>            <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* adjacente = <a class="code hl_function" href="fgrafos_8c.html#a68056d856f08c721b291e3019e740ad6">pesquisarVerticePorID</a>(grafo, adjacenteAtual-&gt;<a class="code hl_variable" href="struct_adjacente.html#a62f640289e0a57bcf0bffb4830cf15c9">idvertice</a>);</div>
 <div class="line"><span class="lineno">  299</span> </div>
 <div class="line"><span class="lineno">  300</span>            <span class="keywordflow">if</span> (!adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#ae8ebf04016dcaf2bbb4d6c68a1792f42">visitado</a>) {</div>
 <div class="line"><span class="lineno">  301</span>                </div>
@@ -651,10 +651,10 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  303</span>                <a class="code hl_function" href="fgrafos_8c.html#a0a886feccf7f1700bcc7191c5a371f2b">inserirElemFinalFila</a>(fila, adjacente); <span class="comment">// Inserir vértice adjacente na fila</span></div>
 <div class="line"><span class="lineno">  304</span> </div>
 <div class="line"><span class="lineno">  305</span>                <span class="comment">// Armazenar dados no predecessor</span></div>
-<div class="line"><span class="lineno">  306</span>                adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#a9b32aa16d6863b77d42f3e3316b7d629">predecessor</a> = verticeAtual-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a>;</div>
+<div class="line"><span class="lineno">  306</span>                adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#a9b32aa16d6863b77d42f3e3316b7d629">predecessor</a> = verticeAtual-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a>;</div>
 <div class="line"><span class="lineno">  307</span>                adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#ab7e9094e7fa6b17c3fde2a29279abf58">distancia</a> = verticeAtual-&gt;<a class="code hl_variable" href="struct_vertice.html#ab7e9094e7fa6b17c3fde2a29279abf58">distancia</a> + adjacenteAtual-&gt;<a class="code hl_variable" href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">distancia</a>;</div>
 <div class="line"><span class="lineno">  308</span> </div>
-<div class="line"><span class="lineno">  309</span>                <span class="keywordflow">if</span> (adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a> == destino) { <span class="comment">// Parar se vértice destino encontrado</span></div>
+<div class="line"><span class="lineno">  309</span>                <span class="keywordflow">if</span> (adjacente-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a> == destino) { <span class="comment">// Parar se vértice destino encontrado</span></div>
 <div class="line"><span class="lineno">  310</span>                    encontrouDestino = 1;</div>
 <div class="line"><span class="lineno">  311</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  312</span>                }</div>
@@ -719,7 +719,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  191</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* aux = grafo;</div>
 <div class="line"><span class="lineno">  192</span> </div>
 <div class="line"><span class="lineno">  193</span>    <span class="keywordflow">while</span> (aux) {</div>
-<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">if</span> (aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a> == idvertice) {</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">if</span> (aux-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a> == idvertice) {</div>
 <div class="line"><span class="lineno">  195</span>            <span class="keywordflow">return</span> aux;</div>
 <div class="line"><span class="lineno">  196</span>        }</div>
 <div class="line"><span class="lineno">  197</span>        aux = aux-&gt;<a class="code hl_variable" href="struct_vertice.html#a40b6b8cc9000b134f9eb0609446a2ed5">proximo</a>;</div>

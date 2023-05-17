@@ -122,12 +122,12 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   19</span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* vertice = grafo;</div>
 <div class="line"><span class="lineno">   20</span> </div>
 <div class="line"><span class="lineno">   21</span>    <span class="keywordflow">while</span> (vertice) { <span class="comment">// Loop nos vértices</span></div>
-<div class="line"><span class="lineno">   22</span>        printf(<span class="stringliteral">&quot;ID: %d\tCidade: %s\n&quot;</span>, vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">idVertice</a>, vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#ac66e0d343ccbf5c604e6dc2dd5a7f7d7">cidade</a>);</div>
+<div class="line"><span class="lineno">   22</span>        printf(<span class="stringliteral">&quot;ID: %d\tCidade: %s\n&quot;</span>, vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">idvertice</a>, vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#ac66e0d343ccbf5c604e6dc2dd5a7f7d7">cidade</a>);</div>
 <div class="line"><span class="lineno">   23</span> </div>
 <div class="line"><span class="lineno">   24</span>        <a class="code hl_struct" href="struct_adjacente.html">Adjacente</a>* adjacent = vertice-&gt;<a class="code hl_variable" href="struct_vertice.html#a945d7afa4a007ba6ed080c1d24ac3e20">adjacentes</a>;</div>
 <div class="line"><span class="lineno">   25</span> </div>
 <div class="line"><span class="lineno">   26</span>        <span class="keywordflow">while</span> (adjacent) { <span class="comment">// Loop nas adjacentes</span></div>
-<div class="line"><span class="lineno">   27</span>            printf(<span class="stringliteral">&quot;  -&gt; ID: %d\tDistancia: %.2f\n&quot;</span>, adjacent-&gt;<a class="code hl_variable" href="struct_adjacente.html#a5eb673426a6728fe28dae9e382928343">idVertice</a>, adjacent-&gt;<a class="code hl_variable" href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">distancia</a>);</div>
+<div class="line"><span class="lineno">   27</span>            printf(<span class="stringliteral">&quot;  -&gt; ID: %d\tDistancia: %.2f\n&quot;</span>, adjacent-&gt;<a class="code hl_variable" href="struct_adjacente.html#a62f640289e0a57bcf0bffb4830cf15c9">idvertice</a>, adjacent-&gt;<a class="code hl_variable" href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">distancia</a>);</div>
 <div class="line"><span class="lineno">   28</span>            adjacent = adjacent-&gt;<a class="code hl_variable" href="struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7">proximo</a>;</div>
 <div class="line"><span class="lineno">   29</span>        }</div>
 <div class="line"><span class="lineno">   30</span> </div>
@@ -136,13 +136,13 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   33</span>    }</div>
 <div class="line"><span class="lineno">   34</span>}</div>
 <div class="ttc" id="astruct_adjacente_html"><div class="ttname"><a href="struct_adjacente.html">Adjacente</a></div><div class="ttdef"><b>Definition:</b> grafos.h:18</div></div>
-<div class="ttc" id="astruct_adjacente_html_a5eb673426a6728fe28dae9e382928343"><div class="ttname"><a href="struct_adjacente.html#a5eb673426a6728fe28dae9e382928343">Adjacente::idVertice</a></div><div class="ttdeci">int idVertice</div><div class="ttdef"><b>Definition:</b> grafos.h:19</div></div>
 <div class="ttc" id="astruct_adjacente_html_a60a62b2d0b2c843df830d7447ebd1bb7"><div class="ttname"><a href="struct_adjacente.html#a60a62b2d0b2c843df830d7447ebd1bb7">Adjacente::proximo</a></div><div class="ttdeci">struct Adjacente * proximo</div><div class="ttdef"><b>Definition:</b> grafos.h:21</div></div>
+<div class="ttc" id="astruct_adjacente_html_a62f640289e0a57bcf0bffb4830cf15c9"><div class="ttname"><a href="struct_adjacente.html#a62f640289e0a57bcf0bffb4830cf15c9">Adjacente::idvertice</a></div><div class="ttdeci">int idvertice</div><div class="ttdef"><b>Definition:</b> grafos.h:19</div></div>
 <div class="ttc" id="astruct_adjacente_html_ac95b36a42b0c95d9d599ef02b0c60c43"><div class="ttname"><a href="struct_adjacente.html#ac95b36a42b0c95d9d599ef02b0c60c43">Adjacente::distancia</a></div><div class="ttdeci">float distancia</div><div class="ttdef"><b>Definition:</b> grafos.h:20</div></div>
 <div class="ttc" id="astruct_vertice_html"><div class="ttname"><a href="struct_vertice.html">Vertice</a></div><div class="ttdef"><b>Definition:</b> grafos.h:30</div></div>
-<div class="ttc" id="astruct_vertice_html_a05209b5253168eedd2800fd46c3c2d1a"><div class="ttname"><a href="struct_vertice.html#a05209b5253168eedd2800fd46c3c2d1a">Vertice::idVertice</a></div><div class="ttdeci">int idVertice</div><div class="ttdef"><b>Definition:</b> grafos.h:31</div></div>
 <div class="ttc" id="astruct_vertice_html_a40b6b8cc9000b134f9eb0609446a2ed5"><div class="ttname"><a href="struct_vertice.html#a40b6b8cc9000b134f9eb0609446a2ed5">Vertice::proximo</a></div><div class="ttdeci">struct Vertice * proximo</div><div class="ttdef"><b>Definition:</b> grafos.h:33</div></div>
 <div class="ttc" id="astruct_vertice_html_a945d7afa4a007ba6ed080c1d24ac3e20"><div class="ttname"><a href="struct_vertice.html#a945d7afa4a007ba6ed080c1d24ac3e20">Vertice::adjacentes</a></div><div class="ttdeci">struct Adjacente * adjacentes</div><div class="ttdef"><b>Definition:</b> grafos.h:34</div></div>
+<div class="ttc" id="astruct_vertice_html_ac338ce57369331cc1be824718a7d5de9"><div class="ttname"><a href="struct_vertice.html#ac338ce57369331cc1be824718a7d5de9">Vertice::idvertice</a></div><div class="ttdeci">int idvertice</div><div class="ttdef"><b>Definition:</b> grafos.h:31</div></div>
 <div class="ttc" id="astruct_vertice_html_ac66e0d343ccbf5c604e6dc2dd5a7f7d7"><div class="ttname"><a href="struct_vertice.html#ac66e0d343ccbf5c604e6dc2dd5a7f7d7">Vertice::cidade</a></div><div class="ttdeci">char cidade[TAM_CIDADE]</div><div class="ttdef"><b>Definition:</b> grafos.h:32</div></div>
 </div><!-- fragment -->
 </div>

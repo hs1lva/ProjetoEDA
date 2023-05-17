@@ -13,30 +13,30 @@
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ TAM\_CIDADE\ 100}}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adjacente}{Adjacente}}\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_adjacente_a5eb673426a6728fe28dae9e382928343}{idVertice}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_adjacente_a62f640289e0a57bcf0bffb4830cf15c9}{idvertice}};}
 \DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_adjacente_ac95b36a42b0c95d9d599ef02b0c60c43}{distancia}};}
 \DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ \mbox{\hyperlink{struct_adjacente_a60a62b2d0b2c843df830d7447ebd1bb7}{proximo}};}
 \DoxyCodeLine{00022\ \}\mbox{\hyperlink{struct_adjacente}{Adjacente}};}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adjacente_file}{AdjacenteFile}}\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_adjacente_file_ae33aa5d7321caac38646d8ffc1ff6ea9}{idVertice}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_adjacente_file_af5335415758197236375c2e9cad16d1b}{idvertice}};}
 \DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_adjacente_file_ad9f0195c8be4ee0e6ca9652d99f7cbac}{distancia}};}
 \DoxyCodeLine{00027\ \}\mbox{\hyperlink{struct_adjacente_file}{AdjacenteFile}};}
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ \textcolor{comment}{//Grafo}}
 \DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertice}{Vertice}}\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_a05209b5253168eedd2800fd46c3c2d1a}{idVertice}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_ac338ce57369331cc1be824718a7d5de9}{idvertice}};}
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vertice_ac66e0d343ccbf5c604e6dc2dd5a7f7d7}{cidade}}[\mbox{\hyperlink{grafos_8h_a6638e43c96076bab62b905a56e626ce8}{TAM\_CIDADE}}];}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{struct_vertice_a40b6b8cc9000b134f9eb0609446a2ed5}{proximo}};}
 \DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ \mbox{\hyperlink{struct_vertice_a945d7afa4a007ba6ed080c1d24ac3e20}{adjacentes}};}
 \DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_ae8ebf04016dcaf2bbb4d6c68a1792f42}{visitado}};}
 \DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_a9b32aa16d6863b77d42f3e3316b7d629}{predecessor}};}
 \DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_vertice_ab7e9094e7fa6b17c3fde2a29279abf58}{distancia}};\ \textcolor{comment}{//\ Armazenar\ a\ distância\ do\ vértice\ em\ relação\ à origem.\ Na\ função\ pesquisarEmLargura\ serve\ para\ armazenar\ a\ distância\ percorrida\ até chegar\ no\ vértice\ atual.\ }}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_a79eea2343225f7d2919f3d01e5562af2}{numAdjacentes}};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_a82d01db05b5a72e734cead95c232bb31}{numadjacentes}};}
 \DoxyCodeLine{00039\ \}\mbox{\hyperlink{struct_vertice}{Vertice}};}
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertice_file}{VerticeFile}}\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_file_a03a32c288b59a59ba775ca80cb88710c}{idVertice}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertice_file_a84db2d5dfd80b2f9dd1e32943c7fa189}{idvertice}};}
 \DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vertice_file_a9de4d4aefcd89639ca0f966675b0bb2d}{cidade}}[\mbox{\hyperlink{grafos_8h_a6638e43c96076bab62b905a56e626ce8}{TAM\_CIDADE}}];}
 \DoxyCodeLine{00044\ \}\mbox{\hyperlink{struct_vertice_file}{VerticeFile}};}
 \DoxyCodeLine{00045\ }
@@ -68,7 +68,7 @@
 \DoxyCodeLine{00071\ }
 \DoxyCodeLine{00072\ \textcolor{comment}{//\ Funções\ para\ inserir}}
 \DoxyCodeLine{00073\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafos_8h_ad142557ed4fc1b57d6469a681a6ca2d4}{inserirVertice}}(\mbox{\hyperlink{struct_vertice}{Vertice}}*\ grafo,\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ novo);}
-\DoxyCodeLine{00074\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafos_8h_af177438fd111283596e64b5b8ca41a29}{inserirAdjacente}}(\mbox{\hyperlink{struct_vertice}{Vertice}}*\ grafo,\ \textcolor{keywordtype}{int}\ origem,\ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novoAdjacente);}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafos_8h_a5b5dd9e2def29affdcfa4839019c186c}{inserirAdjacente}}(\mbox{\hyperlink{struct_vertice}{Vertice}}*\ grafo,\ \textcolor{keywordtype}{int}\ origem,\ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novoadjacente);}
 \DoxyCodeLine{00075\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafos_8h_a0a886feccf7f1700bcc7191c5a371f2b}{inserirElemFinalFila}}(\mbox{\hyperlink{struct_fila}{Fila}}*\ fila,\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{struct_node_fila_a382c7df820296e21c4dbb04d366a1782}{vertice}});}
 \DoxyCodeLine{00076\ }
 \DoxyCodeLine{00077\ \textcolor{comment}{//\ Funções\ para\ imprimir}}
