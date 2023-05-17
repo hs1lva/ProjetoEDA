@@ -23,7 +23,7 @@ Vertice* criarVertice(int idvertice, char cidade[]) {
 		return NULL;
 	}
 
-    vertice->idVertice = idvertice;
+    vertice->idvertice = idvertice;
 	strcpy(vertice->cidade, cidade);
     vertice->proximo = NULL;
 
@@ -40,7 +40,7 @@ Vertice* inserirVertice(Vertice* grafo, Vertice* novo) {
     Vertice* anterior = NULL;
     Vertice* atual = grafo;
 
-    while (atual != NULL && atual->idVertice < novo->idVertice) { // Posição para inserir o novo vértice
+    while (atual != NULL && atual->idvertice < novo->idvertice) { // Posição para inserir o novo vértice
         anterior = atual;
         atual = atual->proximo;
     }
@@ -70,7 +70,7 @@ Adjacente* criarAdjacente(int idvertice, float distancia) {
         return NULL;
     }
 
-    adjacente->idVertice = idvertice;
+    adjacente->idvertice = idvertice;
     adjacente->distancia = distancia;
     adjacente->proximo = NULL;
 
@@ -87,7 +87,7 @@ Adjacente* criarAdjacente(int idvertice, float distancia) {
 Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoadjacente) {
 
     Vertice* aux = grafo;
-    while (aux && aux->idVertice != origem) { // Loop para encontrar origem no grafo
+    while (aux && aux->idvertice != origem) { // Loop para encontrar origem no grafo
         aux = aux->proximo;
     }
 
@@ -98,7 +98,7 @@ Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoadjacente) 
     novoadjacente->proximo = aux->adjacentes; // Inserir o novo vértice adjacente na lista de adjacentes da origem
     aux->adjacentes = novoadjacente;
 
-    aux->numAdjacentes++; // Contador de vértices adjacentes da origem
+    aux->numadjacentes++; // Contador de vértices adjacentes da origem
 
     return grafo;
 }
@@ -191,7 +191,7 @@ Vertice* pesquisarVerticePorID(Vertice* grafo, int idvertice) {
     Vertice* aux = grafo;
 
     while (aux) {
-        if (aux->idVertice == idvertice) {
+        if (aux->idvertice == idvertice) {
             return aux;
         }
         aux = aux->proximo;
@@ -295,7 +295,7 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não p
         Adjacente* adjacenteAtual = verticeAtual->adjacentes;
 
         while (adjacenteAtual) { // Loop para todos os vértices adjacentes do vértice atual
-            Vertice* adjacente = pesquisarVerticePorID(grafo, adjacenteAtual->idVertice);
+            Vertice* adjacente = pesquisarVerticePorID(grafo, adjacenteAtual->idvertice);
 
             if (!adjacente->visitado) {
                 
@@ -303,10 +303,10 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não p
                 inserirElemFinalFila(fila, adjacente); // Inserir vértice adjacente na fila
 
                 // Armazenar dados no predecessor
-                adjacente->predecessor = verticeAtual->idVertice;
+                adjacente->predecessor = verticeAtual->idvertice;
                 adjacente->distancia = verticeAtual->distancia + adjacenteAtual->distancia;
 
-                if (adjacente->idVertice == destino) { // Parar se vértice destino encontrado
+                if (adjacente->idvertice == destino) { // Parar se vértice destino encontrado
                     encontrouDestino = 1;
                     break;
                 }
@@ -332,7 +332,7 @@ int pesquisarEmLargura(Vertice* grafo, int origem, int destino) { // Grafo não p
 float calcularDistanciaEntreVertices(Vertice* origem, Vertice* destino) {
     Adjacente* adjacente = origem->adjacentes;
     while (adjacente != NULL) {
-        if (adjacente->idVertice == destino->idVertice) {
+        if (adjacente->idvertice == destino->idvertice) {
             return adjacente->distancia;
         }
         adjacente = adjacente->proximo;

@@ -19,12 +19,12 @@ void imprimirGrafo(Vertice* grafo) {
     Vertice* vertice = grafo;
 
     while (vertice) { // Loop nos vértices
-        printf("ID: %d\tCidade: %s\n", vertice->idVertice, vertice->cidade);
+        printf("ID: %d\tCidade: %s\n", vertice->idvertice, vertice->cidade);
 
         Adjacente* adjacent = vertice->adjacentes;
 
         while (adjacent) { // Loop nas adjacentes
-            printf("  -> ID: %d\tDistancia: %.2f\n", adjacent->idVertice, adjacent->distancia);
+            printf("  -> ID: %d\tDistancia: %.2f\n", adjacent->idvertice, adjacent->distancia);
             adjacent = adjacent->proximo;
         }
 

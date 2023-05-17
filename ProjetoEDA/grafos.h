@@ -16,30 +16,30 @@
 #define TAM_CIDADE 100
 
 typedef struct Adjacente {
-	int idVertice;
+	int idvertice;
 	float distancia;
 	struct Adjacente* proximo;
 }Adjacente;
 
 typedef struct AdjacenteFile {
-	int idVertice;
+	int idvertice;
 	float distancia;
 }AdjacenteFile;
 
 //Grafo
 typedef struct Vertice {
-	int idVertice;
+	int idvertice;
 	char cidade[TAM_CIDADE];
 	struct Vertice* proximo;
 	struct Adjacente* adjacentes;
 	int visitado;
 	int predecessor;
 	float distancia; // Armazenar a distância do vértice em relação à origem. Na função pesquisarEmLargura serve para armazenar a distância percorrida até chegar no vértice atual. 
-	int numAdjacentes;
+	int numadjacentes;
 }Vertice;
 
 typedef struct VerticeFile {
-	int idVertice;
+	int idvertice;
 	char cidade[TAM_CIDADE];
 }VerticeFile;
 
@@ -71,7 +71,7 @@ Fila* criarFila();
 
 // Funções para inserir
 Vertice* inserirVertice(Vertice* grafo, Vertice* novo);
-Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoAdjacente);
+Vertice* inserirAdjacente(Vertice* grafo, int origem, Adjacente* novoadjacente);
 int inserirElemFinalFila(Fila* fila, Vertice* vertice);
 
 // Funções para imprimir
