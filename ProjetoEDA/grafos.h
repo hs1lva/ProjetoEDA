@@ -43,7 +43,8 @@ typedef struct VerticeFile {
 	char cidade[TAM_CIDADE];
 }VerticeFile;
 
-// Fila para ver o melhor caminho
+// Fila para pesquisa em largura (BFS), onde é necessário manter uma fila para armazenar os vértices que estão visitados
+// FIFO (First-In-First-Out), ou seja, o primeiro elemento inserido na fila é o primeiro a ser removido
 typedef struct Fila {
 	struct NodeFila* proximo;
 	struct NodeFila* anterior;
