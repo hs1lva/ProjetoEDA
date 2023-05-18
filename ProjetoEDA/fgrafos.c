@@ -340,3 +340,49 @@ float calcularDistanciaEntreVertices(Vertice* origem, Vertice* destino) {
     // caso os vértices não estejam diretamente ligados
     return INFINITY;
 }
+
+
+
+// Estou a tentar uma alternativa para o Brute Force
+/*#include <limits.h>
+
+void dijkstra(Vertice* grafo, int numvertices, int origem) {
+    // Inicialização dos vértices
+    for (int i = 0; i < numvertices; i++) {
+        grafo[i].distancia = INT_MAX; // Distância inicialmente infinita
+        grafo[i].predecessor = -1; // Predecessor indefinido
+        grafo[i].visitado = 0; // Marcação de não visitado
+    }
+
+    grafo[origem].distancia = 0; // Distância da origem é 0
+
+    Fila* fila = criarFila();
+    inserirElemFinalFila(fila, &grafo[origem]);
+
+    while (!filaVazia(fila)) {
+        Vertice* verticeAtual = removerElemFila(fila);
+        verticeAtual->visitado = 1; // Marcar vértice como visitado
+
+        Adjacente* adjacenteAtual = verticeAtual->adjacentes;
+
+        while (adjacenteAtual != NULL) {
+            Vertice* adjacente = adjacenteAtual->idvertice;
+
+            if (!adjacente->visitado) {
+                int distanciaTotal = verticeAtual->distancia + adjacenteAtual->distancia;
+
+                if (distanciaTotal < adjacente->distancia) {
+                    adjacente->distancia = distanciaTotal;
+                    adjacente->predecessor = verticeAtual->idvertice;
+                }
+
+                inserirElemFinalFila(fila, adjacente);
+            }
+
+            adjacenteAtual = adjacenteAtual->proximo;
+        }
+    }
+
+    // função para limparfila
+}
+*/

@@ -15,6 +15,8 @@
 
 #define TAM_CIDADE 100
 
+// Grafo orientado -> relação entre os vértices unidirecional
+
 typedef struct Adjacente {
 	int idvertice;
 	float distancia;
