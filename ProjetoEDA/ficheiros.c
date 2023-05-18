@@ -480,7 +480,7 @@ int guardarBackupAdjacentes(Vertice* grafo, char* nomeficheiro) {
         Adjacente* adj = aux->adjacentes;
         while (adj != NULL) {
             AdjacenteFile adjFile = { adj->idvertice, adj->distancia }; // struct sem lixo (sem apontadores)
-            fwrite(&aux->idvertice, sizeof(int), 1, ficheiro);
+            fwrite(&aux->idvertice, sizeof(int), 1, ficheiro); // primeiro pega no vertice e depois na adj para fazer associação
             fwrite(&adjFile, sizeof(AdjacenteFile), 1, ficheiro);
             adj = adj->proximo;
         }
